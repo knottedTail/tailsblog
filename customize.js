@@ -5,16 +5,16 @@ const config = {
   /* Site
   ========================================= */
   title: `catstail's blog`,          // Displayed in header
-  description: `This is my blog`,     // Site description
+  description: `Write Everything`,     // Site description
   maxWidth: "768px",                  // Max width of website
   enableAbout: true,                  // Enables about page
-  siteUrl: `https://yourDomain.com/`, // For sitemap & RSS feed
+  siteUrl: `https://catstail.netlify.app/`, // For sitemap & RSS feed
   useScrollIndicator: true,           // Use scroll indicator on top of screen in posts
 
   /* Profile
   ========================================= */
   author: `catstail`,                             // Name shows on profile
-  profileDescription: "{Edit me in customize.js}",   // Shows under author name
+  profileDescription: "Write Everything",   // Shows under author name
   profileImageName: `profile.jpeg`,                  // Place profile.jpg/.jpeg/.png in _assets folder
   location: "",                                      // Location under profileDescription. "" --> disabled
   footerLink: "",                                    // Link to page when you click footer name
