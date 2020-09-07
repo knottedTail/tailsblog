@@ -1,6 +1,8 @@
+import "katex/dist/katex.min.css"
 import { wrapRootElement as wrap } from "./src/components/Code/wrap-root-element"
 import Prism from "prism-react-renderer/prism"
 ;(typeof global !== "undefined" ? global : window).Prism = Prism
+
 
 export const wrapRootElement = wrap
 

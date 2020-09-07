@@ -70,6 +70,12 @@ module.exports = {
               ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
             },
           },
+          {
+            resolve: `gatsby-remark-katex`  // What need to be added.
+          },
+        ],
+        plugins: [
+          `gatsby-remark-katex`
         ],
       },
     },

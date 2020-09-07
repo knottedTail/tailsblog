@@ -4,7 +4,7 @@
 const config = {
   /* Site
   ========================================= */
-  title: `gatsby-blog-mdx`,          // Displayed in header
+  title: `catstail's blog`,          // Displayed in header
   description: `This is my blog`,     // Site description
   maxWidth: "768px",                  // Max width of website
   enableAbout: true,                  // Enables about page
@@ -13,7 +13,7 @@ const config = {
 
   /* Profile
   ========================================= */
-  author: `Author Name`,                             // Name shows on profile
+  author: `catstail`,                             // Name shows on profile
   profileDescription: "{Edit me in customize.js}",   // Shows under author name
   profileImageName: `profile.jpeg`,                  // Place profile.jpg/.jpeg/.png in _assets folder
   location: "",                                      // Location under profileDescription. "" --> disabled
@@ -24,13 +24,13 @@ const config = {
       showHeaderIcon: shows social media icon in header. When true, must have account name set
   ========================================= */
   socialMediaLinks: {
-    email:     { emailAddress: "", showHeaderIcon: true },
-    github:    { accountName: "", showHeaderIcon: true },
-    facebook:  { accountName: "", showHeaderIcon: true },
-    instagram: { accountName: "", showHeaderIcon: true },
-    twitter:   { accountName: "", showHeaderIcon: true },
-    linkedIn:  { accountName: "", showHeaderIcon: true },   // Use URL after "linkedin.com/"
-    medium:    { accountName: "", showHeaderIcon: true },   // Use URL after "medium.com/@"
+    email:     { emailAddress: "philip94@snu.ac.kr", showHeaderIcon: true },
+    github:    { accountName: "CATsTAILs", showHeaderIcon: true },
+    facebook:  { accountName: "", showHeaderIcon: false },
+    instagram: { accountName: "", showHeaderIcon: false },
+    twitter:   { accountName: "", showHeaderIcon: false },
+    linkedIn:  { accountName: "", showHeaderIcon: false },   // Use URL after "linkedin.com/"
+    medium:    { accountName: "catsdetail", showHeaderIcon: true },   // Use URL after "medium.com/@"
   },
 
   /* Social Media Share Buttons--available below every post
@@ -48,7 +48,7 @@ const config = {
   /* More Custom Settings
   ========================================= */
   defaultTheme: "light",                      // Options: dark / light -- applied to first visitors
-  showTimeToRead: false,                      // Shows time to read for each post in main page
+  showTimeToRead: true,                      // Shows time to read for each post in main page
   breakCodeLines: false,                      // Breaks long code lines instead of having horizontal scroll
   faviconSrc: `_assets/icon-code.png`,        // Favicon
   gaTrackingId: ``,                           // Your google analytics tracking id--i.e. UA-*****
