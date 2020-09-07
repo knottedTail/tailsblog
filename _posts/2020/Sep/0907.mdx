@@ -4,3 +4,36 @@ date: 2020-09-07 00:00:00
 tags: [Daily]
 excerpt: Daily Report
 ---
+
+<Collapsable title="C++" titleSize="1.6rem">
+
+* How to check timing
+
+```cpp
+#include <iostream>
+#include <chrono>
+
+auto start = std::chrono::high_resolution_clock::now();
+// Execute functions
+std::cout << std::chrono::duration_cast<milliseconds>(
+    std::chrono::high_resolution_clock::now() - start
+).count() << std::endl;
+```
+
+* Speed comparison : recursive _vs_ for-loop, _vs_ memoization:
+    * recursive for loop __memoization__ is not tested(but probabley the fastest one)
+
+* NTL library: **_Number Theory Library_** 
+    * contains _polynomial_, _bigint_ etc..
+    * let you be sure that GMP__ is installed when you install __NTL__
+    * When you complied source codes including NTL, then
+```bash
+g++ -O2 -std=c++11 -pthread -march=native main.cpp-lgmp -lntl
+```
+1. O2: optimization argument
+2. std=c++11: Run compiler based on c++11
+3. pthread: Use pthread (not exact)
+4. march=native(optional): good performance for x86 acrhitecture
+
+
+</Collapsable>
