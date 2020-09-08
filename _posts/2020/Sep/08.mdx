@@ -1,0 +1,73 @@
+---
+title: 09/08
+date: 2020-09-08 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+
+# Sheaf
+---
+* Gluing Equation can be written as
+
+$$
+0 \rightarrow \mathcal{F}(U) \rightarrow \prod \mathcal{F}(U_i)  \rightrightarrows \mathcal{F}(U_i \cup U_j)
+$$
+
+where $\mathcal{F}$ is a functor from a category of open sets to some structured category.
+
+'$\rightrightarrows$' indicates an _Equalizer_. 
+
+* étalé = to spread out
+
+* For a two ringed spaces $(X, \mathcal{O}_X), (Y, \mathcal{O}_Y)$, a __morphism__ from $(X, \mathcal{O}_X)$ to $(Y, \mathcal{O}_Y)$ is a pair 
+$$
+(f:X\rightarrow Y, \varphi:\mathcal{O}_Y \to f_.(\mathcal{O}_X))
+$$
+__NOTE__: $f$ does not induce $\phi$, but induce $f_.(\mathcal{O}_X)$ where $f_.(\mathcal{O}_X)(U) = \mathcal{O}_Y(f^{-1}(U))$.
+
+## __Godement resolution__
+
+__Idea__: global(esp. cohomological) information about a sheaf in terms of local information is coming form its stalks.
+
+where $\mathcal{F}$ is a sheaf over $X$,
+$$
+\text{Gode}(\mathcal{F})(U):= \prod_{x \in U}\mathcal{F}_x\ ^\forall \text{open subset } U \subseteq X
+$$
+
+Then, $\text{Gode}(\mathcal{F})$ becomes a presheaf, further, flabby sheaf.
+
+Finally, $\text{Gode}$ becomes functor with a natural transformation between identity functor and itself.
+
+(flabby sheaf: all of the restriction of the sheaf is surjective.)
+
+
+
+## __Adapted class__
+
+Given an abelian category $\mathcal{A}$ and a left-exact functor $\mathcal{F}$ from $\mathcal{A}$, 
+
+a class of objects $\mathcal{R} \subset \mathcal{A}$ is adapted to $\mathcal{F}$ if it satisfies the followings:
+
+> * stable under finite direct sums
+> * $\mathcal{F}$ acts like exact in $\text{Kom}^+(\mathcal{R})$
+> * any object from $\mathcal{A}$ is a subobject of an object from $\mathcal{R}$
+
+* If $\mathcal{A}$ contains sufficiently many injective objects, then the class of all injective objects is an adapted to any left-exact functor from $\mathcal{A}$
+
+# What to check
+---
+* the section functor with a given open set is _left-exact_. 
+
+Especially, the global section functor is left-exact.
+
+* Let $M$ be a manifold with a structured sheaf $\mathcal{O}_M: U \rightarrow \{$ smooth fcts on $U\}$. 
+
+The sheaf $\mathcal{E}:U \rightarrow \{$ smooth serctions of $\rho$ on $U \}$ is an $\mathcal{O}_M$-modules.
+
+Then the category of sheaves associated to a vector bundle are not form of __Abelian category__
+
+Check $\mathbb{R}\times\mathbb{R} \rightarrow \mathbb{R}\times\mathbb{R}: (x,v) \rightarrow (x, xv)$ is an example for not being abaelian.
+
+
+
