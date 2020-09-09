@@ -13,6 +13,7 @@ const Image = () => {
             name
             childImageSharp {
               fluid(maxWidth: 300, maxHeight: 300) {
+              # fluid(quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
