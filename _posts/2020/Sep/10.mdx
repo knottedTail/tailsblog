@@ -1,0 +1,239 @@
+---
+title: 09/10
+date: 2020-09-10 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+
+# Differential Geometry
+
+> Especially, based on calculations (my weakest part)
+>
+> with _Spivak_'s book, _A Comprehensive Introduction to Differential Geometry vol.2_  and _SungHae_'s invaluable talks.
+
+Riemannian geometry evolves once again by introducing notion of tensor.
+
+__Levi-Civita connection__
+
+A (affine) connection $\nabla$ on the tangent bundle of a given manifold $M$.
+
+it should satistfy:
+
+* _linearity_, $C^{\infty}$-linear on $X$, and $\mathbb{R}$-linear on $Y$.
+
+* _torsion free_ condition, $\nabla_X Y = \nabla_Y X - [X, Y] = 0$
+
+* _matric compatible_ condition, $X \langle Y,Z \rangle = \langle \nabla_X Y, Z \rangle + \langle Y, \nabla_X Z \rangle$ 
+
+Connection can be extanded as a map from $T_{(p,q)} \times \Gamma(TM)$ to $T_{(p,q)}$ where $T_{(p,q)}$ is a $(p,q)$-type tensor field on $M$ ~~correct notation?~~
+
+__NOTE:__ It is not a (1,2)-tensor.
+
+---
+
+__Generalization of connection__
+
+$\nabla_X$ is already defined for $(1,0)$-type tensor.
+
+It is expressed locally as the followings.
+
+> $\nabla Y = Y_{a;b} \partial x^a \otimes dx^b$
+>
+> $X^a_{;b} = \nabla X(dx^a, \partial_b) = \nabla_{b} X(dx^a) = X^a_{,b} + X^c \Gamma^a_{bc}$
+
+
+also, for $(0,0)$-type tensor $\phi$ (just  $C^\infty$ functions on $M$), one can define
+$$
+\nabla_X(\phi) = X(\phi)
+$$
+
+and by _Leibniz's rule_, It would be defined on products of tensors
+$$
+\nabla_X(\phi \otimes \psi) = \nabla_X \phi \otimes \psi + \phi \otimes \nabla_X \psi
+$$
+
+So, It will be defined on $(p,q)$-type tensor, for arbirary integers $p,q \geq 0$, right after that the connection is defined on $(1,0)$-type tensor.
+
+Let me allow the folloings.
+$$
+X(\alpha(Y)) = \nabla_X(\alpha(Y)) = (\nabla_X \alpha) (Y) + \alpha(\nabla_X Y)
+$$
+~~.. why?~~
+
+then $\nabla_X \alpha$ is expressed as 
+$$
+\nabla_X \alpha(Y) = X(\alpha(Y)) - \alpha(\nabla_X Y)
+$$
+
+By this expression, $\nabla_X \alpha(Y)$ is written locally,
+$$
+\nabla_X\alpha(Y) = \alpha_{\mu;\nu}X^\nu Y^\mu,\ \alpha_{\mu;\nu} = \alpha_{\mu, \nu} - \alpha_\rho \Gamma^\rho_{\mu\nu}
+$$
+
+where $\alpha = \alpha_\rho dx_\rho$, $X = X^\nu \frac{\partial}{\partial x^\nu}$, $Y = Y^\mu \frac{\partial}{\partial x^\mu}$ and $\alpha_{\mu;\nu} = \frac{\partial \alpha_\mu}{\partial x^\nu}$.
+
+> with $X = \partial_\nu, Y = \partial_\mu$,
+>
+> $X(\alpha(Y)) = X(\alpha_nu) = \alpha_{\nu,\mu}$
+>
+> $\alpha(\nabla_X Y) = \alpha(\Gamma^\rho_{\nu\mu} \partial\rho) - \alpha_\rho \Gamma^\rho_{\nu\mu}$
+
+Local expression of connection on $(0,2)$-type tensor gives the form of _matric compatiblity_ condition on Levi-Civita connection.
+
+Since
+$$
+\nabla T = T_{ab;c} dx^a \otimes dx^b \otimes dx^c,\ T_{ab;c} = \partial_c (T(\partial_a, \partial_b)) - T_{db} \Gamma^d_{ac} - T_{ad} \Gamma^d_{bc}
+$$
+
+then $\nabla_Z g$ becomes of form of connetion.
+$$
+\nabla_Z g(X,Y) = Z(g(X, Y)) - g(\nabla_Z X, Y) - g(X, \nabla_Z Y) = 0
+$$
+
+By this, derivatives of the Riemannian metrics are expressed in simple forms.
+$$
+g_{ij,k} = \partial_k \langle \partial_i, \partial_j \rangle \\
+g_{ij;k} = 0 = \nabla g
+$$
+
+
+---
+
+__Riemannian normal coordinate__
+
+local coordiante system in a nbhd. of $p$ obtained by an image of exponential map from the tangent space at $p$.
+
+In this coordinate, Christoffel symbols are vanishing at $p$.
+
+So, connection (covariant derivative) of a tensor $A$ of any type is obtained by partial derivatives.
+
+---
+
+__Curvature Tensor__
+
+> A protagonist of differential geometry.
+
+A curvature tensor $R$ is a $(1,3)$ tensor over vector fields defind as
+$$
+R(X,Y)Z = \nabla_X \nabla_Y Z - \nabla_Y \nabla_X Z - \nabla_{[X, Y]} Z
+$$
+__NOTE:__ the last term is to make $R$ as a tensor.
+
+There are lots of symmetric on curvature tensors.
+
+
+# The Reidemeister torsion
+
+> _Leo Benard_, Reidemeister torsion on character varieties
+
+"Determinant on complexes"
+
+1. __Finite Vector Space__
+
+Consider an endomorphism $d$ of a $n$-dimensional vector space $V$ over a field $k$.
+
+Then the determinant of $d$ would be calculated from choices of basis $e$ in the domain space, and of basis $f$ in the target space.
+
+_Interpretation_: the volume of the polytope $d(e)$ when the volume of the polytope $f$ = 1.
+
+2. __Short Exact Sequence of Finite Vector Spaces__
+
+Considering an short exact sequence of finite vector spaces $C_*$.
+$$
+0 \to C^{-1} \xrightarrow{d_{-1}} C^0 \xrightarrow{d_0} C^1 \to 0
+$$
+
+with $\rm{dim}$ $C^* = n_*$
+
+Then let define the torsion of the exact sequence, $\rm{tor}$$(C^*, c^*)$ after fixing bases $c^*$ in $C^*$:
+$$
+\text{tor}(C^*, c^*) := \text{det}(d_{-1}(c^{-1}), \bar{c}^1)
+$$
+
+where $\bar{c}^1$ is any lift to $C^0$ of $c^1$
+
+_Interpretation_: the volume of the polytope $d_{-1}(c^{-1}), \bar{c}^1$ when the volume of the polytope $f=1$.
+
+__NOTE:__ It does not depend ot the choice of $c^0$.
+
+Alternatively, 
+$$
+\text{tor}(C^*, c^*) = \frac{\text{det}\bar{d}_0}{\text{det}\bar{d}_{-1}}
+$$
+where $\bar{d}_{-1}$ is a co-restriction map to the subspace $C^{-1}$ generated by first $n_1$ vectors of $c^0$, 
+$\bar{d}_0$ is a restrction map of $d_0$ to the last $n_1$ vectors of $c^0$.
+
+By permuting $c^0$, $\bar{d}_{-1}$ is an isomorphism, also for $\bar{d}_0$. 
+
+3. __Long Exact Sequence of Finite Vector Spaces__
+
+For any long exact sequence,
+$$
+C^1 \to C^1 \to \cdots \to C^n
+$$
+with a choice of bases $c^*$
+
+then one can generalize the torsion defined above as:
+$$
+\text{tor}(C^*, c^*) = ?
+$$
+
+4. __Comlex of Finite Vector Spaces__
+
+Hard to generalize. It is a core of the thesis written by _Beanrd_.
+
+__NOTE:__ It depends on the bases of cohomological groups, $H^i(C^*)$.
+
+---
+
+Reidemeister used the torsion to distinguish non-homeomorphic lens space with isomorphic fundamental groups.
+
+lens space $L_{(p,q)}$, for $p, q$ relatively prime, have rational homology of $3$-sphere and finite fundamental groups $\mathbb{Z}/p\mathbb{Z}$.
+
+and the computation of the torsion of _some acyclic homological complex_ of a lens spaces is invariant, and involves $q$, the second integer.
+
+It is generalized as __Ray-Singer analytic torsion__ by using the action of the Laplacian on differential fomrs on the complex.
+
+5. __Ray-Singer analytic torsion__ for an finite acyclic complex
+
+In the case of an acyclic complex,
+$$
+C^* = C^0 \xrightarrow{d_0} C^1 \xrightarrow{d_1} \cdots \xrightarrow{d_{n-1}} C^n
+$$
+
+With a choice of bases $c^*$ of the $C^i$'s, $C^i$s are able to be expressed as a direct sum 
+$$
+C^i = \text{ker}_{d_i} \oplus K_i
+$$
+Then $\bar{d}_i: K_i \to \text{im}(d_i) = \text{ker}(d_{i+1})$ can be defined and
+$$
+\text{tor}(C^*, c^*) = \prod\text{det}(\bar{d}_i)^{(-1)^i}
+$$
+
+An other way to do is the followings:
+
+Take an adjoint map of $\bar{d}_i$, $\bar{d}^*_i:C^{i+1} \to C^i$, by taking transposition of the map. 
+
+One can define the natural scalar product on $C^i$ that turns $c^i$ into an orthogonal base.
+
+Hence, the orthogonal splitting $C^i = \text{ker}(\bar{d}_i) \oplus^\perp \text{im}(\bar{d}^*_{i})$. ~~why does it need?~~
+
+From these settings, one can define _the combinatorial Laplacians_
+$$
+\Delta_i = d^*_i d_i + d_{i-1}d^*_{i-1}: C^i \to C^i
+$$
+With some careful calculations,
+$$
+\text{tor}(C^*, c^*) = \prod\text{det}(\Delta_i)^{\frac{i}{2}(-1)^{i+1}}
+$$
+
+## ML
+
+[multivariate tensorflow](https://www.tensorflow.org/tutorials/structured_data/time_series)
+
+
+
+
+
+
