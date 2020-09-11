@@ -1,0 +1,126 @@
+---
+title: 09/11
+date: 2020-09-11 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# ML
+
+To avoid __gradient vanishing__, minimize $F(x) + x$ instead of $F(x)$. This is the core idea of __ResNet__.
+
+* __BN__ : Batch Normalization, 
+
+Dimension of Convolution layer indicates shape of input data.
+
+There are often 1, 2 and 3-dim CNN is used. Time series, image data and MRI for example.
+
+__Activation functions__
+
+> non-linear function at the last part of each layer.
+
+* ReLU (a solution for gradient vanishing problem)
+
+$\text{max}(0, x)$
+
+* Sigmoid(Logistic)
+
+$\frac{1}{1 + e^{-wx+b}}$
+
+* Softmax
+
+$f(x)_i = \frac{e^x_i}{\sum e^x_i}$
+
+---
+
+__Kernel Initialization__
+
+> initialization for weights
+
+* He normal.uniform
+
+used when the activation function is __ReLU__.
+
+when $n$ is the number of nodes in the previous layer,
+
+_Normal initialization_
+$$
+\text{Weights} \sim N(0, \text{Var}(W)),\ \text{Var}(W) = \sqrt{\frac{2}{n}}
+$$
+
+_Uniform initialization_
+$$
+\text{Weights} \sim U(-\sqrt{\frac{6}{n}}, \sqrt{\frac{6}{n}})
+$$
+
+---
+
+## Layers
+
+__Conv1D__
+> keras
+
+```python
+keras.layers.Conv1D(
+    filters, 
+    kernel_size, 
+    strides=1, 
+    padding='valid', 
+    data_format='channels_last', 
+    dilation_rate=1, 
+    activation=None, 
+    use_bias=True, 
+    kernel_initializer='glorot_uniform', 
+    bias_initializer='zeros', 
+    kernel_regularizer=None, 
+    bias_regularizer=None, 
+    activity_regularizer=None, 
+    kernel_constraint=None, 
+    bias_constraint=None
+)
+```
+
+* _filters_: how many different windows you will have. It equals to the length of depth of output.
+
+* _kernel_size_: the size of the sliding window.
+
+* _strides_: step size for each sliding window.
+
+__NOTE:__ Conv1D with kernel_size=$1 \times 1$ = a Linear layer. it is used for:
+1. Manipulating the number of channels
+2. Reducing calculation complexity(from __1__.)
+3. Adding non-linear layer
+
+
+__Dense__
+> keras
+
+```python
+tf.keras.layers.Dense(
+    units,
+    activation=None,
+    use_bias=True,
+    kernel_initializer="glorot_uniform",
+    bias_initializer="zeros",
+    kernel_regularizer=None,
+    bias_regularizer=None,
+    activity_regularizer=None,
+    kernel_constraint=None,
+    bias_constraint=None,
+    **kwargs
+)
+```
+
+* _units_: the dimension of the output space
+
+* _activation_: activation function used in the layer, _ReLU_, _linear_, etc.
+
+__Dropout__
+> keras
+```python
+tf.keras.layers.Dropout(rate, noise_shape=None, seed=None, **kwargs)
+```
+
+* _rate_: dropout rate, probability of present for each node.
+
+It is a kind of weight for weights.
