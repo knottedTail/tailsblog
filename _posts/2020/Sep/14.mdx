@@ -1,0 +1,140 @@
+---
+title: 09/14
+date: 2020-09-14 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+
+# ML
+
+* FFNN (Feed-forward Neural Network): A neural network whose network doesn't contain a cycle.
+
+## Universal Approximation theorem
+
+> Let $f$ be a any _Lebesgue-integrable_ function from $\mathbb{R}^n$ to $\mathbb{R}$ 
+>
+> then it can be approximated by a fully-connected with depth $d \leq (n+4)$ ReLU network to arbitrary accuracy __w.r.t__ $L^1$ distance.
+
+Another version is proved in 2020.
+
+_Patrick Kidgfer and Terry Lyons_, [KL20](https://arxiv.org/abs/1905.08539)
+
+> _(From Wikipedia)_
+>
+> $\phi: \mathbb{R} \to \mathbb{R}$ is any nonaffine continuous function which is continuously differentiable at least one point with nonzero derivative at that point.
+>
+> $K \subseteq \mathbb{R}^n$ is a compact set.
+>
+> $\mathcal{N}$ is the space of FFNN with $n$ input neurons, $m$ output neurons and an arbitrary number of hidden layers each with $n+m+2$ neurons
+>
+> also, every  hidden neuron has activation function $\phi$ and every output neuron has the identity as its activate function.
+>
+> Then any $f \in C(K;\mathbb{R}^m)$ can be approximated by $F \in \mathcal{N}$, in other words, $\mathcal{N}$ is dense in $C(K;\mathbb{R}^m)$ with respect to the uniform norm.
+
+---
+
+# Sheaf
+
+* Abelian sheaf: sheaf valued in abelian category
+
+## Exactness
+
+A sequence $0 \to \mathscr{A} \to \mathscr{B} \to \mathscr{C} \to 0$ of abelian sheaves on a space $X$ is exact if and only if 
+
+$$
+0 \to \mathscr{A}_x \to \mathscr{B}_x \to \mathscr{C}_x \to 0
+$$
+is exact for every $x \in X$.
+
+__e.g.__ Exponential sequence
+
+Let $X$ be a complex manifold, $\mathscr{O}^{\text{an}}_X$ denotes the sheaf of holomorphic functions on $X$, and $\mathscr{O}^{\times\text{an}}_X$ denotes the (multiplicative) sheaf of invertible holomorphic functions on $X$.
+then
+$$
+0 \to \mathbb{Z}(1)_X \to \mathscr{O}^{\text{an}}_X \xrightarrow{\text{exp}} \mathscr{O}^{\times\text{an}}_X \to 0
+$$
+is exact where $\mathbb{Z}(p) = (2\pi \sqrt{-1})^p \mathbb{Z}$, $\mathbb{Z}(p)_X$ is a constant sheaf on $X$.
+
+## Basics of sheaves
+
+> [GM] I.5
+
+Let $Y$ be a manifold, $\mathcal{F}$ be a presheaf on $Y$.
+
+__A germ of sections of $\mathcal{F}$ over an arbitrary subset $Z$ of $Y$__, 
+$$
+\Gamma(Z,Y):= \lim_{\longrightarrow}\Gamma(V, \mathcal{F})
+$$
+the limit being taken over all open $V \supset Z$.
+
+elements are in $\Gamma(Z, Y)$ is called a section over $Z$.
+
+__The total spasce of a presheaf $\mathcal{F}$__,
+$$
+F = \bigsqcup_{y \in Y} \mathcal{F}_y
+$$
+with the weakest topology where all the $F(s):=\{s_y | y \in U\}$ for every $s \in \Gamma(U, Y)$ and for any open subset $U \subset Y$ is open.
+
+* Then, the natural projection $\pi: F \to Y$ is continuous with the topology.
+
+> Let $U$ be an open subset of $Y$, then $\pi^{-1}(U) = \{ \mathcal{F}_y  | y \in U \}$.
+>
+> Choose any point in  $\pi^{-1}(U)$, a germ $s_y$ has a representative $(V, s')$  for some open $V \subset U$ containing $y$.
+>
+> then $F(s') \ni s_y \subset \pi^{-1}(U)$.
+
+* Furthermore, $\pi$ is a local homeomorphism.
+
+> $F(s)$ for any $s \in \Gamma(U, Y)$ has one-to-one correspondence to $U$.
+
+* _Example_ for $f:Z \to Y$, a map between topological spaces, one can define sheaf $\Gamma$ of local continuous sections of $f$ as follows:
+$$
+\Gamma(U) := \{ \sigma: Y \to Z | f \circ \sigma = id_U \}
+$$
+
+__Sheafification__
+
+The sheaf $\mathcal{F}^+$ associated with a presheaf $\mathcal{F}$ is the sheaf of local continuous section of $\pi:F \to Y$ where $F$ is a total space of $\mathcal{F}$.
+
+Then, there exists a canonical morphism of presheaves, $\mathcal{F} \to  \mathcal{F}^+$:
+$$
+\mathcal{F}(U) \ni s \mapsto \sigma_s \in \mathcal{F}^+(U) 
+$$
+where $\sigma_s(y) = s_y$ for $y \in U$.
+
+If $\mathcal{F}$ is a sheaf, then this map becomes an isomorphism.
+
+## Constant (pre)sheaf
+
+Let$A$ be a set, $Y$ a a topological space.
+
+A __constant presheaf__ $\boldsymbol{A}$ on $Y$ with fibre $A$ is defined by, $\boldsymbol{A}(U) = A$ $^\forall$ open $U \subset Y$
+
+with restriction maps $\text{res}_{U,V}=id_A$ for all $V \subset U \subset Y$.
+
+A __constant sheaf__ $\mathcal{A} = \boldsymbol{A}^+$.
+
+
+
+
+
+# Complex Analysis
+
+## Reinhardt domain
+
+__Def__ (_Reinhardt domain_)
+
+> An open subset $G$ of $\mathbb{C}^n$ is called __Reinhardt domain__ 
+>
+> if $(z_1, \cdots, z_n) \in G$ implies $(e^{i \theta_1}z_1, \cdots, e^{i \theta_n}z_n) \in G$ for every real number $\theta_j$.
+>
+> Reinhardt domain $G$ is __logarithmically convex__
+>
+> if the image of $G^* = \{z=(z_1, \cdots, z_n) \in G | z_1 \cdots z_n \neq 0\}$ under the map $\lambda: z \mapsto (\text{ln}(|z_1|), \cdots, \text{ln}(|z_n|))$ is convex in $\mathbb{R}^n$.
+
+* Reinhardt domain is under intersections.
+
+* Logarithmically convex Reinhardt domains are the domains of convergence of power series.
+
+* Logarithmically convex Reinhardt domain is disk when $n=1$, and polydisk is one of examples of it.
