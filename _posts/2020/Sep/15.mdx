@@ -1,0 +1,117 @@
+---
+title: 09/15
+date: 2020-09-15 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+
+# Knot
+
+## TODO
+
+- [ ] Solve the problem of local CLI wolframscript .. WolframEngine?
+
+- [ ] Refactoring check
+
+## Topics
+
+* __Volume Conjecture__ (Main)
+
+* Octahedron ideal triangulation
+
+* Colored Jones polynomial (asymptotics)
+
+* Character Variety
+
+* Torsion (Reidemeister?)
+
+* Quantumm reprn
+
+# Sheaf
+
+The constant sheaf $\mathcal{A}$ is a set of locally constant sections of $\pi: A \to U$ for given open subset $U$ of $Y$.
+
+___pf___
+
+> Let $\sigma \in \mathcal{A}(U)$ and $\sigma(y) = (y, \sigma_y) \in Y \times A$ (NOTE: $Y \times A$ with discrete topology on $A$ is the total space.)
+>
+> Since $\sigma$ is continuous section, $V_{y_0} = \sigma^{-1}(Y \times \{\sigma_{y_0}\}) \subset U$ is open for every $y_0 \in A$
+>
+> Therefore, $\sigma$ is constant on $V_{y_0}$, so it is locally constant.
+
+A sheaf $\mathcal{F}$ is __locally constant __ if any point in $Y$ has a neighborhood $U$ such $\mathcal{F}|_U$ is a constant sheaf.
+
+---
+
+__Example__ (a presheaves on two points)
+
+
+Consider presheaves value $\mathbb{Z}$ on $\{p\}$ and $\{q\}$, $\mathcal{F}$ and $\mathcal{G}$.
+
+Let $\mathcal{F}$ be a constant presheaf, so $\mathcal{F}(\emptyset)=\mathbb{Z}$, $\mathcal{F}(\{p,q\})=\mathbb{Z}$.
+
+Note that $\mathcal{F}$ is not a sheaf beacuse it fails _local identity axiom_ on the empty set. $s, t \in \mathcal{F}(\emptyset)$ shoud determine only one section in $\mathcal{F}(\emptyset)$.
+
+Let $\mathcal{G}$ be a constant sheaf, __i.e.__ a sheafification of $\mathcal{F}$.
+
+Then, $\mathcal{G}(\{p\}) = \mathcal{G}(\{q\}) = \mathbb{Z}$ and check $\mathcal{G}(\emptyset) = 0$, $\mathcal{G}(\{p, q\}) = \mathbb{Z}^2$.
+
+Remind _locally constant section_ interpretation.
+
+---
+
+* __Sheafification__ needs stability of structure under limits for structured valued preshreaves. Since stalks are limits.
+
+* With some structure (Lie algebras depending on parameters, etc.) cease constant as a sheaf of sets to be constant as a sheaf of structures.
+
+* The classification of locally constant sheaves <=> The structure of fundamental groups of topological spaces.
+
+* More generalization of locally constant sheaves => __constructed sheaves__.
+
+---
+
+## Extension properties of sheaves of functions = Rigidity of sheaves
+
+* Sections should be considered over _closed_ sets. (in the view of extension property) $\frac{1}{x^2-1}$ cannot be extended over $(-1, 1)$.
+
+* __continuous__ functions: a continuous $\mathbb{R}$ valued function on a closed set $Z$ in a __compact__(?) Hausdorff space $X$ can be extended on $X$ (Tietze extension Theorem, check compact Hausdorff $\Rightarrow$ normal).
+
+* __differentiable__ functions: both cases implies that $\Gamma(X, \mathscr{O}) \to \Gamma(Z, \mathscr{O})$ is surjective.
+
+* non-uniqueness can be dealt by considering $\Gamma(X, \mathscr{O}) \to \Gamma(Z \bigcup Z', \mathscr{O})$ for any closed subset $Z'$ disjoint with $Z$, which is surjective.
+
+* __vector bundle__ $\pi: E \to X$ satisfies the same extendability properties for the sheaf of germs of sections of $\pi$.
+
+* __complex__ analytic manifold $X$ with the structure sheaf of holomorphic functions $\mathscr{O}$ induces that $\Gamma(X, \mathscr{O}) \to \Gamma(Z, \mathscr{O})$ be injective because of uniqueness of analytic functions. 
+
+* Rigidity porperties of sheaves of holomorphic functions are closed to those of locally constant sheaves.
+
+
+
+# Programs
+
+__How to Install Mathematical Programs?__
+
+* Magma
+
+1. Download installer including _shared_complete_*_ file and *.exe file(s). Unzip them into any folder.
+2. Locate _magmapassfile_ into the same folder
+3. Move the folder to /usr/local/magma (or any folder you want to locate magma files)
+4. Edit _magma_ file. Especially the first line defining __ROOTDIR__. Let it be a /usr/local/magma (dir you set above). Maybe you want to edit file which will be executed.
+5. Make softlink using the below command:
+```bash
+ln -s /usr/local/magma/magma /usr/local/bin/magma
+```
+6. If you need to make fake ipcard(?) for _magmapassfile_, then check the following commands (provided by SeonHwa Kim)
+```bash
+ip link add _mycard_ type dummy
+ifconfig mycard hw ether MAC
+ifconfig mycard up
+```
+You can change _mycard_ and _MAC_ in your favor.
+
+* Sage
+
+1. Download the installer [here](https://www.sagemath.org/download.html). Plz check your version of Ubuntu.
+2.
