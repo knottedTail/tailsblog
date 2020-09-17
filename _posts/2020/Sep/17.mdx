@@ -1,0 +1,89 @@
+---
+title: 09/17
+date: 2020-09-17 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# ML
+
+## ROC
+
+> Receiver Operating Characteristic
+
+A curve which starts at $(0,0)$ and ends at $(1,1)$. It is used to evaluate learning models.
+
+* $x$-coordinate: _FPR_(False Positive Rate) = 1 - TNR
+
+* $y$-coordinate: _TPR_ (False Positive Rate)
+
+TPR, TNR and FPR, FNR are values calculated from TP, TN, FP, FN which are ususally used to describe performace of binary classification models.
+
+__i.e.__ when one gives a sample to the machine, then the sample is:
+
+1. __TP__: True Positive when Machine says positive and it is true.
+2. __TN__: True Negative when Machine says negative and it is true.
+3. __FP__: False Positive when Machine says positive and it is false.
+4. __FN__: False Negative when Machine says negative and it is false.
+
+then TPR(recall, sensitivity), TNR(specificity), FPR, FNR and PPV(precision) are following below formulae:
+$$
+\text{TPR} = \frac{TP}{TP + FN} = 1 - \text{FNR}
+$$
+$$
+\text{TNR} = \frac{TN}{TN + FP} = 1 - \text{FPR}
+$$
+$$
+\text{PPV} = \frac{TP}{TP + FP}
+$$
+
+In other words, __TPR__($y$-axis) is a ratio of correct judgement over positive samples and __FPR__($x$-axis) is a ratio of incorrect judgement over negative samples.
+
+These values is depending on __threshold__, a reference value to judge class.
+
+For example, suppose the machine says a sample is positive with a probability $p$ and threshold is $0.6$. 
+
+Then the sample is classified as positive if $p > 0.6$, as negative if $p \leq 0.6$.
+
+__How to draw ROC?__
+
+1. Rearrange samples by ascending order of probability.
+2. Set the threshold to first samples's probability.
+3. Calculate $(\text{FPR}, \text{TPR})$, plot the point.
+4. Increase the threshold to set it the probability of the next sample,
+5. Repeat __2.__ to __4.__ until threshold is over all the probability of samples.
+
+__NOTE:__ FPR is increasing in the above procedure, since $FP$ is increasing in FPR = $\frac{FP}{TN+FP}$.
+
+## BOSS?
+
+__command logging all the prints with errors__ (and choose graphic card to use)
+```bash
+CUDA_VISIBLE_DEVICES=3 python3 main.py 2>&1 | tee logs.log
+```
+
+
+# Heart
+
+* Systole: 수축기
+
+* Diastole: 이완기
+
+# Reidemeister torsion
+
+$\mathfrak{sl}(n, F)$ is a algebra of matrices with trace zero.
+
+___pf___
+
+> At $I \in SL_n$, Flow is described as $e^{tX}$ for some matrix $X$.
+>
+> Since $\det{e^{tX}}$ = e^{t \cdot \tr{X}}, the flow is on $SL_n$ if and only if $\text{tr}{X} = 0$.
+
+$\underline{\text{Ad}}_a: G \to G, g \mapsto aga^{-1} = L_a R_{a^{-1}}g$ implies a endomorphism on the lie group $\mathfrak{g}$. 
+$$
+\text{Ad}_a : \mathfrak{g} \to \mathfrak{g}, X \mapsto \frac{d}{dt}|_{t=0} a \cdot \text{exp}(tX) \cdot a^{-1}
+$$
+
+$d(L_a \circ R_{a^{-1}} \circ \text{exp}(tX)) = dL_a \circ dR_{a^{-1}} \circ X = dR_{a^{-1}} X$ since $X \in \mathfrak{g}$ is a left invariant vector field.
+
+* algebraic map: a morphism between algebraic variety locally given by polynomials.
