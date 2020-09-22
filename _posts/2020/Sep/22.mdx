@@ -1,0 +1,108 @@
+---
+title: 09/22
+date: 2020-09-22 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# Sheaf
+
+__ReView__
+
+Direct limit(colimit, inductive limit) is exact.
+
+The direct image functor induce from $f:X \to Y$, $f_\cdot (\mathcal{F})(U) = \mathcal{F}(f^{-1}(U))$, is left-exact
+
+___why?___: a functor, $\Gamma(U, \_ )$, is left exact.
+
+flabby(늘어진, 무기력한, 힘없는) sheaf: a sheaf whoes restriction maps from $X$ is surjective.
+
+* _A category has enough injective objects_ means that any object is a subobject of an injective one.
+
+where an object $Y$ is said to be _injective_ if $X \mapsto \text{Hom}_\mathscr{A}(X, Y)$ is exact.
+
+* _flabby_ sheaf is interpreted as a sheaf whose sections on any open subset are be able to extend to $X$. 
+
+* From the above facts ... $R\Gamma \circ \Phi = R\Gamma$ where $\Phi: \mathscr{O}_X\text{-mod} \to Sh(Ab)$, the forgetful functor.
+
+$i$-th __Sheaf cohomology__, $H^i(X, \mathcal{F})$, is defined as $R^i \Gamma(\mathcal{F})$.
+
+We consider $\mathcal{F}$ as a element in $\text{Kom}^+(R_X\text{-mod})$ as a sequence of sheaves
+$$
+\cdots \to 0 \to \mathcal{F} \to 0 \to \cdots 
+$$
+
+---
+
+__Prop__
+
+$R^i f_\cdot (\mathcal{F})$ is a naturally isomorphic to the sheaf associated to the presheaf(sheafification)
+$$
+U \mapsto H^i(f^{-1}(U), \mathcal{F})
+$$
+where $U$ is an open subset of $Y$.
+
+___pf___
+
+Let $I^\cdot$ be an injectvie resolution of $\mathcal{F}$, then
+$$
+R^if_\cdot(\mathcal{F}) = H^i(f_\cdot(I^\cdot))
+$$
+it is calculated with given open subset $U \subset Y$ as the cohomology of the following sequence:
+$$
+\begin{matrix}
+\cdots & \to & f_\cdot(I^{i-1}) & \to & f_\cdot(I^i) & \to & f_\cdot(I^{i+1}) & \to & \cdots \\
+\cdots & \to & f_\cdot(I^{i-1}) & \to & f_\cdot(I^i) & \to & f_\cdot(I^{i+1}) & \to & \cdots
+\end{matrix}
+$$
+
+
+# ML
+
+__To imporve accuracy__
+
+* Multilayer Perceptron (MLP)
+
+* Deep Belief Network (DBN)
+
+* CNN
+
+* Recurrent Neural Network (RNN)
+
+* Bidirection Recurrent Neural Network (BRNN)
+
+* Long Short Term Memory (LSTM)
+
+* Inception (GoogLeNet)
+
+## Interbretable Machine Leraning (IML)
+
+# Others
+
+Article abut mathematical genius, [here](https://deconstructinggenius.wordpress.com/)
+
+> musing: 사색, 사색한 것을 말하기
+>
+> wunderkind: 신동, 젋어서 크게 성공한 사람
+>
+> wither: 시들다, 말라 죽다
+>
+> obsolete: 한물간, 구식의
+>
+> procurement: 물품, 조달
+>
+> gruesome: 섬뜩한
+>
+> fervent: 열렬한, 강렬한
+>
+> precocious: 조숙한
+
+1. Relentless Curiosity coupled with the ability with fulfill it. (in our controlls): _Sitzfleisch_, the ability to sit int one's chair doing gruesome work for hours!
+2. Social
+3. A Base Level of Analytic Intelligence
+
+Time spent to understand simple notions makes you understand other complicate things with lesser time.
+
+_mathematics is not about understanding complex abstract ideas, but about understanding simple things well._
+
+_For those not familiar with higher mathematics, consider that learning Japanese is much harder than reading a dense Japanese political text given you know the language._
