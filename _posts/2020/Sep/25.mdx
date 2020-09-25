@@ -1,0 +1,92 @@
+---
+title: 09/25
+date: 2020-09-25 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# Programming
+
+## GIT: How to remove remote branch
+
+Suppose you made a branch named 'NEW' and you pushed it to the remote repository.
+
+1. Delete local branch
+```bash
+git branch -d NEW
+```
+
+GIT might recommend the following command:
+
+```bash
+git branch -D NEW
+```
+
+2. Delete remote branch by using _push_
+```bash
+git push origin --delete branch
+```
+
+## Network OSI7 Layer
+
+Standard structure for network system.
+
+From this, one can deduce that some superficial layers are not affected by other interior layers.
+
+1. __Physical Layer__,
+A layer consists of Bits. Most hidden layer, transport bit flow via physical objects.
+
+2. __Data Link Layer__,
+A layer consists of Layers. It is used to detect errors in a process of transportation of data. __MAC__ address is involed in this layer.
+
+3. __Network Layer__,
+__IP__(location), __Route__(root) are involed in this layer, a layer to trasport _packets_.
+
+$$
+\uparrow \text{ Lower Layer -------------------- Upper Layer } \downarrow
+$$
+
+4. __Transport Layer__,
+__TCP/UDP__ protocol is involed in this layer. Its header includes the information about port number. Units are _segment_(TCP) and _datagram_(UDP).
+
+5. __Session Layer__,
+This layer is related to _session_ as its name. It maintains the connection between receiver and transmitter. __TCP/IP__ session and __OS__(?) involed in this layer.  
+
+6. __Presentation Layer__,
+Encoding or decoding is done by this layer. It tells a format of a given data and gives it to the _application layer_ when the network is a receiver. __MIME__ encoding is involed in this layer. 
+
+7. __Application Layer__,
+Most superficial layer, only the layer user can meet. It makes users touch networks. Network __API__ is done in this layer.
+
+
+
+The process of transportation is:
+$$
+\begin{matrix}
+7 & \to & 6 & \to & 5 & \to & 4 & \to & 3 & \to & 2 & \to & 1 \\
+& & & & & & & & & & & & \downarrow \\
+7' & \leftarrow & 6' & \leftarrow & 5' & \leftarrow & 4' & \leftarrow & 3' & \leftarrow & 2' & \leftarrow & 1'
+\end{matrix}
+$$
+where the numbers with _prime_ indicates the receiver's layers
+# Knot
+
+## Seminar (윤석범 박사님)
+
+### 본인 논문 및 Porti의 논문 소개(Memoir 시리즈)
+
+__Result__
+
+For the $2$-bridge knot, $S(p, q)$, a torsion of meridian is calculated as:
+$$
+\mathbb{T}_\mu(\mathcal{X}_\rho) = \pm \frac{m^{e_k +1}}{2(m^2-1)} \cdot \frac{w_{11}}{v_{11} \phi_v} \cdot \frac{\partial \phi_w}{\partial u}
+$$
+where $\mu$ is a meridean , $e_k$ is $k$th epsilon in the epsilon sequence from the _Schubert_ form of $K$, $S(p,q)$, $\phi$'s are _Riley_ polynomials.
+
+and other details are not known for me...
+
+__CHECK:__ Awesome diagram consists of two vertical lines and one curve which consists of several parallel diagonals. (u know what I mean)
+
+# English
+
+* phish: 보이스피싱의 그 피싱
