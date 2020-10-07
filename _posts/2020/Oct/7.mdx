@@ -1,0 +1,118 @@
+---
+title: 10/07
+date: 2020-10-07 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# Echocardiography
+
+## Dictionary
+
+---
+
+* Transducer: 탐촉자
+
+* Piezoelectric crystal: 압전결정
+
+* Apex: 원호에서 원의 중심에 해당하는 부분, 초음파 사진에서 가장 윗부분
+
+* Scan line: 주사선, 압전결정에서 일정한 주기마다 내보내는 초음파, 주사선의 수 및 1회 내보내지는 주사선의 수가 영상의 화질을 결정
+
+* Shunt: 단락, 폐포를 지나지 않는 관류(정맥혈관?).
+
+---
+
+압전결정에서 전기가 흐르는 것으로 초음파가 발생되고 반사되는 초음파를 수집하는 것으로 영상을 만든다. 주파수의 변화량을 이용하면 특정 부분의 속도(특히 혈류의 속도) 역시 관찰 가능하다.
+
+관찰가능 한 것으로는 정반사가 일어나는 심낭, 심내막, 심외막 및 판막, 반사가 이루어지지 않는 혈액이 있다. 심근의 경우 산란이 일어난다.
+
+## Models of echocardiography
+
+1. Two dimensional imaging(B-type), 2면방식 영상
+
+가장 기본적인 방법으로 압전결정에서 발사된 주사선을 받아 2차원 심장 단면도 영상을 만드는데 사용한다.
+
+2. M-mode imaging, M방식 영상
+
+탐촉자로부터 특정 spot 사이의 거리를 정확히 측정하는데 유용한 방식으로 2면방식 영상을 통해 관심구조(structure of interest)로 M방식 커서를 옮겨 해당 위치까지의 거리를 정밀하게 구할 수 있다. 사람의 손을 많이 타는 모양.
+
+3. Doppler ultrasound, 도플러 초음파
+
+혈류 방향 및 속도를 검사하는 방법으로 초음파의 진동수 변화를 역으로 계산한다. 주사선의 방향과 수직한 성분은 측정하지 못한다는 단점이 있다.
+
+종류에 따라 세가지로 나뉜다.
+
+    a. Pulse Wave Doppler, PW, 간헐파 도플러
+    - 특정 점의 혈류를 분석할 때 사용하나 혈류의 속력이 1.6 m/s보다 한참 클 경우 aliasing 현상이 일어나 속력이 줄어보일 수 있다. (Nyquist limit과 관련된 문제인듯 하다.)
+    - 혈류의 속도가 일관적이어서 결과의 주파수가 일정한 경우(선형, laminar) 및 와류 등으로 인해 혈류의 속도가 제각각이 되어 결과의 주파수가 면의 형태로 나타나는 경우(turbulent) 등을 구분할 수 있다.
+    b. Continuous Wave Doppler, CW, 연속파도플러
+    - PW의 속도 제한 문제를 해결하였으나 공간해상도가 보다 떨어진다. 판막을 지나는 혈류의 압력차 및 단락(shunt)의 압력차를 보는데 사용한다.
+    c. Color Flow Mapping, CFM, 색지도도플러
+    - PW에 혈류 속도 정보를 추가하여 색으로 나타낸 그림으로 연세 세브란스 측에서 보여준 사진들이 여기에 해당하는 듯 하다. PW에서 나타나는 alising 현상이 나타나 부적절한 색이 나타나기도 한다. 와류 및 판막 와류 부위를 판독하기 위해 사용한다.
+
+위의 방법이 혈류 분석에 중점을 두었다면 심장의 조직운동을 위주로 검사하기 위해 아래의 방법을 사용한다.
+
+    a. Tissue Doppler Imaging, TDI, 조직도플러영상
+    - 조직에 중점을 둔 CFM으로 심근의 운동방향 및 속도를 분석한다. 공간을 측정하는 것이 아님에 유의. 심장 기능의 부위별 차이를 보기 위해 사용한다.
+    - e.g. 좌심실 벽운동 속도를 구할 때 사용한다. 수축기(systole) 에는 유입성가속이, 확장기(diastole) 에는 유출성 가속이 일어난다. 이외에도 좌심실 기능에 대한 유용한 정보를 제공하는 다양한 가속 및 감속파형이 있다고 한다.
+
+---
+
+# Algebra Geometry
+
+2-dimensional curve (which is isomorphic to $V(x^2+y^2-z^2)$) is isomorphic to $\mathbb{P}^1$. Check the following homomorphism.
+$$
+\begin{matrix} 
+V(x^2+y^2-z^2) \subset \mathbb{P^2} & \to & \mathbb{P}^1 & \\
+[x,y,z] & \mapsto & [x, z-y] & \text{except } [0,+1,+1] \\
+[x,y,z] & \mapsto & [z+y, x] & \text{except } [0,-1,+1]
+\end{matrix}
+$$
+It is well defined since $[x, z-y] = [x(z+y), z^2-y^2=x^2] = [z+y, x]$ 
+
+where $[x,y,z] \neq [0, 1, 1] \text{ or } [0, -1, 1]$
+
+From the _Segree embedding_, 
+$$
+\begin{matrix}
+\sigma : & \mathbb{P}^n \times \mathbb{P}^m & \to & \mathbb{P}^{(m+1)(n+1)-1} \\
+& ([\cdots, x_i, \cdots ], [\cdots, y_j, \cdots]) & \mapsto & [\cdots, x_iy_j, \cdots]
+\end{matrix}
+$$
+whose image, $\Sigma_{n,m}$, is a projective variety.
+
+And $\Sigma_{1,1}$ is isomorphic to $\mathbb{P}^1 \times \mathbb{P}^1$ it is called _ruled_ by two 2-dimensional curves.
+
+---
+
+## Projection
+
+### Cone
+
+Let $X$ be a projective variety in $\mathbb{P}^{n-1} \subset \mathbb{P}^n$ fand take a point $p \in \mathbb{P}^n \setminus \mathbb{P}^{n-1}$.
+
+By projective transformations, let $\mathbb{P}^{n-1} = \{[0, x_1, \cdots, x_n] \in \mathbb{P}^n \}$ and $p=[1, 0, \cdots, 0]$.
+
+then a ___Cone___ of a projective variety $X \subset \Pi$, $\overline{X}_p$ is defined as follows.
+$$
+\overline{X}_p := \bigcup_{q \in X} \overline{qp} \subset \mathbb{P}^n
+$$
+It is equel to 
+$$
+\overline{X}_p = V_{\mathbb{P}^n}(J) \subset \mathbb{P}^n
+$$
+where $J$ is a homogeneous ideal defining $X$.
+
+Its conecpt would be more generalized by inserting $k$-plane $\lambda$ into the point $p$ and $n-k-1$-plane $\Pi$ into $\mathbb{P}^{n-1}$ satisfying $\Lambda \cap \Pi = \emptyset$
+$$
+\overline{X\Lambda} := \bigcup_{q \in X} \overline{q\Lambda}
+$$
+where $\overline{q\Lambda}$ is the minimal $k+1$ affine plane containing $q$ and $\Lambda$
+
+As above, $\overline{X\Lambda} = V_{\mathbb{P}^n}(J)$ where $X = V_{\mathbb{P}^{n-k-1}}(J)$
+
+And with the same conditions above, a ___Join__ of project varieties $X\subset\Lambda$, $Y\subset\Pi$ is defined as follows:
+$$
+J(X, Y) := \bigcup_{p\in X, q\in Y}\overline{pq}
+$$
