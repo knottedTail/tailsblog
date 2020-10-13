@@ -60,6 +60,7 @@ module.exports = {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
               className: `anchor-heading`,
+              maintainCase: false,
             },
           },
 
@@ -114,6 +115,7 @@ module.exports = {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
               className: `anchor-heading`,
+              maintainCase: false,
             },
           },
 
