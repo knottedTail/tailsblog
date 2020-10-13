@@ -1,0 +1,71 @@
+---
+title: Gatsby
+date: 2020-10-14 03:24:00
+tags: [Tutorial]
+excerpt: List for tips of Gatsby
+---
+# Header-links
+
+_header-link_ means that a link containing header information in each post.
+
+For example, [here](https://catstail.netlify.app/2020/_Themes/Gatsby/#header-links) send you to the header above.
+
+It is used for __TOC__(Table Of Contents). A table of lists of headers in an underlying post.
+
+When you click a header in TOC, then it scrolls up(or down) to deliver you to that header.
+
+Let me indtroduce you how to add this function into your Gatsby-blog by using _mdx_.
+
+__NOTE:__ There is another way to do via _remark_. You can search, or just adjust the followings.
+
+References are:
+[[1](https://nickymeuleman.netlify.app/blog/table-of-contents)], 
+[[2](https://blueshw.github.io/2020/05/30/table-of-contents/)]
+
+---
+
+First, install a plugin _remark-slug_
+
+```bash
+npm install remark-slug
+```
+
+And add it this plugin as a option of _gatsby-plugin-mdx_ plugin _gatsby-config.js_ file 
+
+```json:title=gatsby-config.js
+const remarkSlug = require(`remark-slug`);
+// ...
+  {
+    resolve: `gatsby-plugin-mdx`,
+    options: {
+        remarkPlugins: [remarkSlug]
+    }
+  }
+// ...
+```
+
+After that, add _tableOfContents_ into a quary of mdx in a query of post templates.
+
+__e.g.__
+```json:title=src/components/Posts/PostTemplate
+export const postQuery = graphql`
+  query BlogPostByPath($slug: String!) {
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
+      tableOfContents // ADD THIS LINE!
+      excerpt
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+        date(formatString: "MM/DD/YYYY")
+        tags
+      }
+    }
+  }
+`
+```
+
+Then just enjoy it :D
+

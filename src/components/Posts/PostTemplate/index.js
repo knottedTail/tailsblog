@@ -310,10 +310,10 @@ export const postQuery = graphql`
   query BlogPostByPath($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       body
+      tableOfContents
       excerpt
       fields {
         slug
-        tableOfContents
       }
       frontmatter {
         title
