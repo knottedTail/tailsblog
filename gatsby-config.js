@@ -1,5 +1,6 @@
 const config = require("./customize")
 const rss = require("./gatsby-rss")
+const remarkSlug = require('remark-slug')
 
 module.exports = {
   siteMetadata: config,
@@ -78,6 +79,7 @@ module.exports = {
         plugins: [
           `gatsby-remark-katex`
         ],
+        remarkPlugins: [remarkSlug],
       },
     },
 

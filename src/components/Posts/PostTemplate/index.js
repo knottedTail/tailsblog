@@ -313,6 +313,7 @@ export const postQuery = graphql`
       excerpt
       fields {
         slug
+        tableOfContents
       }
       frontmatter {
         title
