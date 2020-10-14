@@ -1,0 +1,97 @@
+---
+title: experiments
+date: 2020-10-12 00:00:00
+tags: [Project]
+excerpt: Experiments for multi-modal learning
+draft: true
+---
+
+# ~ 10/08
+I did 3 tests, which are based on the model already made for 12 Leads: [GIT](https://github.com/antonior92/automatic-ecg-diagnosis)
+
+and I divided the dataset into 3 groups: training, validation, test set(6:2:2)
+
+a. Classifying normal/abnormal with 12 Leads or just 8 leads(except aVR, aVL, aVF and lead III)
+
+b. Binary classification for each disease (columns of .xlsx file) with 12 Leads and 8 Leads (maybe meaningless)
+
+c. Binary classification for 'IHD_CAD' with 8 Leads only. (10 times)
+
+## Results 
+
+__a__:
+
+accuracy was 71.46%(8 Leads) vs 70.98%(12 Leads) Not so different but values are slightly more  than the ratio of abnormality(63.6%)
+
+__b__:
+
+|Accuracy|8 Leads|12 Leads|True values|
+|:------:|:-----:|:------:|:---------:|
+IHD CAD|0.5808|0.5118|0.8021
+HF|0.9301|0.9383|0.9645
+VHD|0.8675|0.8457|0.9222
+congential|0.9728|0.9655|0.9761
+HCM|0.9909|0.9891|0.9908
+DCM|0.9564|0.9601|0.9816
+infiltrative|0.9891|0.9891|0.9969
+pericardial|0.9964|0.9964|0.9969
+HHD|0.9310|0.9401|0.9547
+aorta ds|0.8820|0.9074|0.9271
+cardiac tumor|1.0000|1.0000|1.0000
+a|0.9746|0.9800|0.9847
+
+Note that accuracies are so low in 'IHD CAD' row, that's the reason why I did 3rd test.
+
+__c__:
+
+Among 10 tests, the best accuracy was 0.7641 with f1 score 0.7529(weigthed) and the worst accuracy was 0.3757 with f1 score 0.3361(weighted).
+
+# 10-12
+
+10/09 and 10/10, I ran 8L/abnormal test again once in a day.
+
+|Trial|Loss|Acc|Val_Loss|Val_Acc|Test_Acc|AUC|
+|:-----:|:----:|:---:|:--------:|:-------:|:--------:|:---:|
+10/09|0.4594|0.7818|1.6176|0.7244|0.7098|0.6327|
+10/10|0.5103|0.7744|1.1187|0.6951|0.7049|0.6649|
+
+## Comparison the number of parameters
+
+__TJ__ (simple_cnn2_test): 10,481,058 (10,473,314+7,744)
+
+__8L__ (from 12L model): 6,395,937 (6,392,209+3,728)
+
+## Modification on the number of layers of the model.
+
+4 blocks -> 12 blocks, # of parameters = 11,771,649(11,765,121 + 6,528)
+
+# What To Do
+
+- [x] Check data loader
+> was opt for pyTorch and load only X-ray data
+
+- [ ] Count the number of layers
+
+- [x] Make a model with more layers
+> Add 3 Residual blocks(+ 7*3 layers), # of parameters is almost 11,000,000.
+
+- [x] Make a whole prcess to train models with different number of layers
+> calculation is ongoing.
+
+- [x] Check availablity of GPU in the server.
+> INVALID(10/12), the manger will come to school after 10/15.
+
+# Check anchor is working well
+
+- [ ] Investigation on X-ray data / sound data. Esp, what information does .dicom file have?
+
+# 10-14
+
+Results of [10/12](#10-12)
+
+* Max. of __AUC__ among 162 tests (0 to 161) = 0.6679 @ 11
+
+* Max. of __Accuracy__ among 162 tests (0 to 161) = 0.7220 @ 119
+
+Re-run without early stopping call back, but it ran with more epochs $(5 + \text{count} \times 5)$.
+
