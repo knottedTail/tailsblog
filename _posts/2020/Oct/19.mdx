@@ -1,0 +1,50 @@
+---
+title: 10/19
+date: 2020-10-19 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# Image Quality Assessment
+
+## BRISQUE
+
+> Blind/Referenceless Image Spatial Quality Evaluator
+
+1. Full-Reference IQA
+
+2. Reduced-Reference IQA (e.g. watermarked images are  being standard)
+
+3. Objective Bline / No-Reference IQA
+
+Database : [TID2008](https://www.semanticscholar.org/paper/TID2008-%E2%80%93-A-database-for-evaluation-of-visual-Ponomarenko-Lukin/6dd37b57f3391b438fa588f98a1c2067365ae5ca?p2df)
+
+Mean Quality Score : (0 to 100) mean score of  
+
+Differences between _natural_ and _artificial_ images
+
+1. pixel intensity, one of natural images follows gaussiasn distribution after normalization(__MSCN__).
+
+2. relations of each pixels with neighborhoods
+
+### STEPS
+
+1. Extract 5 matrices, 1 MSCN image and 4 _pairwise product image_.
+
+2. Calculate $36 \times 1$ feature vector(18 for original image, 18 for half downsized image). __GGD__ and __AGGD__ is used.
+
+3. Predict scores by using Support Vector Machine(__LIBSVM__) after scailing the vector from -1 to 1.
+
+### MSCN coefficients
+
+* Gaussianblur: Apply Imagefilter with the gaussian distribution filter, __i.e.__ matrix (of given size) whose sum of coeff=1, follows Gaussian dist.
+
+## Notes
+
+* BRISQUE seems to assess known-filtered images. Unfortunately, our case sholud deal with 
+
+## Database
+
+* TID2008 : The database used for __BRISQUE__ project. It is invalid now
+
+* KonIQ-10K : Similar database with TID2008, 10,073 quality scored images.
