@@ -1,0 +1,332 @@
+---
+title: 10/21
+date: 2020-10-21 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# DICOM
+
+# Development Environment
+
+* 안티패턴 : 익숙하지만 쓸모 x 패턴 in codes
+
+* bikeshedding : 중요한 것을 놓친 채 보다 덜 중요한 것에 시간을 낭비하는 것
+
+* caveat : 경고, 통고
+
+* judicious : 판단력 있는, 신중한
+
+* boilerplate : 표준 문안
+
+[__Google Style Guide__](https://google.github.io/styleguide/pyguide.html)
+
+
+## PEP8
+
+[PEP8](https://www.python.org/dev/peps/pep-0008/), [한글번역](https://kongdols-room.tistory.com/18)
+
+* Limit of length of characters in a line = 79(72, for comments/docstring etc.)
+
+* line breaks before operations
+```python
+line_break(aft 
+    + bef 
+    + cdot
+)
+```
+
+* Avoid _wildcard_(import *) except for overwriting definition of internal interface
+
+### Modules
+
+- Docstring
+
+- Dunders(\__all__ ...)
+
+- import
+
+### Quotes
+
+- Just choose \' or \" for your convenience
+
+- But, use \" for triple-quoted strings
+
+### whitespaces
+
+where to avoid
+
+- right after/before parenthesis
+```python
+# BAD
+temp( a, b, c, )
+arg = (0, )
+# Good
+temp(a, b, c)
+arg = (0,)
+```
+
+- immediately before comma, semi-colon, colon.
+```python
+# BAD
+if temperature<10 :
+    dada(x , y , x*y , clean)
+# GOOD
+if temperature<10:
+    dada(x, y, x*y, clean)
+```
+
+- EXCEPTION: colon as binary operator
+```python
+# BAD
+x = y[10:3]
+# GOOD
+x = y[10 : 3]
+```
+
+- between a name of a function and its open-parenthesis for args, indexing etc.
+```python
+# BAD 
+ham (expensive)
+cheese [23]
+# GOOD
+ham(expensive)
+cheese[23]
+```
+
+- More than one space to line args
+```python
+# BAD
+x          = True
+y          = False
+ph_1_style = (True, False)
+# GOOD
+x = True
+y = False
+ph_1_style = (True, False)
+```
+
+- Avoid _trailing white spaces_
+```python
+# BAD
+if meenoi < 10:  # whitespaces
+    print("Hello")
+# GOOD
+if meenoi < 10:# No whitespace
+    print("Hello")
+
+```
+
+- Only one whitespace between operator, if two operators are used, you decide that where to use whitespace
+```python
+# BAD
+print(3 * 3 - 25 / 5)
+# GOOD
+print(3*3 - 25/5)
+```
+
+- No whitespace neighborhoods of __=__ in arguments parenthesis.
+```python
+# BAD
+def tda(pH = 12):
+    return make(it = 27)
+# GOOD
+def tda(pH=12):
+    return make(it=27)
+```
+
+- However, space should be used with combination of docs of functions
+```python
+# BAD
+def tda(pH:AnyStr=12):
+    return make(it=27)
+# GOOD
+def tda(pH: AnyStr = 12):
+    return make(it=27)
+```
+
+- Avoiding multiple statements in an one line
+```python
+# BAD
+if temperature > 0: print("Hell no")
+    calculate(sth); print(results)
+# GOOD
+if temperature > 0: 
+    print("Hell no")
+    calculate(sth)
+    print(results)
+```
+
+### ?
+
+- No folding
+
+- Trailing comma with parenthesis.
+
+- COMMENTS take first priority
+
+- two spaces after the end of each sentence(except for final sentence)
+
+- comments' indent have same code's level
+
+- Appropriate _inline comments_ are prefered. Aviod unnecessary comments. And it starts from '# '.
+
+- Good _docstring_ -> PEP257
+
+- docstring for every __public__ module, function, class, method
+
+### Code Naming
+
+- code naming: follow your local rules, but there are some public(famous) rules
+
+- module: all chars are lower case. '_' is allowed only for readability.
+
+- Class : CapWord
+
+- TypeVar : CapWord, _co/_contra for covariant/contravariant variables.
+
+- Exception : CapWord(follow _Class_'s rule), suffix '_Error' used for error exception case.
+
+- First argument for instance method(class method) = self(cls)
+
+- In a def. of function, use '_' for collision of name of variables. (class\_)
+
+- Method / Instance variable follows the rule for functions. (use \_ for readability.)
+
+- CONSTANT : UPPERCASE
+
+### Inheritence
+
+- Choose __public__ or __non-public__ whenver you make class method/instance variable
+
+    - Public : (no leading '_'), ensure compatibility with the previous version, documented
+
+    - Non-public : Not intended by your third party, undocumented
+
+### Programming Recommendations
+
+- String join : don't use ```a+=x``` or ```a = a+x``` for string, use _join()_.
+
+- comparision with _None_ should not use '=' just use _is_ or _is not_ (No _not ~ is_ for readability).
+
+- Implement \__eq\__, \__ne\__, \__gt\__, \__lt\__, \__ge\__, \__le\__. If you don't have time to implement, consider a decorator __functools.total_ordering()__
+
+- sort(), min() -> __<__
+
+- max() -> __>__
+
+- lambda << def
+
+### Docstring
+
+- Functions : Replaced by [PEP484]
+
+- Variables :  Replaced by [PEP526]
+
+## Google Style Guide
+
+- _Import_ only for modules/packages (exception: typing)
+
+- ```import y as z``` when _z_ is a standard abbreviation.
+
+- Exception
+
+    - raise : internal
+
+    - assert : public
+
+- Avoid global var, if necessary try to use constants in module level.
+
+- Nested functions / classes : It's OK but do not use it only to hide functions from users.
+
+- Comprehensions / Generator Expressions : OK for ___simple___ cases. It's hard to read for complicated cases. (only one line for each portion!)
+
+- Default Iterators/Oprators : USE THEM! 
+```python
+# BAD 
+for k in keys.keys()
+# GOOD
+for k in keys
+```
+
+- Use __Generators__ (a function which ends _yield:_ rather than _return:_)
+>
+> but do not replace __all lists__ by generators, list is faster when memory will be used < available machine's memory.
+>
+> TensorFlow supports __generators__
+
+```python
+# Example 1: Generator with 'yield from'
+def generator():
+    a = [1,2,3]
+    yield from a
+```
+
+```python
+# Example 2: Reading Large File
+# BAD
+def csv_reader(fn):
+    file = open(fn)
+    result = file.read().split('\n')
+    return result
+
+# GOOD(lesser memory)
+def csv_reader(fn):
+    for row in open(fn, 'r'):
+        yield row
+```
+
+```python
+# Example 3: Infinite Sequence
+def fibonacci():
+    prev = 0
+    val = 1
+    while True:
+        tmp = val
+        val = val + prev
+        prev = tmp
+        yield val
+
+for seq in fibonacci():
+    print(seq, end='|')
+"""
+    1|2|3|5|8|13|21|34|55|89|144|233|377|610|987|1597|2584|4181|6765|10946|17711|28657|46368|75025|121393|196418|317811|514229|832040|1346269|2178309|3524578|5702887|9227465|14930352|24157817|39088169|63245986|102334155|165580141|267914296|433494437|701408733|1134903170|1836311903|2971215073|4807526976|7778742049|12586269025|20365011074|32951280099|53316291173|86267571272|139583862445|225851433717|365435296162|5912867298
+"""
+```
+
+- Labmda : one line only(hard to debug/read)
+
+- Conditional Expression(ternary operator) : OK for one-line
+
+- Default Arguments : OK for most cases
+>
+> NOTE: if a default value is mutable object(_list_, _dict_, etc.) then it is possible to override the values of them.
+>
+> Therefore, do not use mutable object as default args, method/variable of module also.
+
+- Properties : Use if in python3
+
+- Use Implicit __False__ statements
+>
+> Remember: All __empty__ values are false, 0, [], None, '', etc.
+
+- Use list comprehensions instead of _map_ or _apply_
+
+- __Lexical scoping__ is allowed, pyhton function always uses variables defined in enclosing variables.
+
+
+- Use decorators judiciously, since it causes errors which is impossible to recover
+
+### Comments for type variables
+```python
+# 1. comments for functions
+def funct(a: int) -> List[int]:
+
+# 2-1.
+a: SomeType = somefunct()
+
+# 2-2.
+a = somefunct() # type: SomeType
+```
+
+- Avoid __Power Features__: _custom metaclass(ABC)_, _access to bytecode_,
