@@ -1,0 +1,186 @@
+---
+title: 10/25
+date: 2020-10-25 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# TF 2nd Lecture
+
+## Week 2 
+
+### How to deal with 'ImageGenerator'?
+
+
+- Used model
+```python
+
+source_dir = '<path/to/sources>'
+
+model = tf.keras.models.Sequential([
+    # Note the input shape is the desired size of the image 150x150 with 3 bytes color
+    tf.keras.layers.Conv2D(16, (3,3), activation='relu', input_shape=(150, 150, 3)),
+    tf.keras.layers.MaxPooling2D(2,2),
+    tf.keras.layers.Conv2D(32, (3,3), activation='relu'),
+    tf.keras.layers.MaxPooling2D(2,2), 
+    tf.keras.layers.Conv2D(64, (3,3), activation='relu'), 
+    tf.keras.layers.MaxPooling2D(2,2),
+    # Flatten the results to feed into a DNN
+    tf.keras.layers.Flatten(), 
+    # 512 neuron hidden layer
+    tf.keras.layers.Dense(512, activation='relu'), 
+    # Only 1 output neuron. It will contain a value from 0-1 where 0 for 1 class ('cats') and 1 for the other ('dogs')
+    tf.keras.layers.Dense(1, activation='sigmoid')  
+])
+
+model.compile(optimizer=RMSprop(lr=0.001),
+              loss='binary_crossentropy',
+              metrics = ['accuracy'])
+```
+
+- ImageGenerator
+```python
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+datagen = ImageGenerator( rescale = 1.0/255. )
+generator = datagen.flow_from_directory(
+    source_dir,
+    batch_size=10,
+    class_mode='binary',
+    target_size=(150, 150)
+)
+```
+
+- History
+```python
+history = model.fit(
+    generator, # Put your generator
+    validation_data=validation_generator, # Put your 'val' generator if you have
+    steps_per_epoch=100,
+    validation_steps=50,
+    verbose=2
+)
+```
+
+- How to view intermeidiate results?
+```python
+x = 'read array image '
+x = x.reshape((1,) + x.shape)
+
+successive_outputs = [layer.output for layer in model.layers[1:] ]
+visz_model = tf.keras.models.Model(inputs = model.input, outputs = successive_outputs)
+successive_feature_maps = visualization_model.predict(x)
+layer_names = [layer.name for layer in model.layers]
+
+# -----------------------------------------------------------------------
+# Now let's display our representations
+# -----------------------------------------------------------------------
+for layer_name, feature_map in zip(layer_names, successive_feature_maps):
+  
+  if len(feature_map.shape) == 4:
+    
+    #-------------------------------------------
+    # Just do this for the conv / maxpool layers, not the fully-connected layers
+    #-------------------------------------------
+    n_features = feature_map.shape[-1]  # number of features in the feature map
+    size       = feature_map.shape[ 1]  # feature map shape (1, size, size, n_features)
+    
+    # We will tile our images in this matrix
+    display_grid = np.zeros((size, size * n_features))
+    
+    #-------------------------------------------------
+    # Postprocess the feature to be visually palatable
+    #-------------------------------------------------
+    for i in range(n_features):
+      x  = feature_map[0, :, :, i]
+      x -= x.mean()
+      x /= x.std ()
+      x *=  64
+      x += 128
+      x  = np.clip(x, 0, 255).astype('uint8')
+      display_grid[:, i * size : (i + 1) * size] = x # Tile each filter into a horizontal grid
+
+    #-----------------
+    # Display the grid
+    #-----------------
+
+    scale = 20. / n_features
+    plt.figure( figsize=(scale * n_features, scale) )
+    plt.title ( layer_name )
+    plt.grid  ( False )
+    plt.imshow( display_grid, aspect='auto', cmap='viridis' )  
+```
+## Week 3
+
+### Image augmentation
+
+```python
+train_datagen = ImageDataGenerator(
+    rescale=1./255.
+    rotation_range=40,  # randomly chosen between 0 and 40(deg)
+    width_shift_range=0.2,  # also, randomly chosen parameter between 0% and 20%
+    height_shift_range=0.2,
+    shear_range=0.2,
+    zoom_range=0.2,
+    horizontal_flip=True,
+    fill_mode='nearest'  # Uniformized neighborhood pixels
+)
+```
+
+Then, just do what you did.
+
+```python
+# New layer is open, Dropout!
+
+model = tf.keras.models.Sequential([
+    # ...
+    tf.keras.layers.Dropout(0.8)  # Error message is called since 0.8 is too high
+    # ...
+])
+```
+
+```python
+model.get_layer('mixed7')  # get layer of the given model
+```
+
+```python
+x = tf.keras.layers.Flatten()(last_output)
+x = tf.keras.layers.Dense(1024, activation='relu')(x)
+# ...
+
+model = tf.keras.Model(pre_trained_model.input, additional_model)
+```
+
+```python
+for layer in model.layers:
+    layer.trainable = false  # Lock layers
+```
+
+## Week 4
+
+Binary -> Multiple
+
+```python
+dataGenerator = ImageDataGenerator(
+    # ...
+    class_mode = 'categorical'  # from binary
+)
+
+# ...
+
+model = tf.keras.Models.Sequential(
+    # ...
+    tf.keras.layers.Dense(3, activation='softmax')  # from sigmoid
+)
+# ...
+model.compile(
+    loss='categorical_crossentropy',  # from binary_crossentropy
+    optimizer=RMSprop(lr=0.001),
+    metrics=['accuracy']
+)
+```
+
+```python
+history = model.fit_generator(
+    train_datagen.flow(images, labels)
+)
+```
