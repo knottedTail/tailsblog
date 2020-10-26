@@ -1,0 +1,30 @@
+---
+title: 10/26
+date: 2020-10-26 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# What can I do?
+
+# GIT
+
+## How to merge a branch with just a single commit-message?
+
+[How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) [번역](https://djkeh.github.io/articles/How-to-write-a-git-commit-message-kor/)
+
+1. All of the committed message are integrated
+```bash
+git merge feature_branch  # @ master branch
+```
+
+2. All the messages are merged into one message.
+```bash
+git merge --squash feature_branch
+git commit -m 'Feature commit messages are merged into this message'
+```
+
+3. 
+```bash
+git cherry-pick -n <commit-name>  # -n : do not commit after merging messages
+```
