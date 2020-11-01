@@ -1,0 +1,65 @@
+---
+title: 11/01
+date: 2020-11-01 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# Tensorflow
+
+## Course 3
+
+```python
+import tensorflow as tf
+from tensorflow import keras
+
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+
+sentecnes = [
+    '<sentence1>',
+    '...',
+    '<sentencen>'
+]
+
+tokenizer = Tokenizer(
+    num_words=100,  # the number of dictionary
+    oov_token='<OOV>'  # don't add new word to the dictionary, just replace it as '<OOV>'
+    )
+tokenizer.fit_on_texts(sentences)
+word_index = tokenizer.word_index  # {'i':1, ... }
+sequences = tokenizer.texts_to_sequences(sentences)  # sentences -> sequences
+padded = pad_sequences(
+    sequences
+    ,padding='post'  # where to pad?
+    ,truncating='post'  # where to truncate?
+    ,maxlen = 5  # maximum of sequence = 5
+)
+
+```
+
+* [sarcasm dataset](rishabhmisra.gityub.io/publications/) (in the kaggle)
+>
+> .json data processed by the lecturer
+
+## How to download database from tf
+
+```python
+import tensorflow.datasets as tfds
+imdb, info = tfds.load("imdb_reviews", wint_info=True, as_supervised=True)  # supervised?
+# imdb, info = tfds.load("imdb_reviews/subwords8k", wint_info=True, as_supervised=True)  # supervised?
+
+
+'... some settings'
+
+model = tf.keras.Sequenctial(
+    [
+        tf.keras.layers.Embedding(vocab_size, embdding_dim, input_length=max_length)  # New layer!
+        tf.keras.layers.GlobalAveragePooling1D(),  # or tf.keras.layers.Flatten()  
+    ]
+)
+```
+
+
+
+
