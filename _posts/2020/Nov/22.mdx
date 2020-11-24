@@ -1,0 +1,211 @@
+---
+title: 11/22
+date: 2020-11-22 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# Happy happy short goals for medifarm project
+
+## PR + QRS
+
+### PR
+
+1. Medifarm DB 파일 찾기(2050) : There are two waves files(for training); raw, preprocessed
+
+2. preprocess 과정이 justifier 전에 있는지, 후에 있는지 확인(2052) : 전!
+
+3. P-wave가 있는 질병? list-up(2100) : S1, S2, S3, SA, AVB1, AVB2, AVB4, BBB, NQT
+
+4. PR 먼저할까 QRS 먼저할까 결정(2101) : PR
+
+5. PR 정보가 justifier의 어디에서 출력되는지 확인(2130) : 오직 found_p_wave가 True 일 때만 js에 정보가 있는 듯 
+
+    * justifier.check_disease : js.check_disease <- js.reasons.return_reasoning() <- self.pr_info(only for mean) <- js.pr_reasons() = js.pr_interval
+        
+        * S1, SA, BBB, AVB1, AVB2, AVB4 -> found_P_wave==True일 때만 js.pr_check가 실행되면서 js.pr_interval에 값이 채워진다.
+
+        * 따라서 per_beat_only를 봐야된다, 무조건
+
+    * interface.report : js의 정보 직접 활용(js.pr_interval) <- __js.pr_check__(found_beat_only=True : beat_ana.per_beat_pr() / found_beat_only=True : m_ana.get_pr())
+
+6. 구조가 너무 개같아서 일하기 싫다고 불평(2135):
+
+7. PR interval 정의 찾기(2139) : per_beat_pr = P_onset - R_peak  .. 이지만 정의는 P_onset - Q_onset : get_pr (mean analysis)에선 제대로 계산한다 -> 문제없음, 다만 beat 단위가 아님
+
+8. PR interval 찾는 함수 만들 위치 선청(2143) : js.pr_check을 건드리는 것이 좋아보인다. 문제는 이 때 q_onset/p_onset 이 있느냐
+
+9. pr_check 전에 q_onset/p_onset 찾는지 확인/all anoms(2222) : 
+
+    * q_onset/s_offset : BeatAnalysis에서 find_qs_on_offsets_type1() 에서 추가됨(in check_sinus_type, 모든 질병에서 실행 at first), r_peaks은 그전에 이미 추가
+
+    * p_onset : mean.on_off_sets <- mean.p_onset_index (이게 mean analysis에서 계산된다는게 문제), collect_correct_onsets()에서 계산되며 모든 병에 들어가 있다.
+
+    * pr_check 전에 위의 계산이 일어나는가? : AVB2, 4, NQT에는 pr_check가 없었음 -> 추가(1122/21:53)
+
+    * found_p 는 pr_check 없어도 알 수 있음 (check_sinus_type <- m_ana.basic_p)
+
+    * reason.pr_info 가 evaluate 되는 부분은 오직 js.pr_reasons(), 여기에서 js.pr_interval로 값을 대입
+
+    * js.pr_interval이 evaluate 되는 부분이 오직 js.pr_check (m_ana.get_pr() / beat_ana.per_beat_pr())
+
+    * pr_check가 일어나는 경우 : 오직 질병검사의 내부 
+
+    * m_ana.get_pr()이 정상적으로 작동하려면 p_onset_index 가 정의되어 있어야하고 p_onset_index는 return_p_onset / fall_back_p_peak(p_peak_index가 np.int64가 아니면 ㅎ..) 에서 계산
+
+    * 오직 basic_p 에서 return_p_onset / fall_back_p_peak 가 실행됨. basic_p 는 check_sinus_type 에서 실행되므로 모든 질병검사의 초입부에 계산됨으로 간주
+
+    * beat_analysis 는 조사할 필요 없음(오류를 낼 가능성은 있으나, 결과를 직접 사용하는 것은 오직 found_p_wave 가 True일 때이므로)
+
+    * 따라서 pr_check는 모든 경우에서 옳은 결과를 낼 것이라 추측 (high prob.)
+
+    * 하지만 pr_check에다 비트별 pr 계산을 넣는다면, collect_correct_onsets() 이후에 pr_check가 실행되어야 함(p_onset 때문)
+
+    * 아닌 질병들이 몇군데 있음...? 인 줄 알았는데 왜 아니지??
+
+10. pr_check에 pq matching implement하기.. 전에 집에 가기(2223)
+
+11. 집에 오기(2328)
+
+12. 딴짓(매스매티카로 그림그리기, 0006)
+
+13. pr_check 코드 작성(q_onset / p_onset 맞추기, 일단 m_ana로 ).. 중 q_onset/s_offset이 가끔 R-peak에 가있는 것을 확인(0031)
+
+    * beat_ana.qrs 확인(0131), R-peak 근처에 있는 경우 이걸로 대체할 수 있지 않을까?
+
+    * common이 m_ana의 q/s 를 훔쳐오는 것을 발견(0134) .. 여기서 보정을 넣어야되나 .. 열받아서 놀고옴(0211)
+
+    * add_generic_reasons에서 훔쳐오는데, 이 시점이 언제인가?(0214) : collect_correct_onsets
+
+    * common의 QRS width, (max, min 포함)은 m_ana에서 훔쳐온 것으로 계산함, 이게 reason에 쓰인다 (0217)
+
+    * 결국 common의 QRS variation으로 잡아야 된다는 건데... 일단 한번 해보고 결과가 나쁘면 리포팅해야할 듯 이후 해결책을 찾자(0221)
+
+    * js의 'PR_interval'은 대체 어디다써?(0230),= np.mean(m_ana.pr_intervals) .. m_ana.pr_intervals는 생애 evaluate 되는 일이 없습니다. 야발진짜
+
+    * 노래들으면서 웹툰.. 이래서 시간이 흘러가는건가봐 Forgive, forget - 스텔라장이 어떤 노래였을까 ..? 아 이 곡이구나 (0250)
+
+    * found_p_wave가 True면 실행되는 pr_reasons에 pr_variation을 넣는게 좋아보입니다 선생님, 그리고 mean은 m_ana에서 계산되니까 그 정보를 참고해서 list 형태를 구해볼까요?(0308)
+
+    * pr_list를 어떻게 구할꼬? / m_ana.averaged 는 길이 200의 list.. but lr이 뭔가 이상하다(0342)
+
+    * packaged_block : r-s-p-q 인 것이었따. (0353) ... 5시까지 책 읽기로 합의봄 
+
+    * 5시는 페이크였습니다 5시 좀 넘어서 잠든 듯 (1207)
+
+    * 누워 생각한건데 pr이든 qrs든 correction 있/없 버전을 그냥 만들어서 테스트 돌리면 되지 않을까.. 코드 좀 끄적거리다 밥 먹고옴
+
+    * mean_s_offset 가끔 5000을 넘김 (1343)
+
+    * mean의 packaged_block이 가끔 지랄지랄해서 순서가 맞지 않는(아보이는) 경우가 상당함 (1356)
+
+    * 그런 경우는 보통은 found_p_wave가 False일 때. True일 때만 보정을 해주거나 하나봄, True일 때도 엇나가는 경우가 있기는 함(1359)
+
+    * 잠깐 knot 들어갔다옴(1411)
+
+    * 잠깐 쉬다옴(1436)
+
+    * pqrs verfiy하는 함수 만드는 중.. 왜 VT / AVB4 가 found_p_wave죠?(1525)
+
+    * VT 일 때 qrs_bundle 가끔 먹통.. VT는 fusion_beat(P + QRS) 혹은 PSVT일 때 발견할 수는 있음
+
+    * 아 힘들어 np.array에서 a < np.array < b 같은게 먹히는지 확인 : 안먹힘(1601) 괄호 묶으면 됨(1603)
+
+    * mean_to_beat_correction 이 packaged_block을 고칠 수 있음에 유의(1611) 이는 overlap_correction <- collect_correct_onsets에서 진행, 따라서 모든 질병에 대해 실행됨(1613)
+
+    * pqrs 매치시키는 함수 대충 짬(1616)
+
+    * 침대에 쓰러져있다 복귀(1626)
+
+    * pull-request는 commit msg가 하나만 나오던가?
+
+    * mean 으로 pqrs 매칭시키는거 만들고 pr/qrs var 내보내는거 만들고 일단 업로드하는게 좋을 듯(1631)
+
+    * mean이 p를 더럽게 잡는 경우가 있구나.. / generate_pqrs_blocks완성(1711)
+
+    * AVB4에서 왜 found_p인데 m_ana의 idx가 저지랄인지 분석 시작(1725?)
+
+    * mean analysis에서 q가 너무 바짝 붙은 경우가 생김 -> m_ana.get_narrow_qrs_width는 잘 찾는것로 보임, 후에 수정?(1750)
+
+    * m_ana.get_wide_qrs_width는.. 똑같음(1750)
+
+    * qrs_onset은 어디서 수정되는가?(qrs_check() / qrs_width_check(mode) 등등, qrs_check()가 오래되어 나쁜 결과를 내보내는 듯하다)(1802) PAC에서 qrs_width_check를 쓰도록 추가
+
+    * 하지만 PAC에서 P가 또 문제인데...? -> 해결(force_weak=True 처리해둠) .. VT?
+
+    * S1 에서 averaged가 너무 죽어버리는 현상 확인, spline method의 parameter 가 너무 쎈게 아닐까(1836)
+
+    * AVB1 은 narrow_AVB1 보다는 narrow를 쓰는게 좋아 보임(1903)
+
+    * AVB2 는 P찾기가 엉망이라 SVM하고 나오는 peak(beat_ana.p_peaks)를 써야할 듯 하다.(1925)
+
+    * m_ana.pr_intervals .. 언제나 비어있다 마치 나의 머리와 같지(1938)
+
+    * get_interval_variations 함수 작성 및 마무리(PR 등) (2043)
+
+죽겄다
+
+
+
+
+# ToDo for weekend(하나도 못하는중 ㅎ)
+
+* Close Model Theory
+
+* 세훈씨 + 준환씨 코드 구경
+
+* Medifarm (QRS variation, PR variation)
+
+* Handlebodies Ref.
+
+* Autoencoder Ref.
+
+* Rolfsen
+
+* Wall
+
+* Discrete Differential Geometry
+
+* A course in a metric geometry / oudot's book?
+
+* Other references you printed out ...
+
+와! 할게 많다!
+
+# Schedule
+
+
+# TODO
+
+- [ ] Make more models :D:D:D:D:D:D:D:D:D
+
+- [ ] Do some experiments with sound data (feature extracting first?)
+
+- [ ] Autoencoder / how about reading '12 automatic ecg blah blah'
+
+- [ ] Augmentation on training set
+
+- [ ] Read [_Evolution of unknotting strategies for knots and braids_](https://arxiv.org/abs/1302.0787)
+
+- [ ] 1st chapter of Rolfsen's book
+
+- [ ] 1st chapter of Wall's book
+
+- [ ] Cnt comp 생각해보기
+
+- [ ] Recurrence plot?
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? Because there is _continuus_ homotopy between  them
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? (False, what the author want to say is just there is an another embedding for being unknot (by def.))
+
+- [ ] Read Ch2. of the thesis written by Kingma
+
+- [ ] stability condition reading
+
+- [ ] Marching cube code 살펴보기
+
+- [ ] CT dcm investigation (necessary?)
+
+
+
