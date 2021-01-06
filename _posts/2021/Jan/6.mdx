@@ -1,0 +1,295 @@
+---
+title: 01/06
+date: 2021-01-06 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# Supercomputer powered by KISTI
+
+## Useful command
+
+- motd  : Print important notifications.
+
+- cds   : Move to "scratch" directory.
+    * home directory    : /home01/[ID]/
+    * scratch directory : /scratch/[ID]/
+
+- isam  : Account managemant system. SRU time을 확인할 수 있다.
+
+- lfs quota -uh [ID] /home01(or /scratch)   : Chck storage of /home01(or /scratch)
+
+- showq : 사용가능한 queue 확인.
+
+## Modules
+
+사용자 각자에게 필요한 환경변수/컴파일러 설정을 도와주는 명령어들
+
+- module avail  : 사용가능한 모듈 출력. 아래와 같은 내용이 출력된다.'
+    * modulefiles                   : 계산 노드들 KNL 및 Skylake 지원(network-opa?). 둘 중 하나는 반드시 모듈에 적재해야한다.
+    * compilers                     : 컴파일러
+    * mpi                           : MPI
+    * libraries(using mpi or not)   : 사용가능한 라이브러리
+    * commercial                    : 상용 소프트웨어
+    * applications                  : 응용프로그램
+
+
+- module available                  : 사용가능한 모듈 리스트 확인
+- module add/load <모듈1> <모듈2> ... : 모듈 적재하기
+- module list/li                    : 현재 적재된 모듈 확인
+- module help <모듈>                 : 모듈 정보확인
+- module show <모듈>                 : 모듈 설치 경로 확인
+- module rm/unload <모듈1> <모듈2> ...: 모듈 삭제
+- module purge                      : 모듈 일괄삭제
+
+## Writing a Script
+
+### NURION
+
+스케줄러를 사용하여 사용자간의 작업들을 조절함. 누리온에서는 PBS(Portable Batch System)을 사용하고 있다. (SLUM 4 neuron)
+
+job_examples 폴더에서 예제를 확인할 수 있다.(cp /apps/shell/home/job_examples/) serial.sh 빼고는 모두 병렬계산 사용.
+
+mpi.sh는 유튜브에 나머지는 지침게시판에서 예제해설 확인 가능.
+
+* #!/bin/sh : Bash 설정
+
+* 이후 #PBS - : 작업 스크립트의 정보 넘겨주기, option의 값을 넣어줘야함
+
+* -V : 사용자가 설정한 환경변수를 넘겨 사용
+
+* -N : 작업 이름 설정
+
+* -q : queue 지정, normal -> normal que 사용, 용도에 따라 다양한 queue를 사용할 수 있다. 지침게시판에서 queue별 설명 확인 가능.
+
+* -A : 누리온에서 자료 수집 하는 부분, 사용하고자하는 어플리케이션의 이름(종류?)를 명시하여 주지 않으면 실행이 되지 않는다. https://www.ksc.re.kr/gsjw/jcs/hd 에서 이름 매칭 확인 가능. 직접작성하면 inhouse
+
+* -l : 작업에 사용할 자원 결정. 
+    * select=1:ncpus=1:mpiprocs=1:ompthreads=1
+    * select=4:ncpus=64:mpiprocs=64:ompthreads=1
+        * select : 사용할 노드 개수
+        * ncpus : 노드당 코어 개수
+        * mpiprocs: 병렬계산 코어수?
+        * ompthreads: openmp 쓰레드?
+
+    * walltime=04:00:00
+        * 예상 계산 시간, 딱 이정도만 실행됨
+
+### NEURON
+
+스케줄러를 사용하여 사용자간의 작업들을 조절함. 뉴론에서는 SLUM을 사용하고 있다.
+
+job_examples 폴더에서 예제를 확인할 수 있다.(cp /apps/shell/home/job_examples/) serial.sh 빼고는 모두 병렬계산 사용. cpu용 gpu용이 나뉘어져 있다.
+
+mpi_gpu.sh는 유튜브에 나머지는 지침게시판에서 예제해설 확인 가능.
+
+* #!/bin/sh : Bash 설정
+
+* 이후 #SBATCH - : 작업 스크립트의 정보 넘겨주기, option의 값을 넣어줘야함
+
+* -J : 작업 이름 설정
+
+* -p : 파티션 설정
+    * Ivy Bridge / Skylake GPU를 선택할 수 있다. GPU에 따라 k40 / v100으로 나뉨 마지막 숫자는 GPU 개수.
+
+* -N : 노드 수
+
+* -n : 총 mpi process 개수
+    * -N 2, -n 10 : 각 노드별 5개의 mpi process 사용
+
+* -o : 작업로그의 파일 이름 명시
+
+* -e : 에러로그의 파일 이름 명시
+
+* --time : Wall time 설정
+
+* -gres : 각 노드별 사용할 GPU개수 옵션
+
+* -comment : 누리온에서 자료 수집 하는 부분, 사용하고자하는 어플리케이션의 이름(종류?)를 명시하여 주지 않으면 실행이 되지 않는다. https://www.ksc.re.kr/gsjw/jcs/hd 에서 이름 매칭 확인 가능. 직접작성하면 inhouse
+
+### 작업 스크립트 작성 순서
+
+1. Directory 이동
+
+2. module 적재, 앞서 적재된 것과의 혼란을 피해 가장 먼저 module purge를 해주는 것이 좋아보인다.
+
+3. 실행할 작업 (e.g. mpirun ./a.out (Nurion) | srun ./test_mpi.exe (Neuron))
+
+4. 완료까지 대기 및 관찰
+    * NEURON) squeue -u [ID]로 작업 진행상황을 볼 수 있으며 NODELIST에서 사용중인 gpu를 확인할 수 있다.
+        이후 ssh gpu09 와 같이 gpu노드로 진입가능, nvidia-smi -l 2 등으로 gpu 사용정도를 조회할 수 있다.
+
+## Conda 사용하기
+
+Conda 위치 : /apps/applications/miniconda3/bin/conda list -n [플랫폼 이름]
+    * 플랫폼 : tf_1.13 혹은 pytorch_1.0 원하는 패키지가 없을 경우 그냥 콘다를 까는걸 추천.
+    * !!! module 에서 python을 적재하면 바로 conda가 실행된다 !!!
+
+Conda 환경압축
+```python
+# 내보내기
+conda pack -n [환경이름] -o [내보낼 파일 이름(.tar.gz)]
+
+# 가져오기(after module add python/3.7.1)
+mkdir -p /home01/support/.conda/envs/[환경이름]
+tar xvzf [압축파일] -C /home01/support/.conda/envs/[환경이름]
+```
+
+## 작업제출하기
+
+모든 작업은 _scratch_ 폴더에 제출되어야함 (1개의 실행파일)
+
+* qsub [shell script] : 작업 제출하기
+
+* qstat -u [ID] : 해당 ID가 제출한 작업 상태 조회하기, R:Running, Q:대기중, 작업이 끝나면 조회되지 않음
+
+* qdel [작업ID] : 실행중인 작업 삭제하기
+
+* [작업이름].o~ : 작업로그 파일(화면에 출력)
+
+* [작업이름].e~ : 에러로그 파일, module purge 메세지가 이쪽으로 출력됨
+
+## 데이터 전송
+
+Use sftp!
+
+* cd, ls(for the server) | lcd, lls(for the local)
+
+* put/get (mput/mget for multiple files)
+
+## Interactive working
+
+0. 사용가능한 partition 보기
+    * sinfo
+        * STATE가 alloc인 경우에는 사용하지 못하는 partition임
+1. 작업할당받기 (할당부터 요금들어감)
+    * salloc --partition=ivy_v100_1 --nodes=1 --time=01:00:00 --comment [testname]
+    * 작업조회하기: squeue -u [ID]
+2. 작업실행하기, 작업ID가 부여될 것이다.
+    * srun --pty bash
+3. module load하기
+
+4. 계산노드 사용중단 / 자원 반납 : 모두 exit로 통일, 혹시 모르니 squeue -u [Id]로 반납 확인 미납된 경우 scancle [작업ID]로 반납.
+## CentOS vs Ubuntu
+
+* 레드햇 vs 데비안
+
+* yum,rpm vs apt,dpkg
+
+* 느린 업데이트 vs 빠른 업데이트
+
+# Want to do 
+
+* KISTI 슈퍼컴퓨터 사용 계정 확인(Jones polynomial 계산까지)
+    * 튜토리얼 끝!(SRU time이 줄어들질 않는다...?)
+
+* uComp, vComp limit으로 인한 component 일치 -> Limit of polynomial ideals?
+
+* Knot drawing program 분석(Theoretical?)
+
+* PCG Segmentation 알아보기
+
+* 해당 분야의 배경지식 없이 인자 사이의 관련성을 찾는 것이 가능할까? / 배경지식 없이 행할 수 있는 모든 분석
+
+* Kiem 칼럼 구경하기
+
+* Data with uncertainty
+
+# Schedule
+
+* 1000 - 1030: 슈퍼컴퓨터 접속 시도.. OTP발견
+
+* 1030 - 1230: Knot Seminar
+
+* 1230 - 1325: 태진이형이랑 수다
+
+* 1325 - 1445: Meeting w/ 김선화 선생님
+
+* 1445 - 1555: Limit 구하는법에 대한 자료 정리(2003, 2763) 잠깐 하고 쉼
+
+* 1555 - 1610: 서명하러 IMDARK 방문
+
+* 1610 - 1810: 슈퍼컴퓨터를 ARABOZA / 전공 이직할지 상담
+
+* 1810 - 1945: 저녁먹고 잠깐 낮잠
+
+* 1945 - 2140: 슈퍼컴퓨터 남은 영상 보기 + 이것저것 테스트
+
+* 2140 - 2230: Limit of Ideal을 찾아보려고 오래된 스킴책을 꺼내봄(online)
+
+* 2230 - 2255: 김선화 선생님의 solution 확인, uCompLimitCheck 만들기 시작
+
+* 2255 - 2500: uCompLimitCheck가 vCompNormalize와 잘못 엮인다는걸 깨닫고 삽질 ... 해결하고 어느정도까지는 uCompLimitCheck 만듦
+
+# ToDo
+
+* 1개 빠진 샘플 찾아보기 / Autoencoder? / 새로운 모델(maybe 2d) 구상 / validation protocol 만들기
+
+* Implement PCG envelope
+
+* Segmentation model?
+
+* More training models
+
+# ToDo for weekend(하나도 못했던)
+
+* Prime decomposition method
+
+* Close Model Theory
+
+* 세훈씨 + 준환씨 코드 구경
+
+* Handlebodies Ref.
+
+* Autoencoder Ref.
+
+* Rolfsen
+
+* Wall
+
+* Discrete Differential Geometry
+
+* A course in a metric geometry / oudot's book?
+
+* Other references you printed out ...
+
+# TODO
+
+- [ ] Make more models :D:D:D:D:D:D:D:D:D
+
+- [ ] Do some experiments with sound data (feature extracting first?)
+
+- [ ] Autoencoder / how about reading '12 automatic ecg blah blah'
+
+- [ ] Augmentation on training set
+
+- [ ] Read [_Evolution of unknotting strategies for knots and braids_](https://arxiv.org/abs/1302.0787)
+
+- [ ] 1st chapter of Rolfsen's book
+
+- [ ] 1st chapter of Wall's book
+
+- [ ] Cnt comp 생각해보기
+
+- [ ] Recurrence plot?
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? Because there is _continuus_ homotopy between  them
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? (False, what the author want to say is just there is an another embedding for being unknot (by def.))
+
+- [ ] Read Ch2. of the thesis written by Kingma
+
+- [ ] stability condition reading
+
+- [ ] Marching cube code 살펴보기
+
+- [ ] CT dcm investigation (necessary?)
+
+- [ ] Diagram drawing 코드 분석(command only, 실행이라도 시켜보기)
+
+- [ ] PrimeDecomposition 원리 분석
+
+- [ ] Sphere packing algorithm
+
+
+
