@@ -1,0 +1,341 @@
+---
+title: 01/07
+date: 2021-01-07 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# HORIZON
+
+## 공간의 분류와 대칭성
+> Kiem 18/04/05, 23
+
+### 1. 기하학의 역사
+
+동양 기하학과 서양기하학은 의외로 크게 다르지 않을지도 모른다. 복희여와도에서 우주를 창조했다하는 여와와 복희가 들고 있는 것이 자와 컴퍼스라는 라는게 이를 뒷받침해 줄 수 있지 않은가?
+
+서양 철학의 관점에서 수학은 실재론과 구성론, 두 관점이 대립해왔다. 수학을 관찰과학으로 보는 실재론과 존재로써 빚어진 깊은 사유로 보는 구성론 중 답이 있는가?
+
+농경사회의 요구로 실용적인 관점이 기하학이 발달하였고, 풍요로부터 유래된 그리스 민주주와 토론으로부터 추상적 기하학이 발달되었다고 볼 수 있다.
+
+중세시대에는 잠시 주춤하였으나 르네상스 시대의 교역 및 항해의 요구로부터 또다시 실용적인 기하학이 발달되었다.
+
+이후 르네 데카르트가 좌표계를 기하학에 도입함으로써 새로운 국면을 맞이하였다고 본다.
+
+뉴턴의 시대, 유클리드 기하학에서 일보 진보한 비유클리드기하학 발전되었고, 이 때가 가우스의 시대. 그리고 리만, 클라인이 있었다.
+
+클라인의 기하학은 리군에 대한 quotient space로 표현되는 homogeneous space를 공부하는 것으로 요약할 수 있다. 특히 대칭군에 대한 표현론이 양자역학에 해당된다.
+
+리만은 비유클리드 기하학을 포함하는 개념인 리만다양체를 제시하여 공간의 개념을 확장하였다.
+
+유연하고 연속적인 리만기하학, 대칭성으로 엄격해진 클라인 기하학. 두 기하학은 20세기 초 Cartan에 의해 통합된다.
+
+Principal bundle, metric, connection, curvature 및 이들 사이의 미분방정식으로 표현되는 것이 특징으로 현대적 기하학의 시초라 볼 수 있다. (양자장 이론 등의 motivation 이기도 한가보다.)
+
+그리고, 20세기 후반의 Grothendieck에 의해 대수적인 관점으로 다시 한 번 확장.
+
+### 2. 기하학의 꿈
+
+```
+모든 공간을 완전히 분류하고 각각의 구조를 이해하고자 하는 꿈
+```
+
+특히 4차원 다양체의 분류가 어렵다. Donaldson의 결과에서 4차원에서 homeomorphic 하지만 diffeomorphic 하지는 않은 공간을 찾을 수 있다.
+
+4차원 사용할 수 있는 tool로는 Donaldson, Seiberg-Witten 불변량등이 있다. (두 불변량이 같은가? - Witten's conjecture) 카르탕 기하학에서 출발한 불변량이나 대수기하학적 접근이 가능하다.
+
+중학생의 관점에서 곡선 -> Ideal. (as an algrabraic variety)
+
+매개화의 관점으로 보면 곡선 -> 재매개화 $f: k \rightarrow k^n$ 들의 equivalence class(relation derived from left-multiplicaion of $\rm{Aut}(k)$)
+
+마지막으로 몇 조건을 만족하는 $k[x_1, \cdots, x_n]/I$ as a  $k[x_1, \cdots, x_n]$-module.
+
+* 곡선의 분류의 역사
+```
+Classify All the Riemannian surfaces of genus 1
+```
+
+$C \hookrightarrow \mathbb{P}^2$ 를 생각하여 사영공간에서 곡선이 다항식으로 표현되고, 이 계수가 곡선을 결정하는 것을 이용하여 해결할 수 있다.
+
+즉, 10-dim Vector space 에서 사영공간의 의존성 $\mathbb{C}$, embedding에 대한 의존성 $\rm{Aut}(\mathbb{P}^2) = PGL_3(\mathbb{C})$ 을 제거한 Moduli spalce
+$$
+\mathcal{M}_1 = \mathbb{P}^9/PGL_3(\mathbb{C})
+$$
+의 각 점이 곡선에 대응한다.
+
+Riemann) genus $g$, 1차원 algebraic curves $\rightarrow \mathcal{M}_g$ ($3g-3$ dimensional)
+
+Dellgne, Mumford) $\mathcal{M}_g$ 에 자연스러운 compactification이 존재한다.
+
+Witten) 자연스러운 부분집합들의 교차수를 만들어내는 generating function이 미분방정식으로 표현된다. -> Kontsevich에 의해 풀림, Mirzakhani에 의해 재증명
+
+곡선의 관점마다 같은 개념에 대한 결과가 다를 수 있다. 특히 극한의 경우가 그렇다.
+
+___e.g.___ $X(t) = (\epsilon t, t^2, t^3) \in k^3$
+
+Parametrization의 관점에서 $\epsilon \rightarrow 0$의 극한은 $(0, t^2, t^3)$ 이지만,
+
+Ideal의 관점에서
+$$
+(\epsilon^2 y - x^2, \epsilon^3 z - x^3, y^3 - x^2, xz - \epsilon y^2, xy - \epsilon z) \rightarrow (x^2, y^3-x^2, xz, xy)
+$$
+__NOTE:__ 이러한 극한은 Moduli space의 _boundary_를 결정한다.
+
+* Enumerative Geometry
+
+Ideal의 관점에서 평면 위의 2차 곡선들을 모두 모으면 Hilbert scheme $\mathbb{P}^5$를 이룬다.
+
+Parametrization의 관점에서는 $\mathbb{P}^5$의 double line들의 집합인 $\mathbb{P}^2 \in \mathbb{P}^5$를 blowup한 공간에 해당된다.
+
+이로써 평면 위에 주어진 $n$개의 2차 곡선과 모두 접하는 2차곡선의 수를 헤아릴 수 있게 된다.
+
+주어진 2차곡선과 접하는 2차곡선은 2차곡선의 공간의 hypersurface가 되고, Parametrization의 관점에서 이 곡면들이 유한개의 점에서 만나게 된다.
+
+교차점의 수는 cohomology를 계산하여 알 수 있는데, $n=5$일 때의 값이 $3264$이다.
+
+## 좁은 수학의 세계: 계통 나무, 열대기하학, 그리고 점의 배치
+> 문한봄, 2020/11/12
+
+```
+더럽게 넓고 깊은 분야들이 이렇게 연결될 수 있다니! 의 의미에서의 좁은 수학의 세계인가?
+```
+
+__Tree__: Simply connected graph, 두 점 사이의 path가 유일하다. 적절한 거리가 주어져 있는 거리가 있는 거리나무그래프를 생각할 수 있다.
+
+__Question__
+> $n$개의 잎 $S_1,\cdots\,S_n$에 대해 거리벡터가 알려져 있을 때, 이를 거리로 가지는 거리나무그래프가 존재하는가? 존재한다면 유일한가?
+
+
+이는 거리나무 그래프들의 모임인 $\mathcal{T}_n$에 대해 대응
+$$
+d : \mathcal{T}_n \rightarrow \mathbb{R}^{(\begin{smallmatrix} n \\ m\end{smallmatrix})}
+$$
+을 생각했을 때,
+
+__Question(Revised)__
+
+> 1| $d$는 Surjective/Injective/Bijective 한가?
+>
+> 2| $d^{-1}(\vec{v})$을 구할 수 있는 최적의 알고리즘이 있는가?
+
+2번의 경우 Neighbor-Joining algorithm이 알려져 있다.
+
+1번을 위해 예제를 살펴보자.
+
+$n=4$인 경우, 잎 $S_i,S_j$의 거리인 $d_{ij}$에 대해 __네점조건__이 성립한다. 
+
+즉, 네 점 중 임의의 두 점에 대해 거리를 계산하였을 때, 그 값들 중 임의의 두개를 골라 더한 것의 최댓값이 반드시 두번 이상 나타난다. 
+
+이를 수식으로 서술하면
+$$
+\max{(d_{12}+d_{34}, d_{13}+d_{24}, d_{14}+d_{23})}
+$$
+의 최댓값이 두번 이상 나타나는 것으로 정의할 수 있다.
+
+이러한 조건이 모든 거리나무그래프에 대해 성립함을 알 수 있고, 또한 이 조건을 만족하는 거리에 대해서는 대응되는 유일한 거리나무 그래프가 존재함이 알려져 있다.
+
+이를 __나무-거리 정리__라 한다.
+
+이러한 object를 다루는 기하학을 __열대기하학__이라 부른다. 대수기하학과 비교하면,
+
+원을 나타내는 다항식 $f(x,y) = x^2 + y^2 - 1$에 대해 대수다양체 $V(f)$를 생각하는 것처럼,
+
+열대기하학에서는 이 다항식을 열대화한 $\text{Trop}(f(x,y)) = \max{(2x,2y,0)}$ 을 생각한다. 열대화는 $+\rightarrow\max{}, \times\rightarrow +$ 의 규칙을 적용하여 얻을 수 있다.
+
+마찬가지로 대수다양체에 해당하는 열대다항체 $\text{Trop}(V(f))$ 를 생각할 수 있는데, 이는 $\mathbb{R}^2$ 위의 점들 중 최댓값이 최대 두번 이상 등장하는 점들의 집합으로 정의한다.
+
+조합론의 결과에 의하면 열대다항체는 기하학적으로 평평한 도형들을 붙여 얻을 수 있는 펼침도형(fan)의 구조를 가짐이 알려져 있다.
+
+열대기하학에서는 이런 대수와 기하의 대응의 열대화에 대한 연구를 진행한다.
+
+이전의 예제에서 사용한 식 $\max{(d_{12}+d_{34}, d_{13}+d_{24}, d_{14}+d_{23})}$은 $d_{12}d_{34} + (-1)d_{13}d_{24} + d_{14}d_{23}$ 을 열대화하여 얻을 수 있고, 이 다항식은 Grassmanian $\rm{Gr}(2,4)$를 정의하기 다항식이다.
+
+이러한 관찰의 결과로서, Speyer, Sturmfels는 다음과 같은 결과를 얻었다.
+> 임의의 거리벡터$\vec{v}$에 대해 $\vec{v} \in \mathbb{R}^{(\begin{smallmatrix} n \\ 2 \end{smallmatrix})}$ 일 필요충분조건은 $\vec{v} \in \text{Trop}(\rm{Gr}(2,n))$ 이다.
+
+거리벡터의 일반화, 혹은 노이즈의 영향이 큰 거리벡터를 대신할 대체제를 생각하기 위해 주어진 자연수 $n$에 대해 $G \in \mathcal{T}_n$ 을 고정하자.
+
+크기가 $m$인 $\{1,2,\cdots,n\}$의 부분집합 $I$에 대해 $d_I$를 $j\in I$인 $S_j$를 포함하는 가장 작은 subtree 위의 변들의 합(=tree 의 크기)으로 정의하여,
+
+$G$의 $m$-다름벡터, $(d_I)\in\mathbb{R}^(\begin{smallmatrix}n \\ m\end{smallmatrix})$을 생각할 수 있고, 이로부터 $m$-다름벡터 함수를 정의할 수 있다.
+$$
+d_m : \mathcal{T}_n \rightarrow \mathbb{R}^(\begin{smallmatrix}n \\ m\end{smallmatrix})
+$$
+
+그로부터 자연스럽게 아래와 같은 질문을 해볼 수 있다.
+
+__Question__
+>  $\text{im}(d_m) = \text{Trop}(X)$ 가 되는 대수다양체 $X$가 존재하는가?
+
+이는 앞선 관찰에서 $X=\text{Gr}(n,m)$ 이라 추측해 볼 수 있지만, 아닌것이 여러 결과로부터 알려져 있다. 아직까지 해결되지 않은 문제이다.
+
+다만, $m \geq 4$일 때, $\text{im}(d_m)$이 열대다항체의 구조를 가질 수 없음이 증명되었다.
+
+따라서 일반화의 방향이 틀렸을 수도 있다고 볼 수 있으며, 이를 위해 개선된 정의를 생각해볼 수 있다.
+
+위의 정의에서 $d_I$ 대신 $d^{wt}_I$ 를 생각하는 것에서 출발하는데, 이는 subtree의 합이 아닌 $I$의 두 점 사이의 거리를 모두 더한 값으로 정의한다.
+
+이를 $m$-가중 다름 벡터 $d^{wt}_m:\mathcal{T}_n \rightarrow \mathbb{R}^{\begin{smallmatrix} n \\m \end{smallmatrix}}$ 을 정의하는데 사용할 수 있다.
+
+임의의 벡터가 가중 다름 벡터가 되기 위해서는 __다름 조건__ 이 필요하다.(지면의 흐름상 서술되지 않은 것으로 보임.)
+
+그라스마니안 $\text{Gr}(m,n)$을 행렬공간의 부분공간으로 본다면, 각 원소의 마지막 열을 마지막 숫자로 나누어 $(m-1)$차원 공간에서 $n$개의 점에 대한 __배치__를 얻을 수 있다.
+
+더 나아가, $(m-1)$차원 공간 안의 $n$개의 점을 모두 지나는 차수가 $(m-1)$인 곡선이 존재하는 배치를 $V_{m,n}$이라 정의하자. (다른 이름을 다른데서 들어본 것 같은데 까먹음)
+
+이러한 정의로부터 아래의 결과를 얻을 수 있다.
+> 모든 $2\leq m \leq n-2$에 대해 $d^{wt}_m$은 일대일 대응이다. 또한 다름 조건을 만족하는 $\vec{v}$가 $\vec{v}\in\text{im}(d^{wt}_m)$일 필요충분조건은 $\vec{v} \in \text{Trop}(V_{m,n})$ 이다.
+
+
+## Name convention
+
+English-speaking cultures : __First__ | __Middle__ | __Last__ 
+
+Sometimes, thoses who choose to be known primarily by their middle name may abbreviate their first name as an initial. -> __e.g.__ J. Edgar Hoover(John Edgar Hoover)
+> Middle name 이 유명한 경우 First name 을 줄여쓴다.
+> 혹은 First name을 줄여버리는 경우도 있음.
+
+Open-compound first name 이 있을 수 있다. (Mary Anne / Jo Anne -> Maryanne / Joann)
+
+결혼으로 인해 성이 추가된 경우 4개짜리가 될 수 있다. __e.g.__ Hillary Diane Rodham Clinton 이 때, Middle name은 Diane 이지만 Hillary Rodham Clinton 으로 줄여지기도 한다.
+
+Middle name 은 약칭/생략하기도 함. __e.g.__ Mary Lee Bianchi -> Mary L. Bianchi / Mary Bianchi
+> 약칭이 official
+
+In the United Kingdom, Mary Bianchi, M. L. Bianchi or Mary Lee Bianchi, Lee Bianchi(or familiar shortenings) can be used. 
+
+직계혈통의 경우 윗쪽의 Forenmae이 아랫쪽의 Middle name으로 가는 경우가 있음.
+
+In scholarly papers, __[Sur name], [First name]__ could be used. In the case with middle name, __[Sur name], [Middle name] [First name]__.
+
+__e.g.__ Susan Elizabeth George -> George, S. E.
+
+
+# Want to do 
+
+* Knot drawing program 분석(Theoretical?)
+
+* PCG Segmentation 알아보기
+
+* 해당 분야의 배경지식 없이 인자 사이의 관련성을 찾는 것이 가능할까? / 배경지식 없이 행할 수 있는 모든 분석 -> 통계적인 방법을 배워야할까보다
+
+* Data with uncertainty
+
+# 2021 Reading Challenge
+
+__REMEMBER:__ You always need more time to read. So, don't waste ur time.
+
+* DISCRETE DIFFERENTIAL GEOMETRY: AN APPLIED INTRODUCTION - Keenan Crane (/170)
+
+* All of Statistics, A concise Course in Statistical Inference - Larry Wasserman (/736)
+
+* 논어 - 공자 (/421)
+
+* An Introduction to Homological Algebra - Charles A. Weibel (/464)
+
+* Octahedral developing of knot complement I: Pseudo-hyperbolic structure - Hyuk Kim, Seonhwa Kim, Seokbeom Yoon (/54)
+
+* Computation of Large Asymptotics of 3-Manifold Quantum Invariants - Clément Maria, Owen Rouillé (/26)
+
+* Variational inference & deep learning: A new synthesis - Diederik P. Kingma (24/174)
+
+* STORIES OF YOUR LIFE AND OTHERS - Ted Chiang (387/447)
+
+* Lie Groups, Lie Algebras, and Representations - Brain C. Hall (/453)
+
+* A Comprehensive Introduction to Differential Geometry - Spivak (/512)
+
+* A Course in Metric Geometry - Dmitri Burago, Yuri Burago, Sergei Ivanov (/425)
+
+
+# Schedule
+
+* 1000 - 1010: 출근
+
+* 1010 - 1040: 퇴근
+
+* 1040 - 1130: 정리 및 논문 수집(이동욱 박사님)
+
+* 1130 - 1630: 잠
+
+* 1630 - 1730: 씻고 확정일자 받아옴
+
+* 1730 - 1850: 밥 및 정리
+
+* 1850 - 2118: Kiem 칼럼 두개, 열대기하학 관련 칼럼 하나 정리
+
+* 2118 - 2300: 앞으로 읽을 책들 정리(너무.. 많다....) 우선순위는 일단 개나 주고 적어보기(with page#s), name convention 정리!
+
+
+# ToDo
+
+* 1개 빠진 샘플 찾아보기 / Autoencoder? / 새로운 모델(maybe 2d) 구상 / validation protocol 만들기
+
+* Implement PCG envelope
+
+* Segmentation model?
+
+* More training models
+
+# ToDo for weekend(하나도 못했던)
+
+* Prime decomposition method
+
+* Close Model Theory
+
+* 세훈씨 + 준환씨 코드 구경
+
+* Handlebodies Ref.
+
+* Autoencoder Ref.
+
+* Rolfsen
+
+* Wall
+
+* Discrete Differential Geometry
+
+* A course in a metric geometry / oudot's book?
+
+* Other references you printed out ...
+
+# TODO
+
+- [ ] Make more models :D:D:D:D:D:D:D:D:D
+
+- [ ] Do some experiments with sound data (feature extracting first?)
+
+- [ ] Autoencoder / how about reading '12 automatic ecg blah blah'
+
+- [ ] Augmentation on training set
+
+- [ ] Read [_Evolution of unknotting strategies for knots and braids_](https://arxiv.org/abs/1302.0787)
+
+- [ ] 1st chapter of Rolfsen's book
+
+- [ ] 1st chapter of Wall's book
+
+- [ ] Cnt comp 생각해보기
+
+- [ ] Recurrence plot?
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? Because there is _continuus_ homotopy between  them
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? (False, what the author want to say is just there is an another embedding for being unknot (by def.))
+
+- [ ] Read Ch2. of the thesis written by Kingma
+
+- [ ] stability condition reading
+
+- [ ] Marching cube code 살펴보기
+
+- [ ] CT dcm investigation (necessary?)
+
+- [ ] Diagram drawing 코드 분석(command only, 실행이라도 시켜보기)
+
+- [ ] PrimeDecomposition 원리 분석
+
+- [ ] Sphere packing algorithm
+
+
+
