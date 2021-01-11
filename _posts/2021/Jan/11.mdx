@@ -1,0 +1,472 @@
+---
+title: 01/11
+date: 2021-01-11 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# How to install phcpy
+
+1. Install __gnat__ (not installed in ubuntu 16.04)
+```bash
+# sudo apt-get install gnat  # doesn't work
+# sudo apt-get install gnat-4.9  # doesn't work (absent file:libgnat_pic.a / libgnarl_pic.a)
+# # Download bin file from the official page, http://libre.adacore.com/ by wget
+# chmoad +x path_to_the_bin_file  # doesn't work on the server, it needs to be displayed.
+sudo apt-get install gnat-9  # Install the newest version which can be installed in your OS.
+```
+
+2. Install QDlib
+
+```bash
+git clone https://github.com/scibuilder/QD.git  # Install QDlib
+
+cd QD
+
+./configure CXX=/usr/bin/g++ CXXFLAGS='-fPIC -O3'
+
+sudo make install
+```
+
+3. Install phcpy
+```bash
+cd ..
+
+git clone https://github.com/janverschelde/PHCpack.git  # Install phc source codes
+
+cd PHCpack/src/Objects
+
+# # Do not use the below command line : may occur errors in the following steps 
+# make phc  # To test errors? it will generate an executable file which is not used for phcpy. It spent too long time...(several minutes)
+```
+
+4. Modify variables in make_unix in _Objects_ folder
+
+* PYTHON3 variable should indicate a folder containing __Python3.h__.
+> There is no need to modify __PYTHON__ variable(a variable for python2)
+> PYTHON3=/home/philip94/SageMath/local/include/python3.7m
+
+* ADALIB variable should be indicate a folder named adalib (in a gcc folder, check example in the makefile_unix file)
+> ADALIB = /usr/lib/gcc/x86_64-linux-gnu/9/adalib
+
+* SAGEPYTHONLIB variable should be indicate a folder installed SageMath .. but it won't be used.
+> SAGEPYTHONLIB=/home/philip94/SageMath/local/lib
+If it doesn't exist, you may need to install development version of python3.
+
+5. Compile the maine library
+```bash
+sudo make phcpy2c3.so  # In Obejects folder.
+```
+
+6. Install phcpy module in sage-python
+```bash
+cd ../Python/PHCpy
+sage -python setup.py install
+sage -python setup.py build
+```
+
+7. Import phcpy
+```bash
+sage -python
+```
+```python
+# In python(sage) interpreter
+import phcpy
+>>> PHCv2.4.83 released 2020-12-15 works!
+```
+
+# Arxiv Check
+
+## Differential Geometry 
+
+[A simple characterization of doubly twisted spacetimes](https://arxiv.org/abs/2101.02208)
+> Carlo Alberto Mantica, Luca Guido Molinari
+
+[Partially hyperbolic diffeomorphisms and Lagrangian contact structures](https://arxiv.org/abs/2002.10720)
+> Martin Mion-Mouton
+
+> rigid geometry structure induced from three invariant distributions play a fundamental role to classify three-dimensional contact partially hyperbolic diffeo. whose stable/unstable/central distributions are smooth, whose non-wandering set = the whole mfd.
+
+[Positive Line Bundles Over the Irreducible Quantum Flag Manifolds](https://arxiv.org/abs/1912.08802)
+> Fredy Díaz García, Andrey Krutov, Réamonn Ó Buachalla, Petr Somberg, Karen R. Strung
+
+> Noncommutative Kähler geometry on quantum homogeneous spaces. positive vector bundle and the Kodaira vanishing theorem can be implemented in this settings. examples = irreducible quantum flag manifolds.
+
+[Consistency of M-Theory on nonorientable manifolds](https://arxiv.org/abs/1908.09916)
+> Daniel S. Freed, Michael J. Hopkins
+
+> No parity anomaly(?) in M-theory in the low-energy field approximation.
+
+[Algebraicity of the Metric Tangent Cones and Equivariant K-stability](https://arxiv.org/abs/1805.03393)
+> Chi Li, Xiaowei Wang, Chenyang Xu
+
+> $K$-polystability of $\mathbb{Q}$-Fano varieties (algebro-geometric)
+> Donaldson-Sun's conjecture: the metric tanget cone of any point appearing on a Gromov-Hausdorff limit of Kähler-Einstein Fano manifolds depends on its algbraic structure of singularities.
+> __Voca:__ Metric tangent cones, Fano cone, Fano log cone, $K$-polystable log Fano cone, Kähler
+
+
+
+[Uniformization of branched surfaces and Higgs bundles](https://arxiv.org/abs/2101.03080)
+> Indranil Biswas, Steven Bradlow, Sorin Dumitrescu, Sebastian Heller
+
+> Higgs bundle corresponding to the uniformziation to the cone metric of $\Sigma$ which has genus $\geq 2$. (unique cone metric on cpt Riemannian surface of constant negative curvature $-4$ such that the cone angles are $2\pi n_i$)
+
+[Remarks on manifolds with two sided curvature bounds](https://arxiv.org/abs/2101.03050)
+> Vitali Kapovitch, Alexander Lytchak
+
+> ___folklore___ statements about distant functions in manifolds with two sided curvature bounds.
+> __Voca:__ Regularity, Positive Reach, Cut Locus.
+
+[A flow approach to the generalized Loewner-Nirenberg problem of the σk-Ricci equation](https://arxiv.org/abs/2101.03011)
+> Gang Li
+
+> the generalized Loewner-Nirenberg problem... # PASS
+
+[Minimal surfaces for undergraduates](https://arxiv.org/abs/2101.01375)
+> Franc Forstneric
+> 22 pages
+
+> Minimal surfaces in $\mathbb{R}^n$ for $n \geq 3$. only 2nd year undergraduate knowledge needs.
+
+[Mass and Riemannian Polyhedra](https://arxiv.org/abs/2101.02693)
+> Pengzi Miao, Annachiara Piubello
+
+> ADM mass(Hamiltonian formulation of gen. relativity) in general relativity : the limit of the total curvature + total defect of dihedral angle of the boundary of large Riemannian polyhedra.
+
+[Kähler-Einstein metrics on smooth Fano symmetric varieties with Picard number one](https://arxiv.org/abs/2011.12551)
+> Jae-Hyouk Lee, Kyeong-Dong Park, Sungmin Yoo
+
+> Symmetric varieties are normal equivarient open embeddings of symmetric homogeneous spaces, those are spherical varieties!
+
+[On the genus and area of constant mean curvature surfaces with bounded index](https://arxiv.org/abs/2010.06043)
+> Artur B. Saturnino
+
+> In any closed 3-manifold $(M,g)$, the genus of an embedded CMC(Constant-Mean-Curvature) surface can be bounded in terms of only its index and area, not the value of its mean curvature.
+> If $M$ has finite fundamental group, then the genus and area of non-minimal embedded CMC surface can be bounded by its index and a lower bound of its mean curvature.
+
+[Intersection number of a map with the set of matrices of positive corank](https://arxiv.org/abs/1905.12284)
+> Iwona Krzyżanowska, Aleksandra Nowel
+
+> Intersection number of a map with a closed manifold -> closed stratified set such that the difference between dimensions of its two biggest strata is greater than $1$.
+> __Voca:__ Stratified set, Strata (logic theory?)
+
+[Warped Product Pointwise Semi-slant Submanifolds of Almost Contact Manifolds](https://arxiv.org/abs/1706.04305)
+> Ion Mihai, Siraj Uddin, Adela Mihai
+
+> Too many words that I don't know.
+> __Voca:__ Almost Contact Structure
+
+> An _almost contact structure_ $(\phi, \xi, \eta)$ on a $(2n+1)$-manifold $\tilde{M}$ is defined by a $(1,1)$ tensor field $\phi$, a vector field $\xi$(_characteristic_ / _Reeb vector field_), and a $1$-form $\eta$ satisfying
+>
+> $$ \phi^2 = -I + \eta \otimes \xi,\,\eta(\xi)=1,\,\phi(\xi) = 0 $$
+>
+> Introduced by Shigeo Sasaki in 1960.
+
+[Global Functional calculus, lower/upper bounds and evolution equations on manifolds with boundary](https://arxiv.org/abs/2101.02519)
+> Duván Cardona, Vishvesh Kumar, Michael Ruzhansky, Niyaz Tokmagambetov
+
+> Global functional calculus with a smooth manifold $M$ w/ or w/o boundary. The points is, analysis in the paper is free of local coordinates.
+> __Voca:__ Gårding inequality(some complex inequality about operator..)
+
+[A relative entropy and a unique continuation result for Ricci expanders](https://arxiv.org/abs/2101.02638)
+> Alix Deruelle, Felix Schulze
+
+> An optimal relative integral convergence for two expanding gradient Ricci solitons(not a typo for solution!) coming out of the same cone.
+> __Voca:__ Ricci Soliton, Gradient Ricci Soliton, Einstein Manifold
+
+> A complete Riemannian manifold $M$ is called ___Ricci soliton___ iff there exists a vector field $V$ such that
+>
+> $$ \text{Ric}(g) = \lambda g - \frac{1}{2} \mathfrak{L}_V g$$
+>
+> for some constant $\lambda \in \mathbb{R}$
+>
+> $M$ is called ___gradient Ricci soliton___ iff $M$ is Ricci soliton and there exists $f: M \rightarrow \mathbb{R}$ such that $V=\nabla f$
+>
+> then the equation above becomes the following.
+>
+> $$ \text{Ric}(g) + \nabla^2 f = \lambda g$$
+>
+> If $V=0$ or $f=0$, the equation becomes  _Einstein equation_. __i.e.__ Ricci soliton is a generalization of Einstein manifold.
+
+[Optimal asymptotic of the J functional with respect to the $d^1$ metric](https://arxiv.org/abs/2101.02589)
+> Tamás Darvas, Erin George, Kevin Smith
+
+> No interests, # PASS
+
+## AT
+
+[The weak b-principle: Mumford conjecture](https://arxiv.org/abs/2101.02748)
+> Rustam Sadykov
+
+> __Voca:__ Mumford Conjecture, Madsen-Weiss Theorem
+
+> Hard to find exact statements .. # PASS
+
+
+
+# Persistent Intersection Homology
+> John Harer, Paul Bendich
+
+오늘은 맛보기만
+
+## 0. Abstract
+
+Intersection theory with persistent homology. Poincaré duality is also used.
+
+## 1. Introduction
+
+__pH__ has been developed for a long time, and it contains Poincaré duality, Lefschetz duality, MV-sequence(2008) and Morse theory(2003).
+
+$\phi$-persistence for an arbitrary chosen binary function $\phi$, which represents the simplex removal procedure.
+
+A key fact: Intersection homolog porovides Poincaré duality for stratified space.(fails for ordinary homology)
+
+and it mirrors to (persistent) homology on an embeddedn and filtered manifold.
+
+## 2. Results
+
+Applications:
+
+1. Define an elevation function on an embedded 2-manifold, critical points = "pockets" $\rightarrow$ protein-dockings, protein-protein interface surface.
+
+2. Manifold Learning; the analysis of high-dimensional data(point cloud). data cloud make manifold which data points are living on? ... maybe not(not constant dim.) but there is no reason not to consider manifold data case.
+
+Let $K^i = K^{i-1}\cup_{\partial \sigma}\sigma_i$ and $\sigma_i$ is a $r$-dimensional simplex. Then, by using Mayer-Vietoris sequence for $K^i$, one can verify only $\beta_r^i$ or $\beta_{r-1}^i$ will vary compared to $\beta_*^{i-1}$.
+
+## 3. Preliminaries
+
+When one consider __Extended persistent diagram__, there is a symmetry in the diagram. one of ordinary pairs and the other of extended pairs(from relative homology). 
+
+The symmetry induced from the fact that the datacloud is a manifold + the results of Poincaré duality.
+
+Let $X$ be a $d$-manifold with a function $f$ having $n$ critical points. then for $0 \leq i, j \leq 2n, 0 \leq r \leq d$ there is a_perfect_ pairing
+$$
+P^{i,j}_r \otimes P^{2n-j+1, 2n-i+1}_{d-r} \rightarrow \mathbb{Z}/2\mathbb{Z}
+$$
+
+a bilinear pairing $\Gamma: U \otimes V \rightarrow \mathbb{Z}/2\mathbb{Z}$ for $\mathbb{Z}/2\mathbb{Z}$ vector spaces $U$ and $V$ is called perfect if for every non zero $u \in U$, there exists $v_u \in V$ such that $\Gamma(u, v_u) = 1$ and vice versa.
+
+In this settings, transverserly intersecting representatives of two homological classes are found, then, the number of intersection points modulo $2$ is calculated.
+
+In the step for reducing boudnary matrices, lowest-one of $j$th column $=i$ implies that $\sigma_i$ and $\sigma_j$ is paired in the sense of pairing.
+
+## 4. $\phi$-homology
+
+Given a simplicial complex $K$, let $\phi:K \rightarrow {0,1}$ be a function on the simplices of $K$.
+
+If $\phi(\sigma)=1$, then we say $\sigma$ is _proper_ simplex, _improper_ otherwise.
+
+Let $P(K)$ be a set of proper simplices, and $P_i(K)$ be the $\mathbb{Z}/2\mathbb{Z}$ vector space with basis the proper $i$-dimensional proper simplices.
+
+Before replacing chain complex $C_*(K)$ into $P_i(K)$, let's define _allowable_ chain for elements of $C_*(K)$.
+
+a chain $\xi$ is called _allowable_ if $\xi$ and $\partial\xi$ both can be written as sums of proper simplices.
+
+The set of all $i$ dimensional allowable chains forms $\mathbb{Z}/2\mathbb{Z}$-vector space $I^{\phi}C_i(K)$.
+
+Futhermore, $\{I^{\phi}C_i(K)\}$ forms a chain complex since boundary of an allowable chain is an allowable chain, differential is induced from the previous chain complex.
+
+Therefore, one can define $i$-th homology group of this chain complex, $I^{\phi}H_i(K)$ and also, $i$-th persistent homology group of it, $I^{\phi}H_r^i(K) = I^{\phi}H_r(K^i)$.
+
+__Difference:__ the interpretation of _lowest-one_ function and the ordering of simplices in the columns and rows of boundary matrices.
+
+We can no longer partition simplices into _postive_(generator) and _negative_(degenerator) since the 3rd category, _neutral_ occurs.
+
+Let For a chain $\gamma \in P_i(K)$, let $I(\gamma)$ be the set of improper simplices in $\partial\gamma$.
+
+Suppose there is a complex so far, $L$, and one tries to add a proper $i$-dimensional simplex $\sigma$. Then the one situation of the following three will occur.
+
+1 There exits $\gamma \in P_i(K)$ such that $I(\gamma) = I(\sigma)$, __i.e.__ $\alpha = \gamma + \sigma$ is allowable chain.
+
+ㄴa $\partial\alpha$ was not the boundary of $P_i(L)$, then $\alpha$ kills one dimension of $I^{\phi}H_{i-1}(L)$. $\sigma$ is called _negative_ in this case.
+
+ㄴb $\partial\alpha$ was already the boudary of an element in $P_i(L)$, then it generates one dimension in $I^{\phi}H_{i}(L)$.  $\sigma$ is called _positive_ in this case.
+
+2 Otherwise, $\sigma$ cannot make any new allowable chains, $\sigma$ is called _neutral_.
+
+When $\sigma$ is negative or positive, then it is called an _active_ simplex.
+
+### How to calculate $\phi$-homology?
+
+__Reorder__ simplices in 0.positive first, 1.filtration and 2.dimension. 
+
+Let $s=|P(K)|$ and $m=|K|$, so the number of improper simplices is $m-s$, then imagine boundary matrix without improper columns. So the boundary map is represented by $m \times s$ matrix.
+
+Interpretation is the following.
+
+* $\text{low}_R(j) = 0$: $\sigma_j$ is positive(and active).
+
+* $\text{low}_R(j) = i \leq s$: $\sigma_j$ is positive(and negative) and paired with $\sigma_i$.
+
+* $\text{low}_R(j) = k \gt s$: $\sigma_j$ is neutral.
+
+Q. How to calculate betti numbers? 
+
+A. Just count lowest-ones whose values are above first $s$ rows!
+
+## 5. Stratified Spaces
+
+Stratified spaces : The intersection homology theory can be defined naturally on these spaces.
+
+It has so many alternative definitions. cf) [Surgery and stratified spaces](https://link.springer.com/article/10.1007%2Fs00009-013-0332-7)
+
+Stratified space is a topological space which can be decomposed into pieces of manifolds possibly with different dimensions.
+
+__Definition__
+
+A $d$-dimension topological stratified space is a (paracompact and Hausdorff) topological spsace $X \subset \mathbb{R}^n$ together with a descending chain of closed subsets.
+$$
+X = X_d \supseteq X_{d-1} \supseteq \cdots X_0 \supseteq X_{-1} = \emptyset
+$$
+so that $X_d - X_{d-1}$ is dense in $X$ with the following property:
+For each $x \in X_i \setminus X_{i-1}$, there is a compact topologically stratified space $V_x$
+$$
+V_x = V_d \supseteq V_{d-1} \supseteq \cdots \supseteq V_i = \{\text{point}\}
+$$
+where $V_{k} \setminus V_{k-1}$ has dimension $i-k$, and a map $\psi_x: B^i \times V_d \rightarrow X$.
+
+such  that $B^i \times V_k$ maps homeomorphically onto closed neighborhoods of $x in X_k$ $\forall k \geq in$, $B^i$ is a closed $d$-dimensional ball.
+
+
+
+
+
+
+
+
+# Want to do 
+
+* Knot drawing program 분석(Theoretical?)
+
+* PCG Segmentation 알아보기
+
+* 해당 분야의 배경지식 없이 인자 사이의 관련성을 찾는 것이 가능할까? / 배경지식 없이 행할 수 있는 모든 분석 -> 통계적인 방법을 배워야할까보다
+
+* Data with uncertainty
+
+# 2021 Reading Challenge
+
+__REMEMBER:__ You always need more time to read. So, don't waste ur time.
+
+* DISCRETE DIFFERENTIAL GEOMETRY: AN APPLIED INTRODUCTION - Keenan Crane (/170)
+
+* All of Statistics, A concise Course in Statistical Inference - Larry Wasserman (/736)
+
+* 논어 - 공자 (/421)
+
+* An Introduction to Homological Algebra - Charles A. Weibel (/464)
+
+* Octahedral developing of knot complement I: Pseudo-hyperbolic structure - Hyuk Kim, Seonhwa Kim, Seokbeom Yoon (/54)
+
+* Computation of Large Asymptotics of 3-Manifold Quantum Invariants - Clément Maria, Owen Rouillé (/26)
+
+* Variational inference & deep learning: A new synthesis - Diederik P. Kingma (24/174)
+
+* STORIES OF YOUR LIFE AND OTHERS - Ted Chiang (406/447)
+
+* Lie Groups, Lie Algebras, and Representations - Brain C. Hall (/453)
+
+* A Comprehensive Introduction to Differential Geometry - Spivak (/512)
+
+* A Course in Metric Geometry - Dmitri Burago, Yuri Burago, Sergei Ivanov (/425)
+
+* Reidemeister torsion on character varieties - Leo Benard (24/110)
+
+
+# Schedule
+
+* 0105 - 0420: 1시간안에 phcpy를 깔기로 계획을 세웠더랬다
+
+* 1010 - 1105: Meeting w/ Seonhwa
+
+* 1105 - 1240: Arxiv check(..?)
+
+* 1240 - 1320: 산책갔다가 책 지르고 옴(번역의 탄생)
+
+* 1320 - 1335: 책과 지은이를 검색해봄..  논란의 여지가 좀 있는것 같다.
+
+* 1335 - 1425: AT arxiv 정리하려다가 John Harer 논문 찾아보게 됨, 거기서 만난 Persistent Intersection (co)Homology.
+
+* 1425 - 1455: 잠깐 낮잠
+
+* 1455 - 1736: 마저 Persistent Intersection Homology($phi$-homology 까지(14p)) 별거 안한거같은데...
+
+* 1736 - 1936: 저녁?
+
+* 1936 - 2021: Persistent Intersection Homology from stratified space 보다 phcpy 설치하고 다시 정의 노려봄
+
+* 2021 - : 설치확인, MMA로 테스트해보자
+
+
+# ToDo
+
+* 1개 빠진 샘플 찾아보기 / Autoencoder? / 새로운 모델(maybe 2d) 구상 / validation protocol 만들기
+
+* Implement PCG envelope
+
+* Segmentation model?
+
+* More training models
+
+# ToDo for weekend(하나도 못했던)
+
+* Prime decomposition method
+
+* Close Model Theory
+
+* 세훈씨 + 준환씨 코드 구경
+
+* Handlebodies Ref.
+
+* Autoencoder Ref.
+
+* Rolfsen
+
+* Wall
+
+* Discrete Differential Geometry
+
+* A course in a metric geometry / oudot's book?
+
+* Other references you printed out ...
+
+# TODO
+
+- [ ] Make more models :D
+
+- [ ] Do some experiments with sound data (feature extracting first?)
+
+- [ ] Autoencoder / how about reading '12 automatic ecg blah blah'
+
+- [ ] Augmentation on training set
+
+- [ ] Read [_Evolution of unknotting strategies for knots and braids_](https://arxiv.org/abs/1302.0787)
+
+- [ ] 1st chapter of Rolfsen's book
+
+- [ ] 1st chapter of Wall's book
+
+- [ ] Cnt comp 생각해보기
+
+- [ ] Recurrence plot?
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? Because there is _continuous_ homotopy between  them
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? (False, what the author want to say is just there is an another embedding for being unknot (by def.))
+
+- [ ] Read Ch2. of the thesis written by Kingma
+
+- [ ] stability condition reading
+
+- [ ] Marching cube code 살펴보기
+
+- [ ] CT dcm investigation (necessary?)
+
+- [ ] Diagram drawing 코드 분석(command only, 실행이라도 시켜보기)
+
+- [ ] PrimeDecomposition 원리 분석
+
+- [ ] Sphere packing algorithm
+
+
+
