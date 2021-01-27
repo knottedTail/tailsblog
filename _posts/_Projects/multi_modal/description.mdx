@@ -1,0 +1,260 @@
+---
+title: description
+date: 2020-10-12 00:00:00
+tags: [Project]
+excerpt: Description of progress of the project.
+draft: true
+---
+
+# TODO
+
+* ~~__Update manual__ (논리값, 검사항목 별로 디테일하게, till __9/21 Mon.__)~~
+
+* ~~Check _Sequence diagram_~~
+
+* Otto's suggestions
+    1. Train __BOSS__ on each leads then combine them into a voting system.
+    2. Parallel ECG. (1024 channels with an array of length 12)
+    3. Plot 12 leads in an one picture, and learn with them.
+
+* ~~Check tags in .dcm files~~
+
+# Dataset
+
+
+## Summary
+
+total: 841 + 1630 + 121 = 2592
+
+number of ecgs : 841 + 3718 + 284 = 4843
+
+---
+
+## SNUBH
+
+total: 841 patients, 
+
+* 841+1 _ecg_ s, only _14138175_ has additional .pdf file
+
+* 841+1 _dcm_ s, only _11790860_ has 2 .dcm files but both are the same.
+
+* 841+4 _pcg_ s, _10012606_, _29861129_, _25264043_, _22270614_ has 2 .pcm files
+
+### ECG
+
+length of waves: consistence?
+
+Voltage calibration(1 mV): 0 to 200
+
+## SEVERANCE
+
+total: 1630 patients, 
+
+* 3718 _ecg_ s
+
+* 1630 _dcm_ s
+
+* 1630+4 _pcm_ s, _7574690_, _5484080_, _8745448_, _8457756_ has 2 .pcm files
+
+### ECG
+
+length of waves: 5000(for lead II), 1238 for other leads including lead II.
+
+Sampling rate: seems like 500Hz
+
+* first 1238 data in lead II is the same with first 1238 data in lead II(whole)
+
+Voltage calibration(1 mV): 0 to 1000 (baseline is corrected when it is parsed.)
+
+## HYUH
+total : 121 patients, 
+
+* 284 _ecg_ s
+
+* 121 _dcm_ s
+
+* 128 _pcg_ s, _1617932_, _2727172_, _1429690_, _2549149_, _1268160_, _2743123_, _2219324_ has 2 .pcm files
+
+### ECG
+
+length of waves: 4997(for lead II), 1247 for lead I, II, III and 1250 for other leads including lead II.
+
+Sampling rate: seems like 500Hz
+
+* first 1238 data in lead II is the same with first 1238 data in lead II(whole)  generaly, but some entry is shifted by -1
+
+Voltage calibration(1 mV): 0 to 82 (baseline is corrected when it is parsed.)
+
+## Integrated_ECG
+> integrated_0917
+
+* __new_or_old__
+
+N : recent data,
+
+O : older data when the patient have more than 1 ecg
+
+* __anom__
+> ordered: SNUBH, SEVERERANCE, HYUH
+
+_(old + new)_ : 4843
+
+_abnormal_ : abnormal (163 + 1026 + 109 = 1298)
+
+_normal_ : normal (667 + 614 + 173 = 1454), normal ratio = 52.8%
+
+_error_ : the patient has more than 1 labeling (0 + 0 + 2 = 2)
+
+_no_data_ : the patient is not listed in the .xlsx file (11 + 2078 + 0 = 2089)
+
+_(new)_ : 2592
+
+_abnormal_ : abnormal (163 + 400 + 31 = 594)
+
+_normal_ : normal (667 + 282 + 89 = 1038), normal ratio = 63.6%
+
+_error_ : the patient has more than 1 labeling (0 + 0 + 1 = 1)
+
+_no_data_ : the patient is not listed in the .xlsx file (11 + 948 + 0 = 959)
+
+* __anom_speicific__
+> among 1632 patients(new + labeled), (normal, abnormal)
+
+1. IHD CAD (1309, 323)
+2. HF (1574, 58)
+3. VHD (1505, 127)
+4. congenital (1593, 39)
+5. HCM (1617, 15)
+6. DCM (1602, 30)
+7. infiltrative (1627, 5)
+8. pericardial (1627, 5)
+9. HHD (1558, 74)
+10. aorta ds (1513, 119)
+11. cardiac tumor (1632, 0)
+12. a (1607, 25)
+
+__Some description for each disease.__
+
+_IHD_CAD_ : 관상동맥 질환 중 하나, Ischemic Heart Disease = Coronary Artery Disease
+> IHD: reduced blood flow caused by narrow heart arteries.
+>
+> CAD: (most common disease in USA), there are plaque buldup in the walls of the arteries.
+
+> __guess :__ 
+>
+> * in .pdf file, lead III, aVR, aVR, aVF is obtained from some fomulae, (check below __ECG__ section)
+>
+> * lead III is obtained from first (almost) 1250 points in lead I and II, but aVL, aVR and aVF is obtained points from 1250 to 2500 in lead I and II.
+>
+> * 3 leads are synchronized in .pdf  but all 12 leads are synchronized in .xml file
+
+## Integrated_PCG
+> integrated_pcg_1119.npz
+
+* patient order/anom/anom_specific of it corresponds to one of ECG. (1119)
+
+* the data is ordered as __AA__, __MA__, __PA__, __TA__
+
+* __anom__
+>ordered: SNUBH, SEVERERANCE, HYUH
+
+_(old + new)_ : 2607
+
+_abnormal_ : abnormal (165 + 402 + 33 = 600)
+
+_normal_ : normal (669 + 282 + 94 = 1045), normal ratio = 57.4%
+
+_error_ : the patient has more than 1 labeling (0 + 0 + 1 = 1)
+
+_no_data_ : the patient is not listed in the .xlsx file (11 + 950 + 0 = 961)
+
+_(new)_ : 2592
+
+_abnormal_ : abnormal (163 + 400 + 31 = 594)
+
+_normal_ : normal (667 + 282 + 89 = 1038), normal ratio = 63.6%
+
+_error_ : the patient has more than 1 labeling (0 + 0 + 1 = 1)
+
+_no_data_ : the patient is not listed in the .xlsx file (11 + 948 + 0 = 959)
+
+### Length
+
+| Length | nr(patient) |
+|--------|----|
+|98560|1630|
+|51520|961|
+|49280|422|
+|96320|9|
+|82880|1(2732179)|
+|64960|1(8711616)|
+|15680|1(21443426)|
+|67200|1(8711616)|
+
+
+## ECG 
+* There is a kind of dependency between lead __I__, __II__, __III__, __aVR__, __aVL__ and __aVF__. [ref](https://ecgwaves.com/topic/ekg-ecg-leads-electrodes-systems-limb-chest-precordial/)
+
+__Einthoven's rule__: $\text{lead I} + \text{lead III} = \text{lead II}$
+
+__Goldberger's equation__
+$$
+\text{aVL} = \frac{\text{lead I} - \text{lead II}}{2} \\
+-\text{aVR} = \frac{\text{lead I} + \text{lead III}}{2} \\
+\text{aVF} = \frac{\text{lead II} + \text{lead III}}{2}
+$$
+
+Inversely, one can obtain lead I, II and III data from aVR, aVL and aVF.
+$$
+\text{lead I} = \text{aVL} - \text{aVR} + \text{aVF}
+$$
+$$
+\text{lead II} = - \text{aVL} - \text{aVR} + \text{aVF}
+$$
+$$
+\text{lead III} = \text{aVL} + \text{aVR} + \text{aVF} 
+$$
+
+## PCG
+> 16-bit, 8000Hz?
+
+__Length of files__
+
+> SNUBH: 15680(_21443426_, 274th data in your pcg data), 49280, 51520
+>
+> SEVERANCE: 64960, 67200, 96320, 98560
+>
+> HYUH: 49280, 51520, 82880
+>
+> These are multipliers of $2240$
+
+__NOTE:__ There is a cases which patient's audio data doesn't contain common date, check SEVERANCE/7532200
+
+
+## ML
+
+Reconstruct DNN introduced here. [Ng19](https://stanfordmlgroup.github.io/projects/ecg2/)/[GIT](https://github.com/awni/ecg)
+
+.. the same structure with the network in older paper [Ng17](https://arxiv.org/abs/1707.01836) (both are Ng's paper)
+
+The ECG of chinese has been downloaded. Ref: [ICBEB2018](http://2018.icbeb.org/Challenge.html)
+
+
+### Worth to try
+> ordered by the priority
+
+1. ~~DNN with smaller leads('cause of dependency over 12 leads), ref: [12LeadsCNN](https://www.nature.com/articles/s41467-020-15432-4)/[GIT](https://github.com/antonior92/automatic-ecg-diagnosis)~~
+2. DNN with two CNNs, one for lead I & II and the other for lead$\text{V}n$'s.
+3. Interpretable Machine Learning
+4. Machine Learning related to image classification, __e.g.__ EfficientNet?
+5. RNN(Too many calculations?) / LSTM? or other kinds of DNN
+6. Pipeline for 1D -> 2D (Recurrence plot?)
+
+
+# Need to check
+
+1. BOSS alg : Bag-of-SFA Symbols
+2. ~~Learn on 12 leads(or 8 leads) to judge disease vector (not true/false only)~~
+    * Too small abnormal data per each disease to learn(in fact, ratios of abnormal case are about 90%).
+3. AutoEncoder (Kingma's thesis?)
+---
