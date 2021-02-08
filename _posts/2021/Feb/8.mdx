@@ -4,6 +4,43 @@ date: 2021-02-08 00:00:00
 tags: [Daily]
 excerpt: Daily Report
 ---
+ 
+# 김혁 선생님
+
+애매하게 기억하는 것을 헤매이는 것보다, 시간을 들여 확실히 만드는 것이 좋다.
+
+그 시간이 고될지 몰라도 흐름이 끊기는 것을 막아줄 것이다.
+
+수학에서는, 증명을 손으로 따라가는 것이 그 길이다.
+
+날 위로하려는 빈말이었을지 몰라도, 늙어서 알았다는 선생님의 말이 기억에 남는다.
+
+# Multimodal
+
+## t-SNE
+> t-Disributed Stochastic Neighbor Embedding
+
+__Barnes-Hut approximations__ : $n$ 차원에서의 클러스터링 방법 중 하나, 전체 공간을 cube의 형태로 쪼개어 가며 데이터가 없는 부분을 제거한다. 검색하면 나오는 그림이 설명을 다 함.(octatree)
+
+1 Calculate similarity probability $p_{j|i}$ which indicates the similarity of $x_j$ and $x_i$. The point is :$x_i$ would pick $x_j$ as its neighbor ?!
+
+2 Define $p_{ij} = \frac{p_{i|j} + p_{j|i}}{2N}$
+
+3 Define $q_{ij} = \frac{(1 + ||y_i - y_j||)^{-1}}{\sum_k \sum_{l!=k} (1 + ||y_l - y_k||)^{-1}}$, which is formulated based by Student t-distribution.
+
+4 Maximaumlikelyhood = KL divergence between $p_{ij} and q_{ij}$.
+
+## UMAP
+
+It shares basic idea of t-SNE
+
+## pyTorch
+
+* optimizer has __step()__ method: Update parameters!
+
+* loss has __backward()__ method: Calculate a gradient by backward. $\frac{d(loss)}{dx}$ for all parameters x whose attribute __requires_grad__=True.
+
+* Autoencoder uses __MSEloss__ or __KL-divergence loss__(custom).
 
 # Weekend to do
 
@@ -31,7 +68,7 @@ excerpt: Daily Report
 
 * 장식장 정리
 
-* 모니터 .. 살까
+* 모니터?
 
 # Want to do 
 
@@ -85,27 +122,19 @@ __REMEMBER:__ You always need more time to read. So, don't waste ur time.
 
 # Schedule
 
-* 1005 - 1015: 대형폐기물 처리신청 및 필증 출력
+* 0945 - 1130: Knot Network Meeting
 
-* 1015 - 1100: 인터넷 알아보기
+* 1130 - 1400: 정호형 태진이형 수다
 
-* 1100 - 1130: Lab seminar but Otto was late ..
+* 1400 - 1500: Meeting w/ 김혁 교수님
 
-* 1130 - 1230: Lab seminar
+* 1500 - 1840: 효진누나 태진이형 수다 및 저녁!
 
-* 1230 - 1315: VAE, GAN ... 
+* 1840 - 1925: 주민등록등본 제출(카카오뱅크)
 
-* 1315 - 1345: 잠
+* 1925 - 2020: tSNE 보다가 기절
 
-* 1345 - 1555: Torsion? + TV/인터넷
-
-* 1555 - 1621: Knot 정리
-
-* 1621 - 1830: Meeting w/ 김선화 선생님
-
-* 1830 - 2030: 밥먹고 트위치 구경
-
-* 2030 - 2300: 놀았으면 할 걸 해야지!, data 정리 및 딴짓?(ECG)
+* 2020 - 2342: Autoencoder로 놀기 + Curvatures on simplicial complex / VR-complex / Alpha-complex ?
 
 
 # ToDo
