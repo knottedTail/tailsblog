@@ -1,0 +1,254 @@
+---
+title: 02/10
+date: 2021-02-10 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+ 
+내일부터 연휴!
+
+# SSH Portforwarding
+
+```bash
+ssh -Nfl 27221:localhost:27221 lk4
+```
+
+# Python
+
+## eval v.s. exec
+
+eval : for python 'formula' (e.g. $3+1$, $a+2$ etc.)
+
+exec : for python 'sentence'
+
+## Upscaling for Convolution Layer
+
+* Transposed Convolution
+
+In convolutional layer, one uses __kernel__ which acts like filter of given size.
+
+[Simple explanation](https://naokishibuya.medium.com/up-sampling-with-transposed-convolution-9ae4f2df52d0)
+
+For example, let us assume a size of input is $4\times4$, with a kernel of size $3$.
+
+With $0$-padding, a size of output is $2\times2$.
+
+In this situation, an operation of the kernel can be represented for _flatten_ input data whose size is $16\times1$.
+
+__i.e.__ kernel matrix can be reshaped as a $16\times4$ ( $4\times4$ and $2\times2$ ) matrix.
+
+In the above sense, _transposed convolution_ means that convolution with __transposed__ kernel matrix which have more rows than columns, unlike general convolution.
+
+__NOTE:__ Transposed covolution may occur _checkboard artifects_ for images.
+
+[How to avoid _checkbox_ artifects patterns in deconvolution](https://distill.pub/2016/deconv-checkerboard/)
+
+## How to calculate output size of ConvTranspose2d
+
+Unlike Conv2d, __stride__ has different meaning in this section.
+
+In Conv2d, stride indicates length of space between location of applicated filters on the given tensors.
+
+But in ConvTranspose2d, stride indicates length of space between elements of given input tensor.
+
+Also, __padding__ has differnet meaning in ConvTranspose2d.
+
+In Conv2d, padding is used to expand the size of tensor, but in ConvTranspose2D, it is used to ___reduce___ the size of tensor.
+
+It might be set to _ConvTranspose2d_ could be an inverse operation of _Conv2d_.
+
+## XAI = Explainable AI
+
+## Check version of CUDA
+
+```bash
+nvcc -- version
+```
+
+* nvcc : Nvidia Cuda Compiler
+
+## How to add kernel to jupyter system
+
+In your venv,
+
+```bash
+conda install ipykernel
+python -m ipykernel --user --name=[name of kernel]
+```
+
+## L1 Regularization
+
+Usefor feature selection! (why?)
+
+$=$ add constant to each gradient.
+
+# Mathematica
+
+* Groebner는 magma/mathematica 모두 유리식에 대해 잘 계산이 됨, magma의 NormalForm만 문제인듯,
+
+# Weekend to do
+
+* Jones - volume 데이터 조사(중복도)
+
+* 가능하면 data manager module 만들기?
+
+* 시간되면 resolution 분석도
+
+* fork compatible sow 만들기
+
+* fork로 Groebner 관련 invariants 돌리기
+
+* persistent cup product 있는 논문 분석 [Link](https://arxiv.org/pdf/1902.09138.pdf)
+
+* Rolfsen 책으로 갈아탈까 해보기
+
+* 책장 주문
+
+* 침대 옆 협탁주문
+
+* 악기 세팅
+
+* 장식장 정리
+
+* 모니터?
+
+# Want to do 
+
+* How about __Persistence Torsion__? or .. __Persistence Product__!?
+
+* Experimental Mathematics 논문들 살펴보기
+
+* Knot drawing program 분석(Theoretical?)
+
+* PCG Segmentation 알아보기 -> CinC2016 with MatLab
+
+* 해당 분야의 배경지식 없이 인자 사이의 관련성을 찾는 것이 가능할까? / 배경지식 없이 행할 수 있는 모든 분석 -> 통계적인 방법을 배워야할까보다
+
+* Discrete component is just a high probablisitc distribution?
+
+* Data with uncertainty
+
+# 2021 Reading Challenge
+
+__REMEMBER:__ You always need more time to read. So, don't waste ur time.
+
+* DISCRETE DIFFERENTIAL GEOMETRY: AN APPLIED INTRODUCTION - Keenan Crane (/170)
+
+* All of Statistics, A concise Course in Statistical Inference - Larry Wasserman (/736)
+
+* 논어 - 공자 (/421)
+
+* An Introduction to Homological Algebra - Charles A. Weibel (/464)
+
+* Octahedral developing of knot complement I: Pseudo-hyperbolic structure - Hyuk Kim, Seonhwa Kim, Seokbeom Yoon (/54)
+
+* Computation of Large Asymptotics of 3-Manifold Quantum Invariants - Clément Maria, Owen Rouillé (/26)
+
+* Variational inference & deep learning: A new synthesis - Diederik P. Kingma (24/174)
+
+* ~~STORIES OF YOUR LIFE AND OTHERS - Ted Chiang (447/447)~~
+
+* Lie Groups, Lie Algebras, and Representations - Brain C. Hall (/453)
+
+* A Comprehensive Introduction to Differential Geometry - Spivak (/512)
+
+* A Course in Metric Geometry - Dmitri Burago, Yuri Burago, Sergei Ivanov (/425)
+
+* Reidemeister torsion on character varieties - Leo Benard (24/110)
+
+* Persistent Intersection Homology - Paul Bendich, John Harer (17/32)
+
+* 데미안 - (78/244)
+
+* Introduction to Combinatorial Torsions - Vladimir Turaev (/127)
+
+# Schedule
+
+* 1005 - 1015: 세팅
+
+* 1015 - 1240: Autoencder랑 친해지기, MMA 함수 수정 약간?
+
+* 1240 - 1315: 낮잠
+
+* 1315 - 1745: Autoencoder랑 놀면서 knot 관련된것도 좀 하고 ...
+
+* 1745 - 1755: C[3,n], C[4,n] case genus 분석 결과 계산 돌려놓기 + INF 프로젝트 결과보고서 관련 잡담
+
+* 1755 - : 진짜밥!
+
+
+# ToDo
+
+* 1개 빠진 샘플 찾아보기 
+    * 30028629
+
+* Autoencoder? / 새로운 모델(maybe 2d) 구상 / validation protocol 만들기
+
+* Implement PCG envelope
+
+* Segmentation model?
+
+* More training models
+
+# ToDo for weekend(하나도 못했던)
+
+* Prime decomposition method
+
+* Closed Model Theory
+
+* 세훈씨 + 준환씨 코드 구경
+
+* Handlebodies Ref.
+
+* Autoencoder Ref.
+
+* Rolfsen
+
+* Wall
+
+* Discrete Differential Geometry
+
+* A course in a metric geometry / oudot's book?
+
+* Other references you printed out ...
+
+# TODO
+
+- [ ] Make more models :D
+
+- [ ] Do some experiments with sound data (feature extracting first?)
+
+- [ ] Autoencoder / how about reading '12 automatic ecg blah blah'
+
+- [ ] Augmentation on training set
+
+- [ ] Read [_Evolution of unknotting strategies for knots and braids_](https://arxiv.org/abs/1302.0787)
+
+- [ ] 1st chapter of Rolfsen's book
+
+- [ ] 1st chapter of Wall's book
+
+- [ ] Cnt comp 생각해보기
+
+- [ ] Recurrence plot?
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? Because there is _continuous_ homotopy between  them
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? (False, what the author want to say is just there is an another embedding for being unknot (by def.))
+
+- [ ] Read Ch2. of the thesis written by Kingma
+
+- [ ] stability condition reading
+
+- [ ] Marching cube code 살펴보기
+
+- [ ] CT dcm investigation (necessary?)
+
+- [ ] Diagram drawing 코드 분석(command only, 실행이라도 시켜보기)
+
+- [ ] PrimeDecomposition 원리 분석
+
+- [ ] Sphere packing algorithm
+
+
+
