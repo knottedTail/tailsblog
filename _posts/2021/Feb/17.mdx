@@ -1,0 +1,244 @@
+---
+title: 02/17
+date: 2021-02-17 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+ 
+# Math
+
+## 김선화 선생님 미팅
+
+vComp에 dimension이 생기는 경우(Normalize 전 2 이상)에는 a->0 / b,c->0 으로 component를 나눈 후 limitcheck 하는 것으로 (분명 limit이 같을 것이다.)
+
+확인하는 순서:
+
+1) a->0을 conjugation lifting(이 과정에서 bt=a 추가)
+
+2) 변수변환 및 free var 제거를 위한 Elimination Ideal
+
+3) 얻은 ideal에서 b->0, c->0 으로 보내어 comp 비교, ring의 변수에 따라 ideal dimension이 변할 수 있음에 주의, 비교시 Groebner를 사용해야'만'할 수도 있다.
+
+__NOTE:__ C타입이 늘어남에 따라 dim $n$ comp $\rightarrow$ dim $n-1$ comp 같은 경우가 나올 수 있음.
+
+## 김혁 교수님 면담
+
+Rolfsen + 오토 교수님 강의 따라가기.
+
+지금은 기초공사에 집중하기, 주워 들은 용어들이 익숙해서 방향을 잃지 않을 것이다.
+
+Dehn complex는 중요하게 다뤄지지는 않아서 딱히 Reference라 할 만한게 없다, 이를 이용한 Torsion(아마 Twisted)의 cohomological한 접근은 성공적일 것, 그러나 아직은 기대뿐.
+
+윤석범 박사님은 계산에 천재(!)라서 해보시고 안되면 아무도 못할 것. 그러나 Diagramatic approach 에서는 중요할 듯 하다.
+
+그리고 독립적인 공부를 할 수 있어야 한다.
+
+# Dehn Complex
+> [Link](http://web.mit.edu/glasser/Public/reu-temp.pdf)
+
+_edge_ : 그래프의 vert to vert.
+
+_strand_ : diagram의 arc
+
+_thread_ : vertex / crossing 으로 끊기는 segment
+
+_segment_ : crossing 으로 끊기는 segment
+
+To construct _Dehn complex_, 
+
+First, give two vertices $v_+$ and $v_-$ thoese lie above/below of the knot $\mathcal{G}$.
+
+Secondly, assign region variables to the region divided by projection of the diagram, and assign arcs corresponding to each region including unbounded one.
+
+The orientation of arcs are $v_+$ to $v_-$.
+
+Finally, attatch $2$-cell to the $A_i A_j^{-1} A_k A_l^{-1}$ if $x_i,x_j,x_k,x_l$ meets at some crossing(clockwise) and $x_i$ $x_j$ meets along an overcrossing.
+
+... $3$-ball?
+
+__Prop__ Given a finite, connected projection of a spatial graph $\mathcal{G}$, there is _Dehn complex_ onto which $S^3 \setminus \mathcal{G}$ deformation retracts.
+
+The deficiency of the group presentation : # of generators - # of defining relations
+
+and the rank is a rank of a first homology of the given combinatorial graph, equivalently, $E - V + 1$ (reduced Euler characteristic).
+
+__Thm__ Let $\mathcal{G}$ be a (finite) spatial graph with conneceted projection. Then the deficinecy of the _Dehn_ presentatiion of $\pi_1(S^3 \setminus \mathcal{G})$ is a rank of $\mathcal{G}$.
+
+
+# Just to do
+
+> 주말에까지 일을 늘리는 건 못할 짓인 것 같다.
+
+* Jones - volume 데이터 조사(중복도)
+
+* 가능하면 data manager module 만들기?
+
+* 시간되면 resolution 분석도
+
+* fork compatible sow 만들기
+
+* fork로 Groebner 관련 invariants 돌리기
+
+* persistent cup product 있는 논문 분석 [Link](https://arxiv.org/pdf/1902.09138.pdf)
+
+* ~Rolfsen 책으로 갈아탈까 해보기~
+
+* ~책장 주문~
+
+* ~침대 옆 협탁주문~
+
+* 장식장 정리
+
+* 모니터 + 그래픽카드 등등 ...
+
+# Want to do 
+
+* How about __Persistence Torsion__? or .. __Persistence Product__!?
+
+* Experimental Mathematics 논문들 살펴보기
+
+* Knot drawing program 분석(Theoretical?)
+
+* PCG Segmentation 알아보기 -> CinC2016 with MatLab
+
+* 해당 분야의 배경지식 없이 인자 사이의 관련성을 찾는 것이 가능할까? / 배경지식 없이 행할 수 있는 모든 분석 -> 통계적인 방법을 배워야할까보다
+
+* Discrete component is just a high probablisitc distribution?
+
+* Data with uncertainty
+
+# 2021 Reading Challenge
+
+__REMEMBER:__ You always need more time to read. So, don't waste ur time.
+
+* DISCRETE DIFFERENTIAL GEOMETRY: AN APPLIED INTRODUCTION - Keenan Crane (/170)
+
+* All of Statistics, A concise Course in Statistical Inference - Larry Wasserman (/736)
+
+* 논어 - 공자 (/421)
+
+* An Introduction to Homological Algebra - Charles A. Weibel (/464)
+
+* Octahedral developing of knot complement I: Pseudo-hyperbolic structure - Hyuk Kim, Seonhwa Kim, Seokbeom Yoon (/54)
+
+* Computation of Large Asymptotics of 3-Manifold Quantum Invariants - Clément Maria, Owen Rouillé (/26)
+
+* Variational inference & deep learning: A new synthesis - Diederik P. Kingma (24/174)
+
+* ~~STORIES OF YOUR LIFE AND OTHERS - Ted Chiang (447/447)~~
+
+* Lie Groups, Lie Algebras, and Representations - Brain C. Hall (/453)
+
+* A Comprehensive Introduction to Differential Geometry - Spivak (/512)
+
+* A Course in Metric Geometry - Dmitri Burago, Yuri Burago, Sergei Ivanov (/425)
+
+* Reidemeister torsion on character varieties - Leo Benard (24/110)
+
+* Persistent Intersection Homology - Paul Bendich, John Harer (17/32)
+
+* 데미안 - (78/244)
+
+* Introduction to Combinatorial Torsions - Vladimir Turaev (/127)
+
+# Schedule
+
+* 1000 - 1030: You Only Look Once to ECG.. 를 위한 baseline 맞추기 + resample 알아보던 중
+
+* 1030 - 1100: 834, 2150 관련해서 김선화 선생님과 연락
+
+* 1100 - 1200: 연락 중 그냥 zoom 미팅 하기로 함
+
+* 1200 - 1220: 김혁 교수님께 카드 전달드리면서 조언 받음
+
+* 1220 - 1411: 오토담화
+
+* 1411 - 1433: u poly Factor가 g(-u)에 해당하는 factor를 가지고 있는 경우 조사
+
+* 1433 - 1520: 마저 Dehn  / 상준선배 탭 구경
+
+* 1520 - 1555: 잘거야 깨우지마
+
+* 1555 - 1655: 태준씨랑 스터디.. 하는 줄 알았지만?
+
+* 1655 - 1805: Dehn 마저 구경 등
+
+* 1805 - 2045: 밥먹고 성은 누나랑 노가리
+
+* 2045 - 2309: Singular 돌아보다 자다깸, 할 일이 이렇게 많아도 되는거냐고
+
+# ToDo
+
+* 1개 빠진 샘플 찾아보기 
+    * 30028629
+
+* Autoencoder? / 새로운 모델(maybe 2d) 구상 / validation protocol 만들기
+
+* Implement PCG envelope
+
+* Segmentation model?
+
+* More training models
+
+# ToDo for weekend(하나도 못했던)
+
+* Prime decomposition method
+
+* Closed Model Theory
+
+* 세훈씨 + 준환씨 코드 구경
+
+* Handlebodies Ref.
+
+* Autoencoder Ref.
+
+* Rolfsen
+
+* Wall
+
+* Discrete Differential Geometry
+
+* A course in a metric geometry / oudot's book?
+
+* Other references you printed out ...
+
+# TODO
+
+- [ ] Make more models :D
+
+- [ ] Do some experiments with sound data (feature extracting first?)
+
+- [ ] Autoencoder / how about reading '12 automatic ecg blah blah'
+
+- [ ] Augmentation on training set
+
+- [ ] Read [_Evolution of unknotting strategies for knots and braids_](https://arxiv.org/abs/1302.0787)
+
+- [ ] 1st chapter of Rolfsen's book
+
+- [ ] 1st chapter of Wall's book
+
+- [ ] Cnt comp 생각해보기
+
+- [ ] Recurrence plot?
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? Because there is _continuous_ homotopy between  them
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? (False, what the author want to say is just there is an another embedding for being unknot (by def.))
+
+- [ ] Read Ch2. of the thesis written by Kingma
+
+- [ ] stability condition reading
+
+- [ ] Marching cube code 살펴보기
+
+- [ ] CT dcm investigation (necessary?)
+
+- [ ] Diagram drawing 코드 분석(command only, 실행이라도 시켜보기)
+
+- [ ] PrimeDecomposition 원리 분석
+
+- [ ] Sphere packing algorithm
+
+
+
