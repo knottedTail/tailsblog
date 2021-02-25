@@ -1,0 +1,395 @@
+---
+title: 02/24
+date: 2021-02-24 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# Arxiv Check
+
+## Differential Geometry
+
+[AREA MINIMIZING UNIT VECTOR FIELDS ON ANTIPODALLY PUNCTURED UNIT 2-SPHERE](https://arxiv.org/abs/2102.11128)
+> In memory of Amine Fawaz 
+
+[On sliced spaces: Global Hyperbolicity revisited](https://arxiv.org/abs/1901.07381)
+> Kyriakos Papadopoulos, Nazli Kurt, Basil K. Papadopoulos
+
+> A topological condition for a generic sliced space to be globally hyperbolic.
+
+A __sliced space__ is consists of $(n+1)$ dimensional smooth manifold $M \times I$ where $M$ is a $n$ dimensional smooth manifold and an interval(open / closed any?) of the real line$(\mathbb{R})$ with $(n+1)$ dimensional _Lorentz_ metric which splits as follows:
+$$
+g = -N^2(\theta^0)^2 + g_{ij}\theta^i \theta^j
+$$
+where $\theta^0 = dt$, $\theta^i = dx^i + \beta^i dt$, $N=N(t, x^i)$ is the _lapse function_, $\beta^i(t, x^j)$ is the _shift function_ and $M_t = V \times {t}$, spatial slices of $V$ are spacelike manifolds with time-dependent metric $g_t = g_{ij}dx^idx^j$.
+
+In the _Cotaskis_' paper, the condition for being globally hyperbolic is described with hypothesis that uniformly boundedness for _lapse_, _shift_, and _spatial metric_, with more details,
+
+__THM__(Cotsakis)
+Let $(V, g)$ be a sliced space with uniformly bounded lapse $N$, shift $\beta$ and spatial metric $g_t$. Then, the following are equivalent.
+
+__1__ $(M_0, \gamma)$ is a complete Riemannian manifold.
+
+__2__ The spacetime $(V, g)$ is _globally hyperbolic_.
+
+In this article, the review of global hyperbolicity is described in terms of the product topology of $M \times \mathbb{R}$ for some finite-dimensional manifold $M$.
+
+[On the Smale Conjecture for Diff(S4)](https://arxiv.org/abs/2008.07269)
+> Selman Akbulut
+
+> Differnet proof _Watanabe_'s proof from of _Smale_ conjecture for $S^4$.
+
+Recently, _Watanabe_(2018) disproved _Smale_'s conjecture for $S^4$ by showing $\text{Diff}(S^4) \neq \text{SO}(5)$(SO($5$)? O($5$)?. He showed this by proving higher homotopy groups of them are different.
+This paper prove the same statement by showoing $\pi_0(\text{Diff}(S^4)) \neq 0$.
+
+___Smale_'s conjecture__
+
+The diffeomorphism group of $3$-spheres has the same homotopy type of its isometry group, the orthogonal group $O(4)$.
+
+This conjecture is proved by _Allan Hatcher_(1983), and it has long been known that this fails for higher dimensions at least $5$.
+
+And for dimension $4$, _Watanabe_ disproved in ($2018$)[https://arxiv.org/abs/1812.02448].
+
+There are equivalent statements($3$-dim).
+
+__1__ the component of the unknot in the space of smooth embeddings of the circle in $3$-sphere has the homotopy type of the round circles, __i.e.__ $\text{O}(3)$.
+
+__2__ the diffeomorphism group of the $3$-ball restricted to the identity on its boundary is contractible.
+
+[Average of geometric structures in Finsler spaces with Lorentzian signature](https://arxiv.org/abs/2012.11338)
+> Ricardo Gallego Torromé
+
+__Finsler metric__ : A Riemannian metric not restricted to its _quadratic_ condition.
+
+There is a map: Finlser CAT $\rightarrow$ Riemannian/Affine CAT by tracing out $y$-dependence of relavent Finsler geometric objects(obj. dependence) in _average Finsler theory_ for positive definite signatures.
+
+## Algebraic topology
+
+[Stability of 2-Parameter Persistent Homology](https://arxiv.org/abs/2010.09628)
+> Andrew J. Blumberg, Michael Lesnick
+
+Stability theorem for $2$-parameter persistent homology, stability($\pm$outliers) for several bifiltration constructions are shown.
+
+["Not just an idle game":(examining some historical conceptual arguments in homotopy theory)](https://arxiv.org/abs/2001.00534)
+>  Ronald Brown
+
+From the first definition of higher homotopy by __Céch__(1932).
+
+The title is a quote taken from __Einstein__'s writing. He and the author worried about missing basic questions of some concepts in question nowadays.
+
+__i.e.__ This paper is written to understand historical traces in _homotopy theory_.
+
+[A free-group valued invariant of free knots](https://arxiv.org/abs/2012.15571)
+> Vassily Olegovich Manturov
+
+> To construct invariants for free knots(flat virtual knots, virtual knots) valued in free groups(and free prodcut of cyclic groups)
+
+Knots $=$ Gauss diagrams/Reidemeister moves
+
+Classical knots : Gauss diagrams are drawn in plane, __i.e.__ there is some restriction called _planarity_.
+
+Virtual knots : Let's forget planarity for generalization!
+
+How to encode Gauss diagram?
+
+__1__ Use two bits of information, _local writhe_ and _over_ to _under_(crossings)
+
+__2__ Use $1$-component framed $4$-valent graphs.
+
+__Long free knot__ : In terms of __2__, breaking the $4$-valent graph in a point, and pulling the two ends to the infinity. Moves over the _infinity_ is not allowed in this case.
+
+Advantage of it : _reference point_?
+
+__NOTE:__ Cannot read further since I cannot get the difference between _free knots_ and _long free knots_.
+
+[Classification of COVID-19 via Homology of CT-SCAN](https://arxiv.org/abs/2102.10593)
+> Sohail Iqbal, H. Fareed Ahmed, Talha Qaiser, Muhammad Imran Qureshi, Nasir Rajpoot
+
+CD scans -> PD -> mapping them to Hilbert sphere($S^{\infty}$) -> SVM
+
+_filtered_ VR complex is used.. but it seems a VR complex of subset of points in the point cloud.
+
+__Reidemeister moves__
+
+__1__ 꼬인것 풀기
+
+__2__ 겹친것  풀기
+
+__3__ 크로싱 위로/아래로 옮기기
+
+[Optimizing persistent homology based functions](https://arxiv.org/abs/2010.08356)
+> Mathieu Carrière, Frédéric Chazal, Marc Glisse, Yuichi Ike, Hariprasad Kannan
+
+Differenctiablity of a general map associated with the persistence map, building on real analytic geometry arguments, authors propose a code to calculate gradients of it.
+
+and they provide also conditions for convergence of stochastic subgradient method
+
+_persistence map_ can be thought as a map between Euclidean space -> it is semi-algebraic(arguments from _o-minimal_ geometry(terms related to model CAT..))
+
+persistence map is nothing but permutation of the coordinates of a vector containing the filtration values.
+
+For a given simplicial complex $K$ and filtration(compatible to the complex) $\Phi:K \rightarrow \mathbb{R}$ on it, then its vectorized filtration $\Phi = (\Phi_\sigma)_{\sigma \in K}$ can be defined as a $|K|$-dimensional vector in $\mathbb{R}^{|K|}$.
+
+by the compatiblity, if $\tau \subset \sigma$ then $\Phi_\tau \leq \Phi_\sigma$.
+
+If the $\Phi$ depends on a parameter, then the corresponding family of filtrations can be represented as a map from the space of parameters to $\mathbb{R}^{|K|}$.
+
+__i.e.__ $\Phi: A \rightarrow \mathbb{R}^{|K|}$ for a set $A$.
+
+__o-minimal structure__ on $\mathbb{R}$ is a collection $(S_n)_{n \in \mathbb{N}}$ where each $S_n$ is a set of subsets of $\mathbb{R}$ such thatn
+
+__1__ $S_1$ = the collection of finite unions of points and intervals
+
+__2__ all algebraic subsets(any $0$ sets of polynomials) of $\mathbb{R}^n$ are in $S_n$
+
+__3__ $S_n$ is a _Boolean subalgebra_(=subalgebra) of $\mathbb{R}^n$ for any $n\in\mathbb{N}$
+
+__4__ If $A \in S_n$ and $B \in S_m$ then $A \times B \in S_{n+m}$
+
+__5__ If $\pi:\mathbb{R}^{n+1} \rightarrow \mathbb{R}^n$ is the projection to the first $n$ coordinates, and $A \in S_{n+1}$, then $\pi(A) \in S_n$
+
+An element in $S_n$ for some $n \in \mathbb{N}$ is called _definable set_. 
+
+For a definable set $A \subset \mathbb{R}^N$, a map $f:A \rightarrow \mathbb{R}^m$ is _definable_ if its graph is definable set in $\mathbb{R}^{n+m}$.
+
+Thoese _definable sets_ are stable under geometric oprations, complement, closure, interior, finite union/intersection, image, sums, products, compositions ...
+
+In particular, max and min of finite sets of real valued definable maps are also definable function.
+
+And they admits _finite Whitney stratification_(what is it?). It implies that:
+
+__1__ For any definable set $A \subset \mathbb{R}^n$ can be decomposed into a finite disjoint union of smooth submanifolds of $\mathbb{R}^n$.
+
+__2__ For any definable map $\Phi:A \rightarrow \mathbb{R}^m$, $A$ can be decomposed into a finite union of smooth manifolds such that the restriction of $\Phi$ to each of these manifolds is a differentiable function.
+
+__Example__ : semi-algebraic subsets of $\mathbb{R}^n(n \in \mathbb{N})$.
+
+Most of classical parametrized families of filtrations are semi-algebraic, but exponential functions are also allowed.[Wil96]
+
+... 다음에 더 읽기로 해
+
+# TDA course in Albany Univ.
+By Michael Lesnick, [Link](https://www.albany.edu/~ML644186/AMAT_583_21/index_583_21.html)
+
+# Short notes for persistent homology
+
+## Lecture notes for multiparameter persistent homology (Michael Lesnick)
+
+Stable under the perturbation, but still highly sensitive to noise and outliers.
+
+How to define multiparameter pH?
+
+$$ M_{i,j} = H_l(\text{VR}_{\epsilon_i}(f^{-1}([\delta_j, \infty)))$$
+
+for $l$ dimensional pH.
+
+It is well-defined since any complex in $\text{VR}_{\epsilon_i}(f^{-1}([\delta_j, \infty))$ is in $\text{VR}_{\epsilon_{i'}}(f^{-1}([\delta_{j'}, \infty))$ by inclusion.
+
+__NOTE__: But it is not decomposed as intervels like $1d$ cases... Apparently, it is decomposed as indecomposable modules, but hard to find an way to expression of it, __i.e.__ parametrization of them.
+
+
+### RIVET (Rank Invariant Visualization and Exploration Tool)
+
+The ideal of __RIVET__ is, restrict multidimension persistent modules to an arbitrary straight line $L$ which have non-negative slope.
+
+$M|L$ can be calculated fast with the algorithm of it using some commutative algebra tools.
+
+* Hall's theorem -> stability of bottleneck distance can be proved.
+
+__TEST__ 
+
+Test is done by dataset given by authors of RIVET.
+
+__1__ 210pts on a square, with homology degree 0. fast! fancy! easy to use!
+
+__2__ 450pts on a square, with homology degree 2. It crashes.
+
+__3__ 450pts on a square, with homology degree 1. It doesn't crash but took several miniutes.
+
+## Idea
+
+__1__ How about a sum of probablity distribution instead of complexes(like VR)?
+
+__2__ Uniform sampling on manifold by parametrizated space
+
+__3__ _Something_ can lie to the observer..
+
+
+
+# Just to do
+
+> 주말에까지 일을 늘리는 건 못할 짓인 것 같다.
+
+* Jones - volume 데이터 조사(중복도)
+
+* 가능하면 data manager module 만들기?
+
+* 시간되면 resolution 분석도
+
+* fork compatible sow 만들기
+
+* fork로 Groebner 관련 invariants 돌리기
+
+* persistent cup product 있는 논문 분석 [Link](https://arxiv.org/pdf/1902.09138.pdf)
+
+* 장식장 정리
+
+# Want to do 
+
+* How about __Persistence Torsion__? or .. __Persistence Product__!?
+
+* Experimental Mathematics 논문들 살펴보기
+
+* Knot drawing program 분석(Theoretical?)
+
+* PCG Segmentation 알아보기 -> CinC2016 with MatLab
+
+* 해당 분야의 배경지식 없이 인자 사이의 관련성을 찾는 것이 가능할까? / 배경지식 없이 행할 수 있는 모든 분석 -> 통계적인 방법을 배워야할까보다
+
+* Discrete component is just a high probablisitc distribution?
+
+* Data with uncertainty
+
+# 2021 Reading Challenge
+
+__REMEMBER:__ You always need more time to read. So, don't waste ur time.
+
+* DISCRETE DIFFERENTIAL GEOMETRY: AN APPLIED INTRODUCTION - Keenan Crane (/170)
+
+* All of Statistics, A concise Course in Statistical Inference - Larry Wasserman (/736)
+
+* 논어 - 공자 (/421)
+
+* An Introduction to Homological Algebra - Charles A. Weibel (/464)
+
+* Octahedral developing of knot complement I: Pseudo-hyperbolic structure - Hyuk Kim, Seonhwa Kim, Seokbeom Yoon (/54)
+
+* Computation of Large Asymptotics of 3-Manifold Quantum Invariants - Clément Maria, Owen Rouillé (/26)
+
+* Variational inference & deep learning: A new synthesis - Diederik P. Kingma (24/174)
+
+* ~~STORIES OF YOUR LIFE AND OTHERS - Ted Chiang (447/447)~~
+
+* Lie Groups, Lie Algebras, and Representations - Brain C. Hall (/453)
+
+* A Comprehensive Introduction to Differential Geometry - Spivak (/512)
+
+* A Course in Metric Geometry - Dmitri Burago, Yuri Burago, Sergei Ivanov (/425)
+
+* Reidemeister torsion on character varieties - Leo Benard (24/110)
+
+* Persistent Intersection Homology - Paul Bendich, John Harer (17/32)
+
+* 데미안 - (78/244)
+
+* Introduction to Combinatorial Torsions - Vladimir Turaev (20/127)
+
+* Knots and Links - Rolfsen Dale (12/439)
+
+* Geometric and Topological Inference - Jean-Daniel Boissonnat, Frédéric Chazal, Mariette Yvinec (/295)
+
+* Optimizing persistent homology based functions - Mathieu Carrière, Frédéric Chazal, et al. (2/15)
+
+
+# Schedule
+
+* 1000 - 1135: 간만에 아카이브(DG) 탐방, 연구등록
+
+* 1135 - 1205: 낮잠
+
+* 1205 - 1400: 아카이브(AT) 탐방 중에 Michael Lesnick 이라는 이름에 꽂혀서 뒷조사, Geometry and Topological Inference 부터 Multiparameter pH(RIVET)까지
+
+* 1400 - 1507: 다시 아카이브(AT).. 잠깐 뇌 중지
+
+* 1507 - 1526: 휴식
+
+* 1526 - 1628: Optimization은 다음에 이어서 보기로 하고 RIVET 돌려둔 뒤 매점(RAM을 팔까?)
+
+* 1628 - 1710: 산책, 세훈씨 만나서 Torus 위에서의 uniform sampling에 대한 이야기를 들음
+
+* 1710 - 1745: RIVET 돌려보기 (진행이 되지 않았던 것은 symbolic link를 GUI가 있는 폴더에 만들지 않아서 였다.), 넷플릭스 둘러보다 밥
+
+* 1745 - 1810: 밥먹고 와서 과자 까먹고 있음 언제까지 노나 봐야됨
+
+* 1810 - 1910: 한시간 반을 놀았구요
+
+* 1910 - 2000: 더 놀았습니다.. 졸았어요
+
+* 2000 - 2200: Rolfsen 보기(Jordan에서 넘어가질 못함)
+
+* 2200 - 2330: 연습하러 116호 내려가기
+
+# ToDo
+
+* 1개 빠진 샘플 찾아보기 
+    * 30028629
+
+* Autoencoder? / 새로운 모델(maybe 2d) 구상 / validation protocol 만들기
+
+* Implement PCG envelope
+
+* Segmentation model?
+
+* More training models
+
+# ToDo for weekend(하나도 못했던)
+
+* Prime decomposition method
+
+* Closed Model Theory
+
+* 세훈씨 + 준환씨 코드 구경
+
+* Handlebodies Ref.
+
+* Autoencoder Ref.
+
+* Rolfsen
+
+* Wall
+
+* Discrete Differential Geometry
+
+* A course in a metric geometry / oudot's book?
+* Other references you printed out ...
+
+# TODO
+
+- [ ] Make more models :D
+
+- [ ] Do some experiments with sound data (feature extracting first?)
+
+- [ ] Autoencoder / how about reading '12 automatic ecg blah blah'
+
+- [ ] Augmentation on training set
+
+- [ ] Read [_Evolution of unknotting strategies for knots and braids_](https://arxiv.org/abs/1302.0787)
+
+- [x] 1st chapter of Rolfsen's book
+
+- [ ] 1st chapter of Wall's book
+
+- [ ] Cnt comp 생각해보기
+
+- [ ] Recurrence plot?
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? Because there is _continuous_ homotopy between  them
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? (False, what the author want to say is just there is an another embedding for being unknot (by def.))
+
+- [ ] Read Ch2. of the thesis written by Kingma
+
+- [ ] stability condition reading
+
+- [ ] Marching cube code 살펴보기
+
+- [ ] CT dcm investigation (necessary?)
+
+- [ ] Diagram drawing 코드 분석(command only, 실행이라도 시켜보기)
+
+- [ ] PrimeDecomposition 원리 분석
+
+- [ ] Sphere packing algorithm
+
+
+
