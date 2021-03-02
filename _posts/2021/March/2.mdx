@@ -1,0 +1,202 @@
+---
+title: 03/02
+date: 2021-03-02 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# UMAP
+
+Give __fuzzy topological structure__ in the high dimensional point cloud.
+
+find the __fuzzy topological structure__ to a point cloud in a low dimensional euclidean space which minimize difference between it and the given metrics.
+
+the objective function is formed as follows:
+$$
+\sum_{e \in E} w_h(e) \log(\frac{w_h(e)}{w_l(e)})) + (1-w_h(e) \log(\frac{1-w_h(e)}{1-w_l(e)})
+$$
+where $w_h(e)$ is a weigth of an edge $e$ in high-dim space, __i.e.__ given point cloud. And $w_l(e)$ is a weight of an edge $e$ in low-dim space.
+
+Effective KNN calculation algorithm, differentiable apporximation of an objective function, etc. are used to improve a performance of __UMAP__.
+# Just to do
+
+> 주말에까지 일을 늘리는 건 못할 짓인 것 같다.
+
+* 오류조사, uPoly 관련된 에러가 추가로 난 것이 있는지, 계산되지 않은 ideal이 있는지 모두 조사
+
+* Jones - volume 데이터 조사(중복도)
+
+* 가능하면 data manager module 만들기?
+
+* 시간되면 resolution 분석도
+
+* fork compatible sow 만들기
+
+* fork로 Groebner 관련 invariants 돌리기
+
+* persistent cup product 있는 논문 분석 [Link](https://arxiv.org/pdf/1902.09138.pdf)
+
+* ~~장식장 정리~~
+
+# Want to do 
+
+* How about __Persistence Torsion__? or .. __Persistence Product__!?
+
+* Experimental Mathematics 논문들 살펴보기
+
+* Knot drawing program 분석(Theoretical?)
+
+* PCG Segmentation 알아보기 -> CinC2016 with MatLab
+
+* 해당 분야의 배경지식 없이 인자 사이의 관련성을 찾는 것이 가능할까? / 배경지식 없이 행할 수 있는 모든 분석 -> 통계적인 방법을 배워야할까보다
+
+* Discrete component is just a high probablisitc distribution?
+
+* Data with uncertainty
+
+# 2021 Reading Challenge
+
+__REMEMBER:__ You always need more time to read. So, don't waste ur time.
+
+* DISCRETE DIFFERENTIAL GEOMETRY: AN APPLIED INTRODUCTION - Keenan Crane (/170)
+
+* All of Statistics, A concise Course in Statistical Inference - Larry Wasserman (/736)
+
+* 논어 - 공자 (/421)
+
+* An Introduction to Homological Algebra - Charles A. Weibel (/464)
+
+* Octahedral developing of knot complement I: Pseudo-hyperbolic structure - Hyuk Kim, Seonhwa Kim, Seokbeom Yoon (/54)
+
+* Computation of Large Asymptotics of 3-Manifold Quantum Invariants - Clément Maria, Owen Rouillé (/26)
+
+* Variational inference & deep learning: A new synthesis - Diederik P. Kingma (24/174)
+
+* ~~STORIES OF YOUR LIFE AND OTHERS - Ted Chiang (447/447)~~
+
+* Lie Groups, Lie Algebras, and Representations - Brain C. Hall (/453)
+
+* A Comprehensive Introduction to Differential Geometry - Spivak (/512)
+
+* A Course in Metric Geometry - Dmitri Burago, Yuri Burago, Sergei Ivanov (/425)
+
+* Reidemeister torsion on character varieties - Leo Benard (24/110)
+
+* Persistent Intersection Homology - Paul Bendich, John Harer (17/32)
+
+* 데미안 - (78/244)
+
+* Introduction to Combinatorial Torsions - Vladimir Turaev (20/127)
+
+* Knots and Links - Rolfsen Dale (12/439)
+
+* Geometric and Topological Inference - Jean-Daniel Boissonnat, Frédéric Chazal, Mariette Yvinec (/295)
+
+* Optimizing persistent homology based functions - Mathieu Carrière, Frédéric Chazal, et al. (2/15)
+
+
+# Schedule
+
+* 0930 - 1015: 수학특강1(국웅 선생님)
+
+* 1015 - 1305: 스터디
+
+* 1305 - 1350: Paper works(건강보험 자격득실확인서와 수료/연구생 증명서)
+
+* 1350 - 1446: Strolling + Meeting w/ Prof.Hyuk Kim
+
+* 1446 - 1500: 도시가스 접수(내일 앱에서 접수 확인 가능(접수중))
+
+* 1500 - 1555: 국웅선생님께 Laplacian 추천 요청 메일 작성
+
+* 1555 - 1606: 자다가 희망브릿지 전화받음(간이모듈화)
+
+* 1606 - 1642: 국웅교수님 메일 답장고민 및 short research(김영진씨 논문(2017)찾음, 1708.01907)
+
+* 1642 - 1700: 업무확인서 작성 및 제출, 연구윤리 수강 준비
+
+* 1700 - 1750: UMAP 구경 + 좀([Link](https://umap-learn.readthedocs.io/en/latest/how_umap_works.html))
+
+* 1750 - 1855: ㅎㅎ
+
+* 1855 - 1916: 다시 UMAP
+
+* 1916 - 1928: 다시 잠
+
+* 1928 - 2100: 놀면서 UMAP.. 거의 놈
+
+* 2100 - 2157: UMAP!
+
+* 2157 - 2355: Rolfsen 정리
+
+# ToDo
+
+* 1개 빠진 샘플 찾아보기 
+    * 30028629
+
+* Autoencoder? / 새로운 모델(maybe 2d) 구상 / validation protocol 만들기
+
+* Implement PCG envelope
+
+* Segmentation model?
+
+* More training models
+
+# ToDo for weekend(하나도 못했던)
+
+* Prime decomposition method
+
+* Closed Model Theory
+
+* 세훈씨 + 준환씨 코드 구경
+
+* Handlebodies Ref.
+
+* Autoencoder Ref.
+
+* Rolfsen
+
+* Wall
+
+* Discrete Differential Geometry
+
+* A course in a metric geometry / oudot's book?
+* Other references you printed out ...
+
+# TODO
+
+- [ ] Make more models :D
+
+- [ ] Do some experiments with sound data (feature extracting first?)
+
+- [ ] Autoencoder / how about reading '12 automatic ecg blah blah'
+
+- [ ] Augmentation on training set
+
+- [ ] Read [_Evolution of unknotting strategies for knots and braids_](https://arxiv.org/abs/1302.0787)
+
+- [x] 1st chapter of Rolfsen's book
+
+- [ ] 1st chapter of Wall's book
+
+- [ ] Cnt comp 생각해보기
+
+- [ ] Recurrence plot?
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? Because there is _continuous_ homotopy between  them
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? (False, what the author want to say is just there is an another embedding for being unknot (by def.))
+
+- [ ] Read Ch2. of the thesis written by Kingma
+
+- [ ] stability condition reading
+
+- [ ] Marching cube code 살펴보기
+
+- [ ] CT dcm investigation (necessary?)
+
+- [ ] Diagram drawing 코드 분석(command only, 실행이라도 시켜보기)
+
+- [ ] PrimeDecomposition 원리 분석
+
+- [ ] Sphere packing algorithm
