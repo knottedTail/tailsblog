@@ -1,0 +1,385 @@
+---
+title: 03/03
+date: 2021-03-03 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# Arxiv Check
+
+## DG
+
+[Spacetime distances: an exploration](https://arxiv.org/abs/2103.01191)
+> Carlos Vega
+
+Difference between Lorentzian manifolds and Riemannian manifolds in the sense of _metrics_.
+
+To model the universe, geometry is considered. Three questions are served.
+
+__1__ : What is the distance between two points in a spacetime?
+
+__2__ : What is the distance between two spacetimes?
+
+__3__ : What is a _big bang_?
+
+Loretzian can be Riemannianized by adding conditions, __e.g.__ Wick Rotation. but this method need a restriction that a time function $\tau$ should be smooth although cosmological time $\tau_c$ is usually not.
+
+some progress is made by __Ralph Howard__.
+
+null distance function$\hat{d}_\tau$(kind of time-traveling taxicap distance) has some casuality property.
+$$
+q \in J^+(p) \implies \hat{d}_\tau(p,q) = \tau(q) - \tau(p)
+$$
+
+This paper want to study Riemannianized and null distance functions.
+
+[The Ruelle zeta function at zero for nearly hyperbolic 3-manifolds](https://arxiv.org/abs/2009.08558)
+> Mihajlo Cekić, Semyon Dyatlov, Benjamin Küster, Gabriel P. Paternain
+
+Generic conformal metric perterbation(cpt hyperblci $3$-mfd $\Sigma$ with Betti number $b_1$) -> the order of vanishing of the _Ruelle_ zeta function is $4-b_1$.
+
+Hyperbolic case -> $4-2b_1$. It's an invariant for $2d$ cases in contrast.
+
+[Hyperbolic 4-manifolds with perfect circle-valued Morse functions](https://arxiv.org/abs/2009.04997)
+> Ludovico Battista, Bruno Martelli
+
+Perfect circle-valued _Morse_ function : a Morse function $f:M \rightarrow S^1$ with only $|\chi(M)|(=2$ in this setting) critical points for finite-volume hyperbolic $4$-manifolds $M$.
+
+There is an example where every generic circle-valued function is homotopic to perfect one.
+
+$\implies$ the existence of infinitely many finite-volume(compact and cusped) hyperbolic $4$-manifolds $M$ having a handle decomposition with bounded numbers(Betti numberes $b1$ and $b3$,  and $\textrm{rk}(\pi_1(M)))$ of $1$ and $3$ handles.
+
+In $3$-manifolds, there are many finite-volume hyperbolic $3$ manifolds $M$ that fiber over $S^1$.
+
+On such manifolds, the surface fiber $\Sigma$ generates $\pi_1(\Sigma) \lhd \pi_1(M)$, also, determines a geometrically infinite covering $\tilde{M}  \rightarrow M$ diffeomorphic to $\Sigma \times \mathbb{R}$.
+
+Every finite-volume hyperbolic $3$-manifold is finitely covered by $3$-manifolds fiber over $S^1$(_Agol_ and _Wise_, virtual Haken conjecture?)
+
+Since existence of those fibration in $n$-dimension settings fails since generalized _Gauss_-_Bonnet_ theorem ensures that such fibrations and the given manifodls have dfferent _Euler_ characteristic(vanishing or not).
+
+So the statement should be fix first,
+$$
+\text{Are there any finite-volume hyperbolic } n- \text{manifolds with perfect circle-valued Morse functions in all }n?
+$$
+
+And authors answered for the case of $n=4$
+
+[CausalX: Causal Explanations and Block Multilinear Factor Analysis](https://arxiv.org/abs/2102.12853)
+> M. Alex O. Vasilescu, Eric Kim, Xiao S. Zeng
+
+__CausalX__: Visual recognition system computing a set of causal explanations based on a counterfactual causal model that takes adventage of the assets of tensor algebra.
+
+Something related to facter analysis?
+
+[Developable surfaces with prescribed boundary](https://arxiv.org/abs/2103.01270)
+> Maria Alberich-Carramiñana, Jaume Amorós, Franco Coltraro
+
+A generic simple closed piecewise regular curve in a space can be the boundary of only finitely many developable surfaces with non vanishing mean curvature.
+
+_Developable surface_ is a smooth surface with Gaussian curvature $0$, so locally isometric to a domain in the Euclidean plane $\mathbb{R}^2$.
+
+__Classic Thm__ for thoese surfaces.
+
+A $C^3$ developable surface $S$ embedded in $\mathbb{R}^3$ has an open subset which is ruled, with unit normal vector constant along each line of ruling but varying in a transverse direction.
+
+Every connected components of its complement is contained in a plane.
+
+[Cell Complex Neural Networks](https://arxiv.org/abs/2010.00743)
+> Mustafa Hajij, Kyle Istvan, Ghada Zamzmi
+
+__Cell Complexes Neural Networks__(CXNs) is proposed in this paper.
+
+Using inter cellular message passing scheme on cell complexes = generalization of message passing scheme on graphs.
+
+cell complex autoencoder, __cell2vec__ is proposed(gen. of node2vec).
+
+As a (kind of) generalization of __GNN__, is it useful/meaningful?
+
+[Persistent Homology and Graphs Representation Learning](https://arxiv.org/abs/2102.12926)
+> Mustafa Hajij, Ghada Zamzmi, Xuanting Cai
+
+Topologica invariant properties in a node graph representational embeddings using pH.
+
+Authors define _unique persistence-based graph descriptor_.
+
+About node graph representation, the _encoder_ is defined as followings:
+
+Let $G(V, E)$ is a graph, An encoder on $G$ is a function _enc_:
+$$
+enc : V_G  \rightarrow \mathbb{R}^d
+$$
+for some positive integer $d$.
+
+with a decoder _dec_:
+$$
+dec : \mathbb{R}^d \times \mathbb{R}^d \rightarrow \mathbb{R}^+
+$$
+
+The pair (_enc_, _dec_) is called a graph AutoEncoder on $G$.
+
+[Gradient solitons on statistical manifolds](https://arxiv.org/abs/2005.13470)
+> Adara M. Blaga, Bang-Yen Chen
+
+__Statistical structure__ on a smooth manifold $M$ consists of a pseudo-Riemannian metric $g$ and a torsion-free affine connection $\nabla$ such that $\nabla g$ is a Codazzi tensor field.
+
+For such manifold, the dual connection $\nabla^*$ of $\nabla$ with respect to $g$ is uniquely defined by (Levi-Civita?)
+$$
+X(g(Y,Z)) = g(\nabla_X Y, Z) + g(Y, \nabla^*_X, Z)
+$$
+for $X, Y, Z \in \mathfrak{X}$. The dualistic structure $(\nabla, \nabla^*)$ plays an important role in statistics.
+
+### Conjectures and Problems
+
+* Yamabe problem
+
+Let $(M, g)$ be a closed smooth Riemannian manifold, then there exists positive(?) and smooth function $f$ on $M$ such that $f_*g$ has constant scalar curvature.
+
+* Arnold-Givental conjecture
+
+$M$:smooth manifold with a family of smooth hamiltonian functions $H_t \in C^{\infty}(M); 0 \leq t \leq 1$, Denote by $\phi_H$ the time-one map of the flow of the Hamiltonian vector field $X_{H_t}$ of $H_t$.
+
+Let $L$ be a Lagrangian submanifold of $M$, invariant under some antisymplectic involution of $M$ with assumption that $L$ and $\phi_H(L)$ intersects transversally.
+
+Then,
+$$
+|L \cap \phi_H(L)| \leq \sum_{k=0}^n b_k(L;\mathbb{Z}_2)
+$$
+
+## AT
+
+[On Vietoris--Rips complexes of hypercube graphs](https://arxiv.org/abs/2103.01040) For HyoJin maybe useful for the future?
+> Michał Adamaszek, Henry Adams
+
+[Ripser: efficient computation of Vietoris-Rips persistence barcodes](https://arxiv.org/abs/1908.02518)
+> Ulrich Bauer
+
+References are updated, and other things?
+
+[Persistent and Zigzag Homology: A Matrix Factorization Viewpoint](https://arxiv.org/abs/1911.10693)
+> Gunnar Carlsson, Anjan Dwaraknath, Bradley J. Nelson
+
+pH and zigzag homology can be calculated using factorizations of associated matrices.
+
+The method is parallelizable!
+
+Computational topology, usually computation is done on the cell complexes, is highly expensive.
+
+
+_Contributions_
+
+__1__ Homomorphisms on homology with field coefficients are implemented in software.
+
+__2__ Sequential/Parallel algorithm for interval decomposition
+
+__3__ Apply thoese methods on pH and zigzag homology
+
+__4__ Speed up
+
+Visit later...
+
+[Online High-Dimensional Change-Point Detection using Topological Data Analysis](https://arxiv.org/abs/2103.00117)
+> Xiaojun Zheng, Simon Mak, Yao Xie
+
+Persistent Diagram based Change-Point(PD-CP) .. nonparametric change-point detection? / the distribution of points on persistence diagrams for _online_ detection
+
+
+[An introduction to Topological Data Analysis: fundamental and practical aspects for data scientists](https://arxiv.org/abs/1710.04019)
+> Frédéric Chazal (1), Bertrand Michel (2) ((1) DATASHAPE, (2) LSTA)
+
+
+# GNN
+> [Korean translation for survey paper](https://tootouch.github.io/research/gnn_summary/)
+
+## CGNN
+
+Two methods: Spectral and Spatial
+
+Spectral: using signal processing, theoretically thicken but not usefull(Fourier-based, time consuming(calculating eigen vectors))
+
+Spatial: Efficient, Generalizable, Flexible
+
+## Pytorch
+
+_torch_geometric_ provides dataset/tools for geometrical dataset. Also, pyro(probablistic programming lang.)
+
+# Dataset
+
+* [Labeled Faces in the Wild](http://vis-www.cs.umass.edu/lfw/)
+
+
+# Just to do
+
+> 주말에까지 일을 늘리는 건 못할 짓인 것 같다.
+
+* 오류조사, uPoly 관련된 에러가 추가로 난 것이 있는지, 계산되지 않은 ideal이 있는지 모두 조사
+
+* Jones - volume 데이터 조사(중복도)
+
+* 가능하면 data manager module 만들기?
+
+* 시간되면 resolution 분석도
+
+* fork compatible sow 만들기
+
+* fork로 Groebner 관련 invariants 돌리기
+
+* persistent cup product 있는 논문 분석 [Link](https://arxiv.org/pdf/1902.09138.pdf)
+
+* ~~장식장 정리~~
+
+# Want to do 
+
+* How about __Persistence Torsion__? or .. __Persistence Product__!?
+
+* Experimental Mathematics 논문들 살펴보기
+
+* Knot drawing program 분석(Theoretical?)
+
+* PCG Segmentation 알아보기 -> CinC2016 with MatLab
+
+* 해당 분야의 배경지식 없이 인자 사이의 관련성을 찾는 것이 가능할까? / 배경지식 없이 행할 수 있는 모든 분석 -> 통계적인 방법을 배워야할까보다
+
+* Discrete component is just a high probablistic distribution?
+
+* Data with uncertainty
+
+# 2021 Reading Challenge
+
+__REMEMBER:__ You always need more time to read. So, don't waste ur time.
+
+* DISCRETE DIFFERENTIAL GEOMETRY: AN APPLIED INTRODUCTION - Keenan Crane (/170)
+
+* All of Statistics, A concise Course in Statistical Inference - Larry Wasserman (/736)
+
+* 논어 - 공자 (/421)
+
+* An Introduction to Homological Algebra - Charles A. Weibel (/464)
+
+* Octahedral developing of knot complement I: Pseudo-hyperbolic structure - Hyuk Kim, Seonhwa Kim, Seokbeom Yoon (/54)
+
+* Computation of Large Asymptotics of 3-Manifold Quantum Invariants - Clément Maria, Owen Rouillé (/26)
+
+* Variational inference & deep learning: A new synthesis - Diederik P. Kingma (24/174)
+
+* ~~STORIES OF YOUR LIFE AND OTHERS - Ted Chiang (447/447)~~
+
+* Lie Groups, Lie Algebras, and Representations - Brain C. Hall (/453)
+
+* A Comprehensive Introduction to Differential Geometry - Spivak (/512)
+
+* A Course in Metric Geometry - Dmitri Burago, Yuri Burago, Sergei Ivanov (/425)
+
+* Reidemeister torsion on character varieties - Leo Benard (24/110)
+
+* Persistent Intersection Homology - Paul Bendich, John Harer (17/32)
+
+* 데미안 - (78/244)
+
+* Introduction to Combinatorial Torsions - Vladimir Turaev (20/127)
+
+* Knots and Links - Rolfsen Dale (12/439)
+
+* Geometric and Topological Inference - Jean-Daniel Boissonnat, Frédéric Chazal, Mariette Yvinec (/295)
+
+* Optimizing persistent homology based functions - Mathieu Carrière, Frédéric Chazal, et al. (2/15)
+
+# Schedule
+
+* 0930 - 1015: 수학특강1(국웅 선생님)
+
+* 1000 - 1015: 스터디 준비(Gen. Jordan)
+
+* 1015 - 1300: 스터디 w/ 태준씨
+
+* 1300 - 1350: Taking a walk w/ 본경이형
+
+* 1350 - 1415: Kaggle 랭킹 검색하다가 __파비__ 라는 회사에 대해 잠깐 둘러봄
+
+* 1415 - 1510: Arxiv check(DG 1개 겨우 봄.. intro인데..)
+
+* 1510 - 1540: Arxiv check 2
+
+* 1540 - 1600: 낮잠 
+
+* 1600 - 1750: Arxiv check 3 and survey on GNN
+
+* 1750 - 1818: Arxiv check 4(DG done..)
+
+* 1818 - 1936: 밥먹고 조교 추가배정된 것 처리(경영학 003반)
+
+* 1936 - 2140: Arxiv check 5(AT~) & 세훈씨랑 담소
+
+* 2140 - 
+
+
+# ToDo
+
+* 1개 빠진 샘플 찾아보기 
+    * 30028629
+
+* Autoencoder? / 새로운 모델(maybe 2d) 구상 / validation protocol 만들기
+
+* Implement PCG envelope
+
+* Segmentation model?
+
+* More training models
+
+# ToDo for weekend(하나도 못했던)
+
+* Prime decomposition method
+
+* Closed Model Theory
+
+* 세훈씨 + 준환씨 코드 구경
+
+* Handlebodies Ref.
+
+* Autoencoder Ref.
+
+* Rolfsen
+
+* Wall
+
+* Discrete Differential Geometry
+
+* A course in a metric geometry / oudot's book?
+* Other references you printed out ...
+
+# TODO
+
+- [ ] Make more models :D
+
+- [ ] Do some experiments with sound data (feature extracting first?)
+
+- [ ] Autoencoder / how about reading '12 automatic ecg blah blah'
+
+- [ ] Augmentation on training set
+
+- [ ] Read [_Evolution of unknotting strategies for knots and braids_](https://arxiv.org/abs/1302.0787)
+
+- [x] 1st chapter of Rolfsen's book
+
+- [ ] 1st chapter of Wall's book
+
+- [ ] Cnt comp 생각해보기
+
+- [ ] Recurrence plot?
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? Because there is _continuous_ homotopy between  them
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? (False, what the author want to say is just there is an another embedding for being unknot (by def.))
+
+- [ ] Read Ch2. of the thesis written by Kingma
+
+- [ ] stability condition reading
+
+- [ ] Marching cube code 살펴보기
+
+- [ ] CT dcm investigation (necessary?)
+
+- [ ] Diagram drawing 코드 분석(command only, 실행이라도 시켜보기)
+
+- [ ] PrimeDecomposition 원리 분석
+
+- [ ] Sphere packing algorithm
