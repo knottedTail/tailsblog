@@ -5,15 +5,15 @@ tags: [Daily]
 excerpt: Daily Report
 ---
 
-# Priority on Dawn
+# Priority on Dawn / ToDo List in this week
 
-__1__ 아카이브 보던거(AT) 마저 정리 - 오늘로 미룸
+__1__ ~~아카이브 보던거(AT) 마저 정리 - 오늘로 미룸~~
 
-__2__ 복습
+__2__ ~~복습~~
 
-__3__ Rolfsen further reading
+__3__ ~~Rolfsen further reading: 하다 중단, 자러감~~
 
-__4__ Seminar reading
+__4__ ~~Seminar reading~~
 
 __5__ Otto's lecture (2~3 lectures)
 
@@ -21,7 +21,18 @@ __6__ YOLO investigation
 
 __7__ Ray-Singer
 
-__8__ $n-1$ thing? 
+__8__ $n-1$ thing?: 아침에 잠깐 봄 / 내일 물어보기로
+
+__9__ pH 발표 준비
+
+__10__ Data extraction
+
+__11__ ECG input / output annotating(AI Gatekeeper)
+
+__12__ ECG annotation (for the new 20s project, what does need?)
+
+__13__ Knot 마무리
+
 
 # Arxiv Check
 
@@ -30,10 +41,90 @@ __8__ $n-1$ thing?
 [Online High-Dimensional Change-Point Detection using Topological Data Analysis](https://arxiv.org/abs/2103.00117)
 > Xiaojun Zheng, Simon Mak, Yao Xie
 
-Persistent Diagram based Change-Point(PD-CP) .. nonparametric change-point detection? / the distribution of points on persistence diagrams for _online_ detection
+(Persistent Diagram based) Change-Point(PD-CP) .. nonparametric change-point detection? / the distribution of points on persistence diagrams for _online_ detection
 
-[An introduction to Topological Data Analysis: fundamental and practical aspects for data scientists](https://arxiv.org/abs/1710.04019)
+__1__ a histogram representation constructed for each persistence diagram / time
+
+> distribute barcodes into $M$ different bins depending on its birth time, and sum up persistences of barcodes in the same bin.
+>
+> It's the form which is used in _recent developed method_..?? (allows us to leverage recent developments in empirical distribution based change-point
+methods)
+
+"breakpoints for the bins" are trained (before abrupt change)
+
+* 인포리언스 독자적 개발 .. CoDIP?
+
+__2__ _online non-parametric hypothesis test_ to detect abrupt(급격한) top. changes
+
+_non-parametric detection statistic_
+
+building the lower star filtration of both connected components and holes on $T$=300 images $\sim 90$ sec (RIPSER).
+
+[An introduction to Topological Data Analysis: fundamental and practical aspects for data scientists](  )
 > Frédéric Chazal (1), Bertrand Michel (2) ((1) DATASHAPE, (2) LSTA)
+
+Tools for pH
+* Gudhi (Maria et al., Fasy et al.(R))
+* Dionysus, PHAT, DIPHA, Giotto
+
+Backbone
+
+__1__ Distance(similarity) function on data -> metric of an ambient space
+
+__2__ _Continuous_ shape is built on top of the data.(simplicial complex w/ filtration)
+
+__3__ Extract top/geo info from the structures built on the data. Show _relativity_ like stability on the noise. Statistical are used.
+
+__4__ Provide new families of features from extrated info.
+
+[On Information Links](https://arxiv.org/abs/2103.02002)
+> Pierre Baudot
+
+Knot theory + Information theory, prob = linking number?
+
+Suggest : the negative minima of the $3$-way multivariate mutual information correspond to Borromean link, gen. the correspondence of the minima of $k$ multivariate interaction information with $k$ _Brunnian_ links in the binary variable case.
+
+[R-torsion of Compact Orientable Surfaces via Pants Decomposition](https://arxiv.org/abs/2103.02003)
+> Esma Dirican Erdal, Yaşar Sözen
+
+History:
+
+Reidemeister : Classify 3-dim lens spaces using R-torsion
+
+Franz : Generalize R-torsion on other dimensions
+
+Kirby-Siebenmann : Shown to be a topologicalinvariant
+
+and It is also an invariant of the basis of the homology of a manifold, is equal to the analytic torsion for compact orientable Riemannian manifolds.
+
+Let $\Sigma_{g,n}$ denote the compact orientable surface with genus $g \geq 2$ and boundary disjoint union of $n$ circles.
+
+By using a particular pants-decomposition of it, a formula computing the R-torsion of $\Sigma_{g,n}$ in terms of R-torsions of pairs of pants.
+
+[Farber's conjecture for planar graphs](https://arxiv.org/abs/2010.13530)
+> Ben Knudsen
+
+For a topological(?) space $X$, Topological complexity $TC(X)$ is introduced as a numerical invariant by __Farber__.
+
+## DG
+
+[A note on the periodic orbit conjecture](https://arxiv.org/abs/2103.02481)
+> Robert Cardona
+
+__The periodicorbit conjecture__:
+
+On closed manifolds, the set of lengths of the orbits of a non-vanishing vector field all whose orbits are closeed admits an upper bound.
+
+It is false by a counterexample by Sullivan, but true under geometric condition, _begin geodesible_.
+
+Author use the recent characterization of Eulerisable flows to prove that the conjecture for lager class of vector fields.
+
+[Geometric Invariants of Plane and Space Curves](https://arxiv.org/abs/2010.16415)
+> Hana Melanova
+
+Traditional study of plane/space algebraic curves by looking at their tangent vectors/curvatures/torsions -> not sufficitent.
+
+Author gen. classical curvature/torsion to higher algebraic curvatures.
 
 # Just to do
 
@@ -113,7 +204,31 @@ __REMEMBER:__ You always need more time to read. So, don't waste ur time.
 
 # Schedule
 
-* 0200 : 우선순위 정하기
+* 0200 - 0230: 우선순위 정하기 및 복습까지
+
+* 0230 - 0300: Rolfsen Reading but it was time to go bed
+
+* 1000 - 1030: 스터디 바람맞음
+
+* 1030 - 1130: n-1 dimensional Euler characteristic prob.
+
+* 1130 - 1330: 세미나 준비 + 세미나
+
+* 1330 - 1500: 스터디 준비 + 낮잠
+
+* 1500 - 1605: 스터디 준비
+
+* 1605 - 1750: 스터디 ....
+
+* 1750 - 1900: Arxiv check (AT)
+
+* 1900 - 1907: Arxiv check (DG) (Fast!)
+
+* 1907 - 2100: 밥 + 아무것도 안하기
+
+* 2100 - 2145: 아무것도 안하기
+
+* 2145 - 2410: 아마 차린 정신, Knot invariant numerical part 수정
 
 # ToDo
 
