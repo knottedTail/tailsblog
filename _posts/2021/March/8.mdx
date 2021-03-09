@@ -1,0 +1,288 @@
+---
+title: 03/08
+date: 2021-03-08 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# Arxiv Check
+
+
+## AT
+
+[The Euler Characteristic: A General Topological Descriptor for Complex Data](https://arxiv.org/abs/2103.03144)
+> Alexander Smith, Victor Zavala
+
+Euler Characteristic as discriptor in application fields.
+
+From filtration, EC curve is obtained.
+
+In Geometry of random fields, EC encodes info. of simple stat. descriptors(mean, var, ..) of more complex descriptors. : conn. between geom. and stat.
+
+EC curve: low-dim descriptors, simipler than persistence diagrams
+
+Goal: applied perspective on the EC! (Fields: Brain monitoring, spatio-temporal behavior of fields, image analysis, point cloud analysis, )
+
+[On strongly inflexible manifolds](https://arxiv.org/abs/2101.01961)
+> Cristina Costoya, Vicente Muñoz, Antonio Viruel
+
+_inflexible manifolds_?
+
+An oriented cpt. conn. $n$-manifold $M$ is inflexible $\Longleftrightarrow$ it does not admit self-maps of unbounded degree. (all self-maps have bounded degree)
+
+$+$ if all the maps from any other oriented cpt. conn. $n$-manifold have bounded degree, then $M$ is said to be _strongly inflexible_.
+
+The existence of inflexible manifolds $\Leftarrow$ _Arkowitz_, _Lupton_.
+
+_No example of simply-connected strongly inflexible manifold is known_.
+
+How to check?: using _Sullivan_ models to check simply conn. mfd is strongly inflexible.
+
+$+$ Simplicial volume is used to show that oriented closed connected hyperbolic manifolds are inflexible.
+
+in fact, there exists example of inflexible manifolds with 0 or unknown simplicial volume.
+
+## GT
+
+[Tribracket Polynomials](https://arxiv.org/abs/2103.02704)
+> Sam Nelson, Fletcher Nickerson
+
+Introducing $6$ variable polynomial invariant of _Niebrzydowski tribrackets_(analogous to qunadle/rack/biquandle polynomials)
+
+_quandle polynomial_: $2$ variable polynomial invariant of finite quandles.
+
+.. 노잼각
+
+[Decomposition space theory](https://arxiv.org/abs/2103.02977)
+> Boldizsar Kalmar
+
+__Introduction to Decomposition theory, classicial/well-known results__
+
+__Q__. If a partitioning/decomposition of topological space is given, what is the topology of the quotient space?
+
+__Main Result__. _upper semi-continuous_ decomposition $\rightarrow$ a homeomorphic decomposition space if the decomposition is _shrinkable_(existence of self-homeomorphisms of the space which shrink the partitions into arb. small sets in a controllable way.); _Bing shrinkablity_ criterion.
+
+[Ribbon 2-knot groups of Coxeter type](https://arxiv.org/abs/2103.01987)
+> Jens Harlander, Stephan Rosebrock
+
+Wirtinger presentations of deficiency $1$ $\leftarrow$ knots, long virtual knots, and ribbon $2$-knots.
+
+And they are encoded by (word)labeled oriented trees, called _LOT_ presentations which is important testing ground for the validity/failure of Whitehead's asphericity conjecture.
+
+A _(word) labeled oriented graph_ is an oriented finite graph $\Gamma$ on vertices $\mathbb{x}$ and edges $\mathbb{e}$ where each oriented edge is labeled by a workd in $\mathbb{x}^{\pm1}$.
+
+Associated with a LOG $\Gamma$ presentation:
+$$
+P(\Gamma) = \langle\mathbb{x} |  \mathbb{r} = \{r_e | e \in \mathbb{e}\}\rangle
+$$
+where $r_e = xw(wy)^{-1}$ in case $e = (x \xrightarrow{w} y)$.
+
+[Experimental Mathematics Approach to Gauss Diagrams Realizability](https://arxiv.org/abs/2103.02102)
+> A. Khan, A. Lisitsa, A. Vernitski
+
+Is a _Gauss diagram_(achord diagram) __realizable__? i.e. does itcorresponds to a knot / an immersed curve?
+
+First answer : $1930$s by Dehn, he found a suficient algorithmic solution based on the existence of a _touch Jordan curve_ which is the image of a transformation of the knot diagram by successive splits replacing all the crossings.
+
+L. Lovasz and M.L. Marx in $1976$, found a second necessary condition
+
+And the third condition which allowed the set of three conditions to be sufficient is found by r.C. Read and P. Rosenstiehl in the same year.
+
+__The Gauss Diagram__
+
+the immersing circle with the preimage of each double point connected with a __chord__.
+
+
+# Prolog
+
+논리형 프로그래밍 언어 _programmation enlogique_. 순서가 아닌 논리 규칙에 의해 진행됨. 예제로 미/적분 정의 가능
+
+연식이 좀 된 것 같다.
+
+
+
+# Priority on Dawn / ToDo List in this week
+
+__5__ Otto's lecture (2~3 lectures)
+
+__6__ YOLO investigation
+
+__7__ Ray-Singer
+
+__8__ $n-1$ thing?: 아침에 잠깐 봄 / 내일 물어보기로
+
+__9__ pH 발표 준비
+
+__10__ Data extraction
+
+__11__ ECG input / output annotating(AI Gatekeeper)
+
+__12__ ECG annotation (for the new 20s project, what does need?)
+
+# Just to do
+
+> 주말에까지 일을 늘리는 건 못할 짓인 것 같다.
+
+* 오류조사, uPoly 관련된 에러가 추가로 난 것이 있는지, 계산되지 않은 ideal이 있는지 모두 조사
+
+* Jones - volume 데이터 조사(중복도)
+
+* 가능하면 data manager module 만들기?
+
+* 시간되면 resolution 분석도
+
+* fork compatible sow 만들기
+
+* fork로 Groebner 관련 invariants 돌리기
+
+* persistent cup product 있는 논문 분석 [Link](https://arxiv.org/pdf/1902.09138.pdf)
+
+# Want to do 
+
+* How about __Persistence Torsion__? or .. __Persistence Product__!?
+
+* Experimental Mathematics 논문들 살펴보기
+
+* Knot drawing program 분석(Theoretical?)
+
+* PCG Segmentation 알아보기 -> CinC2016 with MatLab
+
+* 해당 분야의 배경지식 없이 인자 사이의 관련성을 찾는 것이 가능할까? / 배경지식 없이 행할 수 있는 모든 분석 -> 통계적인 방법을 배워야할까보다
+
+* Discrete component is just a high probablistic distribution?
+
+* Data with uncertainty
+
+# 2021 Reading Challenge
+
+__REMEMBER:__ You always need more time to read. So, don't waste ur time.
+
+* DISCRETE DIFFERENTIAL GEOMETRY: AN APPLIED INTRODUCTION - Keenan Crane (/170)
+
+* All of Statistics, A concise Course in Statistical Inference - Larry Wasserman (/736)
+
+* 논어 - 공자 (/421)
+
+* An Introduction to Homological Algebra - Charles A. Weibel (/464)
+
+* Octahedral developing of knot complement I: Pseudo-hyperbolic structure - Hyuk Kim, Seonhwa Kim, Seokbeom Yoon (/54)
+
+* Computation of Large Asymptotics of 3-Manifold Quantum Invariants - Clément Maria, Owen Rouillé (/26)
+
+* Variational inference & deep learning: A new synthesis - Diederik P. Kingma (24/174)
+
+* ~~STORIES OF YOUR LIFE AND OTHERS - Ted Chiang (447/447)~~
+
+* Lie Groups, Lie Algebras, and Representations - Brain C. Hall (/453)
+
+* A Comprehensive Introduction to Differential Geometry - Spivak (/512)
+
+* A Course in Metric Geometry - Dmitri Burago, Yuri Burago, Sergei Ivanov (/425)
+
+* Reidemeister torsion on character varieties - Leo Benard (24/110)
+
+* Persistent Intersection Homology - Paul Bendich, John Harer (17/32)
+
+* 데미안 - (78/244)
+
+* Introduction to Combinatorial Torsions - Vladimir Turaev (20/127)
+
+* Knots and Links - Rolfsen Dale (12/439)
+
+* Geometric and Topological Inference - Jean-Daniel Boissonnat, Frédéric Chazal, Mariette Yvinec (/295)
+
+* Optimizing persistent homology based functions - Mathieu Carrière, Frédéric Chazal, et al. (2/15)
+
+# Schedule
+
+* 1000 - 1115: Machine learning knot meeting ... 있는 줄 알았다가 바람 맞음 + 바람 맞은 김에 집에서 쉬려 오려고 나가자마자 국웅 선생님과 1시 미팅 잡힘
+
+* 1115 - 1300: 인생의 쓴맛을 느끼며 Euler char 정리 / 성은 누나에게 다시 설명(why $\chi(A) = \chi(B)$?) 
+
+* 1300 - 1400: 수학특강1 회의 w/ 국웅 교수님
+
+* 1400 - 1410: 아무것도 하기 싫다 하지만 knot 계산 중간확인
+
+* 1410 - 1415: Arxiv Check, GT 추가하다 unread 피드가 날아감
+
+* 1415 - 1430: Arxiv Check 하다 졸도
+
+* 1430 - 1510: 졸도
+
+* 1510 - 1610: Arxiv Check (done)
+
+* 1610 - 1645: 졸도
+
+* 1645 - : 발표준비 + ECG data arrangement
+
+# ToDo
+
+* 1개 빠진 샘플 찾아보기 
+    * 30028629
+
+* Autoencoder? / 새로운 모델(maybe 2d) 구상 / validation protocol 만들기
+
+* Implement PCG envelope
+
+* Segmentation model?
+
+* More training models
+
+# ToDo for weekend(하나도 못했던)
+
+* Prime decomposition method
+
+* Closed Model Theory
+
+* 세훈씨 + 준환씨 코드 구경
+
+* Handlebodies Ref.
+
+* Autoencoder Ref.
+
+* Rolfsen
+
+* Wall
+
+* Discrete Differential Geometry
+
+* A course in a metric geometry / oudot's book?
+* Other references you printed out ...
+
+# TODO
+
+- [ ] Make more models :D
+
+- [ ] Do some experiments with sound data (feature extracting first?)
+
+- [ ] Autoencoder / how about reading '12 automatic ecg blah blah'
+
+- [ ] Augmentation on training set
+
+- [ ] Read [_Evolution of unknotting strategies for knots and braids_](https://arxiv.org/abs/1302.0787)
+
+- [x] 1st chapter of Rolfsen's book
+
+- [ ] 1st chapter of Wall's book
+
+- [ ] Cnt comp 생각해보기
+
+- [ ] Recurrence plot?
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? Because there is _continuous_ homotopy between  them
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? (False, what the author want to say is just there is an another embedding for being unknot (by def.))
+
+- [ ] Read Ch2. of the thesis written by Kingma
+
+- [ ] stability condition reading
+
+- [ ] Marching cube code 살펴보기
+
+- [ ] CT dcm investigation (necessary?)
+
+- [ ] Diagram drawing 코드 분석(command only, 실행이라도 시켜보기)
+
+- [ ] PrimeDecomposition 원리 분석
+
+- [ ] Sphere packing algorithm
