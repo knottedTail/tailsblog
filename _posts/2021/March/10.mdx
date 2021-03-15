@@ -1,45 +1,95 @@
 ---
-title: 03/07
-date: 2021-03-07 00:00:00
+title: 03/10
+date: 2021-03-10 00:00:00
 tags: [Daily]
 excerpt: Daily Report
 ---
-# Data Extraction Notes
+# Arxiv Update
 
-CSV파일에서 빠진 목록
- * HY/ECG1/2019-01-26/2019-02-14/ : 191개
- * HY/ECG1/2019-02-19-2/2019-02-25-2 : 172개
- * HY/ECG1/2019-03-05/20190516/ : 26개
- * HY/ECG1/2019-03-20-1/2019-03-11 : 191개
- * HY/ECG1/20190128/2019-02-19-1 : 175개
-= 755
+* GT : 12시쯤
 
-210308: 755개 모두 채워짐, total: 45335 + 939 - 4 =
-CSV에는 있으나 WAV에는 없음 : 4개, wave에 문제가 있어 추출할 수 없음
-=> 총 755-4=751개 없음
+* DG : 14시 38분쯤..?
 
-중복데이터? : 있음
-    * SEV/ECG1/421_20181114_1811211805.pdf & SEV/ECG2/421_20181114_1811211805.pdf
-기존데이터와 중복 : 있음
-    * complete_data/BundangSNU_hospital/10000502/10000502_20181130.xml
-    * SNUB/ECG3/~2019.11.22/10000502_20181130.xml
+* AT : 16시쯤?
+
+# Arxiv Check
+
+## GT
+
+[AFPP and Unions of Convex Disks in the Digital Plane](https://arxiv.org/abs/2103.05098)
+> Laurence Boxer
+
+__Q.__ What is _the Digital Plane_?
+
+AFPP : The Approximate Fixed Point Property, which is a property for fixed points in digital topology.
+
+__A.__ $\mathbb{Z}^2$
+
+[Singquandles, Psyquandles and Singular Knots: A Survey](https://arxiv.org/abs/2103.05620)
+> Jose Ceniceros, Indu R. Churchill, Mohamed Elhamdadi, Mustafa Hajij
+
+Algebraic structures related to _singular knot theory_ : quandles, psyquandles and singquandles.
+
+Esp. focusing on the singquandles first, then psyquandles(gen. of oriented signquandles)
+
+Fox, 1961, A quick trip through knot theory : a digrammatic definition of colorability of a knot is introduced $\rightarrow$ an invarinat of knots!
+
+_Quandle_ is introduced $80$s by Joyce and Matveev, independently.
+
+__Rack__
+
+A set $R$ with a binary operation $\lhd$ such that for every $a,b,c \in R$, the self-distributive law holds:
+$$
+a \lhd (b \lhd c) = (a \lhd b) \lhd (a \lhd c)
+$$
+and for every $a,b \in R$, there exists a unique $c \in R$ such that
+$$
+a \lhd c = b
+$$
+.. but the above definition is suboptimal for certain purposes ...(it contains an existential quantifier which is not really necessary)
+
+To avoid this, define the unique $c \in R$ such that $a \lhd c = b$ as $b \rhd a$, then
+$$
+a \lhd c = b \Leftrightarrow c = b \rhd a
+$$
+and thus
+$$
+a \lhd (b \rhd a) = b = (a \lhd b) \rhd a
+$$
+
+And there are various way to define rack equivalently.
+
+__Quandle__
+
+A quandle is a rack $(R, \lhd)$ with additional property
+$$
+a \lhd a = a
+$$
+or equivalently,
+$$
+a \rhd a = a
+$$
+
+e.g. $a \lhd b = aba^{-1}$ is a quandle with $b \rhd a = a^{-1}ba = a{-1} \lhd b$.
+
+__Singular Knot__
+
+The theory of singular knots was itnroduced in the $90$s by V. A. Vassiliev, in _Cohomology of knot spaces_.
+
+A singular knot is an immersed circle in $\mathbb{R}^3$ with finitely many transverse double points. [What is a Singular Knot?](https://arxiv.org/abs/1811.08543)
+
+## DG
+
+## AT
 
 
-## xml
-1. description extractor
-2. 10s data with description, save them
+# A day for preparation for the talk
 
-## data arrangement
-.npz and .pkl
-
-.npz = np.save(path, **db)
-.pkl = pickle.save(db(array? dict?))
-
-0. compatiblity check(done, some of HY data is missing in .csv file)
-1. 
-
+About doubling dimensions, [Link1](https://mathoverflow.net/questions/100777/doubling-dimension-of-a-euclidean-space), [Link2](https://mathoverflow.net/questions/98007/covering-a-unit-ball-with-balls-half-the-radius)
 
 # Priority on Dawn / ToDo List in this week
+
+__0__ pH 발표 준비
 
 __5__ Otto's lecture (2~3 lectures)
 
@@ -47,15 +97,12 @@ __6__ YOLO investigation
 
 __7__ Ray-Singer
 
-__8__ $n-1$ thing?: 아침에 잠깐 봄 / 내일 물어보기로
-
-__9__ pH 발표 준비
-
 __10__ Data extraction
 
 __11__ ECG input / output annotating(AI Gatekeeper)
 
 __12__ ECG annotation (for the new 20s project, what does need?)
+
 
 # Just to do
 
@@ -133,11 +180,30 @@ __REMEMBER:__ You always need more time to read. So, don't waste ur time.
 
 # Schedule
 
-* 2300 - 0525: extract하는 함수들은 다 만듦
+* 1000 - 1030: Ray-Singer 잠깐 보기
 
-* 0525 - 0650: 좀 더 검사하다 전장 좀 뜀
+* 1030 - 1100: 짧스터디(Torsion의 Sign 문제 해결?!)
 
-* 0650 - 0826: 효율적인 구조 생각하고 테스트 후 계산 걸어둠
+* 1100 - 1150: 뭐했더라.. 미얀마 쿠데타 관련 위키 읽기
+
+* 1150 - 1212: 짧잠
+
+* 1212 - 1325: Skimming on Sec.5 and Sparse Rips
+
+* 1325 - 1345: Arxiv Check
+
+* 1345 - 1410: 짬산책
+
+* 1410 - 1415: 짬조교
+
+* 1415 - 1600: 발표준비, 세훈씨께 4절 요약 여쭤보러 갔다가 오토를 만났다가 경모를 만남
+
+* 1600 - 1808: 발표준비 2 / meeting w/ Otto
+
+* 1808 - 1905: 저녁 + AE 돌리기
+
+* 1905 : 발표준비 3 / Arxiv Check 2는 나중에
+
 
 # ToDo
 

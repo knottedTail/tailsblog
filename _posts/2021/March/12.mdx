@@ -1,42 +1,13 @@
 ---
-title: 03/07
-date: 2021-03-07 00:00:00
+title: 03/12
+date: 2021-03-12 00:00:00
 tags: [Daily]
 excerpt: Daily Report
 ---
-# Data Extraction Notes
 
-CSV파일에서 빠진 목록
- * HY/ECG1/2019-01-26/2019-02-14/ : 191개
- * HY/ECG1/2019-02-19-2/2019-02-25-2 : 172개
- * HY/ECG1/2019-03-05/20190516/ : 26개
- * HY/ECG1/2019-03-20-1/2019-03-11 : 191개
- * HY/ECG1/20190128/2019-02-19-1 : 175개
-= 755
+# YOLO
 
-210308: 755개 모두 채워짐, total: 45335 + 939 - 4 =
-CSV에는 있으나 WAV에는 없음 : 4개, wave에 문제가 있어 추출할 수 없음
-=> 총 755-4=751개 없음
-
-중복데이터? : 있음
-    * SEV/ECG1/421_20181114_1811211805.pdf & SEV/ECG2/421_20181114_1811211805.pdf
-기존데이터와 중복 : 있음
-    * complete_data/BundangSNU_hospital/10000502/10000502_20181130.xml
-    * SNUB/ECG3/~2019.11.22/10000502_20181130.xml
-
-
-## xml
-1. description extractor
-2. 10s data with description, save them
-
-## data arrangement
-.npz and .pkl
-
-.npz = np.save(path, **db)
-.pkl = pickle.save(db(array? dict?))
-
-0. compatiblity check(done, some of HY data is missing in .csv file)
-1. 
+* 데이터가 스스로 가치를 가지려면, 학습 대상에 해당되는, 또 그 정반대에 해당되는 데이터를 모두 가져야한다.
 
 
 # Priority on Dawn / ToDo List in this week
@@ -47,15 +18,12 @@ __6__ YOLO investigation
 
 __7__ Ray-Singer
 
-__8__ $n-1$ thing?: 아침에 잠깐 봄 / 내일 물어보기로
-
-__9__ pH 발표 준비
-
 __10__ Data extraction
 
 __11__ ECG input / output annotating(AI Gatekeeper)
 
 __12__ ECG annotation (for the new 20s project, what does need?)
+
 
 # Just to do
 
@@ -133,11 +101,12 @@ __REMEMBER:__ You always need more time to read. So, don't waste ur time.
 
 # Schedule
 
-* 2300 - 0525: extract하는 함수들은 다 만듦
+* 1000 - 1020: 전세입자에게 메세지 보내기(택배), 국웅 교수님과 짧미팅 약속잡기
 
-* 0525 - 0650: 좀 더 검사하다 전장 좀 뜀
+* 1020 - 2030: Knot :D (강병민 박사님 talk)
 
-* 0650 - 0826: 효율적인 구조 생각하고 테스트 후 계산 걸어둠
+* 2030 - : 퇴근후 공원치맥
+
 
 # ToDo
 
