@@ -1,120 +1,64 @@
 ---
-title: 02/10
-date: 2021-02-10 00:00:00
+title: 03/25
+date: 2021-03-25 00:00:00
 tags: [Daily]
 excerpt: Daily Report
 ---
- 
-내일부터 연휴!
 
-# SSH Portforwarding
+3-weeks conscutive talks !
 
-```bash
-ssh -Nfl 27221:localhost:27221 lk4
-```
+* Frog book에 intersection theory 있음!
 
-# Python
+# Arxiv Check
 
-## eval v.s. exec
+## GT
 
-eval : for python 'formula' (e.g. $3+1$, $a+2$ etc.)
+## DT
 
-exec : for python 'sentence'
+## AT
 
-## Upscaling for Convolution Layer
+# 일단 생각나는 오늘의 ToDo
 
-* Transposed Convolution
+* Turaev Ch2 
 
-In convolutional layer, one uses __kernel__ which acts like filter of given size.
+* zigzag algorithm
 
-[Simple explanation](https://naokishibuya.medium.com/up-sampling-with-transposed-convolution-9ae4f2df52d0)
+* Rolfsen? Turaev?
 
-For example, let us assume a size of input is $4\times4$, with a kernel of size $3$.
+* ML check (ㅠㅠ)
 
-With $0$-padding, a size of output is $2\times2$.
+* Mr.Lie
 
-In this situation, an operation of the kernel can be represented for _flatten_ input data whose size is $16\times1$.
+* Knot data 생태조사
 
-__i.e.__ kernel matrix can be reshaped as a $16\times4$ ( $4\times4$ and $2\times2$ ) matrix.
+# Priority on Dawn / ToDo List in this week
 
-In the above sense, _transposed convolution_ means that convolution with __transposed__ kernel matrix which have more rows than columns, unlike general convolution.
+__1__ Lie group study!
 
-__NOTE:__ Transposed covolution may occur _checkboard artifects_ for images.
+__2__ ($3$-manifold study!) Otto's lecture (3~4 lectures) v
 
-[How to avoid _checkbox_ artifects patterns in deconvolution](https://distill.pub/2016/deconv-checkerboard/)
+__3__ Hyperbolic geometry study!
 
-## How to calculate output size of ConvTranspose2d
+__4__ C++ gudhi로 여러 pH 계산해보기
 
-Unlike Conv2d, __stride__ has different meaning in this section.
+__5__ ML 탐방 ㅎㅎ
 
-In Conv2d, stride indicates length of space between location of applicated filters on the given tensors.
+# Just to do
 
-But in ConvTranspose2d, stride indicates length of space between elements of given input tensor.
-
-Also, __padding__ has differnet meaning in ConvTranspose2d.
-
-In Conv2d, padding is used to expand the size of tensor, but in ConvTranspose2D, it is used to ___reduce___ the size of tensor.
-
-It might be set to _ConvTranspose2d_ could be an inverse operation of _Conv2d_.
-
-## XAI = Explainable AI
-
-## Check version of CUDA
-
-```bash
-nvcc -- version
-```
-
-* nvcc : Nvidia Cuda Compiler
-
-## How to add kernel to jupyter system
-
-In your venv,
-
-```bash
-conda install ipykernel
-python -m ipykernel --user --name [name of kernel] --display-name "[displayname]"
-```
-
-## L1 Regularization
-
-Usefor feature selection! (why?)
-
-$=$ add constant to each gradient.
-
-# Mathematica
-
-* Groebner는 magma/mathematica 모두 유리식에 대해 잘 계산이 됨, magma의 NormalForm만 문제인듯,
-
-# Weekend to do
-
-* Jones - volume 데이터 조사(중복도)
-
-* 가능하면 data manager module 만들기?
+> 주말에까지 일을 늘리는 건 못할 짓인 것 같다.
 
 * 시간되면 resolution 분석도
 
 * fork compatible sow 만들기
 
-* fork로 Groebner 관련 invariants 돌리기
-
 * persistent cup product 있는 논문 분석 [Link](https://arxiv.org/pdf/1902.09138.pdf)
 
-* Rolfsen 책으로 갈아탈까 해보기
-
-* 책장 주문
-
-* 침대 옆 협탁주문
-
-* 악기 세팅
-
-* 장식장 정리
-
-* 모니터?
-
-# Want to do 
-
 * How about __Persistence Torsion__? or .. __Persistence Product__!?
+    * Pers. torsion : NO intutive, hard to calculate
+
+* Singular 계산 프로세스 뒤져보기
+
+* SnapPy Chern-Simons 계산 프로세스를 통해 $\pm \frac{\pi^2}{4}$ 구간에 몰리는 이유 찾아보기
 
 * Experimental Mathematics 논문들 살펴보기
 
@@ -126,7 +70,9 @@ $=$ add constant to each gradient.
 
 * Discrete component is just a high probablistic distribution?
 
-* Data with uncertainty
+* Dunfield / Burton 논문 참고하여 exp. 관련 논문은 어떻게 쓰나 report
+
+* __Data with uncertainty__
 
 # 2021 Reading Challenge
 
@@ -160,22 +106,27 @@ __REMEMBER:__ You always need more time to read. So, don't waste ur time.
 
 * 데미안 - (78/244)
 
-* Introduction to Combinatorial Torsions - Vladimir Turaev (/127)
+* Introduction to Combinatorial Torsions - Vladimir Turaev (20/127)
+
+* Knots and Links - Rolfsen Dale (12/439)
+
+* Geometric and Topological Inference - Jean-Daniel Boissonnat, Frédéric Chazal, Mariette Yvinec (/295)
+
+* Optimizing persistent homology based functions - Mathieu Carrière, Frédéric Chazal, et al. (2/15)
 
 # Schedule
 
-* 1005 - 1015: 세팅
+* 1000 - 1215: 발표준비(영어는 아직), ECG duplicated data 처리 방식 상의(파일 이름, description 등에서 찾아보기로, 예전 데이터와 중복확인)
 
-* 1015 - 1240: Autoencder랑 친해지기, MMA 함수 수정 약간?
+* 1215 - 1255: 발표준비!(Speaking)
 
-* 1240 - 1315: 낮잠
+* 1255 - 1600: 발표!!(직전까지 초콜릿 2개) 
 
-* 1315 - 1745: Autoencoder랑 놀면서 knot 관련된것도 좀 하고 ...
+* 1600 - 1830: Turaev study
 
-* 1745 - 1755: C[3,n], C[4,n] case genus 분석 결과 계산 돌려놓기 + INF 프로젝트 결과보고서 관련 잡담
+* 1830 - 2130: 밥먹고 멍(형주 선배랑 수다)
 
-* 1755 - : 진짜밥!
-
+* 2130 - 2345: 내일 짧발표 자료 준비
 
 # ToDo
 
@@ -209,7 +160,6 @@ __REMEMBER:__ You always need more time to read. So, don't waste ur time.
 * Discrete Differential Geometry
 
 * A course in a metric geometry / oudot's book?
-
 * Other references you printed out ...
 
 # TODO
@@ -224,7 +174,7 @@ __REMEMBER:__ You always need more time to read. So, don't waste ur time.
 
 - [ ] Read [_Evolution of unknotting strategies for knots and braids_](https://arxiv.org/abs/1302.0787)
 
-- [ ] 1st chapter of Rolfsen's book
+- [x] 1st chapter of Rolfsen's book
 
 - [ ] 1st chapter of Wall's book
 
@@ -249,6 +199,3 @@ __REMEMBER:__ You always need more time to read. So, don't waste ur time.
 - [ ] PrimeDecomposition 원리 분석
 
 - [ ] Sphere packing algorithm
-
-
-
