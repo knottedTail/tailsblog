@@ -258,3 +258,33 @@ The ECG of chinese has been downloaded. Ref: [ICBEB2018](http://2018.icbeb.org/C
     * Too small abnormal data per each disease to learn(in fact, ratios of abnormal case are about 90%).
 3. AutoEncoder (Kingma's thesis?)
 ---
+
+# About New Dataset
+> 21/04/01
+
+In .xlsx file, pid doesn't give a 1-1 correspondence.
+
+e.g. '2750417'
+
+SEV/ECG3가 patient id를 다시 넘버링 한 정황이보임
+
+Q. 중복 데이터 in new DB (이름으로 봐서)
+A. SEV,HY: 있음, SNU: 없음
+
+Q. In HY, ECG1 == ECG2?
+A. |ECG1| >> |ECG2|, There is no inclusion
+
+Q. 예전 데이터가 포함되어 있나?
+A. 파일 이름들의 inclusion 관계를 조사했을 때, 이번 데이터에 예전 데이터가 모두 들어있음
+
+Q. SEV/ECG3 가 SEV/ECG1, SEV/ECG2의 정보를 모두 포함하고 있나?
+A. 개수로 봐선 전혀 아님
+
+Q. 그래서 우리가 가지고 있는 label 수는?
+A. SEV = 237, HNU = 621(400), SNU = 924, total = ?!
+
+Q. old <-> new pid 사이의 intersection이 있는지 (SEV only)
+A. Nope
+
+Q. SNUB, HY의 경우에 폴더이름 = extract된 이름 인지
+A. Yes
