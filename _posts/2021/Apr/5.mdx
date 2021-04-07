@@ -1,0 +1,399 @@
+---
+title: 04/05
+date: 2021-04-05 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+* Frog book에 intersection theory 있음!
+
+* 막히면 김선화 선생님께 질문 부담없이 드리기
+
+# Arxiv Check
+
+## GT
+
+[0-Shake Slice Knots are Slice](https://arxiv.org/abs/2104.00247)
+> Selman Akbulut
+
+_Recall_ a knot $K \subset S^3$ is called _slice_ if it is the boudnary of a properly imbedded smooth disk $D^2 \subset B^4$ (sliced by $S^3$?)
+
+__Definition of framing..?__ ($h_K(r)$)
+
+$K$ is _$r$-shake slice_ if a generator of $H_2(K^r) = \mathbb{Z}$ is represented by a smoothly imbedded $2$-sphere in $K^r$.
+
+where $K^r = B^4 + h_K(r)$ is the $4$-manifold obtained by attaching a $2$-handle to $B^4$ along ther knot $K$ with _framing_ $r$.
+
+[Hyperbolic volume, mod 2 homology, and k-freeness](https://arxiv.org/abs/2010.03676)
+> Rosemary K. Guzman, Peter B. Shalen
+
+If $M$ is any closed, orientable hyperbolic $3$-manifold with $\text{vol}{M} \leq 3.69$, then $\dim{H_1(M;\mathbb{F}_2)} \leq 7$.
+
+As a consequence of the __Mostow Rigidity Theorem__, a finite-volume hyperbolic $3$-manifold is determined up to isometry by its topology type, any geometrically defiend invariant of such a manifold, such as its volume, may be regarded as a topological invariant.
+
+It has long been known that for any prime $p$, the dimension of $H_1(M;\mathbb{F}_p)$ is liniearly bounded in terms of $\text{vol}M$.
+
+[Homological Filling Functions with Coefficients](https://arxiv.org/abs/2009.13489)
+> Xingzhe Li, Fedor Manin
+
+Geometric group theoriest $\rightarrow$ isoperimetric phenomena! __e.g.__ Dehn function.
+
+__Area of a relation $w$__
+
+Let $G = \langle X \vert R \rangle$.
+
+$w$ is a relation $\Leftrightarrow$ $w$ belongs to the normal closure of $R$ __i.e.__ there exists a representation of $w$ as
+$$
+w = u_1 r_1 u_1^{-1} \cdots u_m r_m u_m^{-1} \text{ in } F(X)
+$$
+where $m \geq 0$ and where $r_i \in R^{\pm 1}$ for $i=1,\cdots,m$.
+
+the _area_ of $w$ with respect $G = \langle X \vert R \rangle$, denoted $\text{Area}(w)$, is the smallest $m \geq 0$ such that there exists a representation like above for $w$ ans the product in $F(X)$ of $m$ conjugates of elements of  $R^{\pm 1}$.
+
+It can be shown that $\text{Area}(w)$ is the smallest number of $2$-cells in a van Kampen diagram over $G=\langle X \vert R \rangle$ with boundary cycle labelled by $w$.
+
+The _Dehn function_ of a finite presentation is defined as
+$$
+\text{Dehn}(n) = \max\{ \text{Area}(w) \vert w = 1 \in G,\, |w| \leq n,\, w \text{ freely reduced.} \}
+$$
+or, defined as the smallest isoperimetric function for $G=\langle X \vert R \rangle$, for any other isoperimetric function $f(n)$, we have $\text{Dehn}(n) \leq f(n)$ for every $n \geq 0$.
+
+where an _isoperimetric function_ for a finite presentation is a monotone non-decreasing function
+$$
+f : \mathbb{N} \rightarrow [0, \infty)
+$$
+such that $\text{Area}(w) \leq f(|w|)$ for every freely reduced word $w \in F(X)$ with $w=1 \in G$.
+
+[Carrick mat and further development of bipartite knots](https://arxiv.org/abs/2103.17254)
+> Alina Pavlikova
+
+Problem $1.60$ in Kirby's list of open problems in topology.
+
+"Which knots possess a matched diagram?"
+
+Conjecture: "There are oriented knots without a matached diagram."(open)
+
+__Alexander Module__
+
+For every subgroup $H$ in $\pi_1(X)$, there is corresponding covering space $\tilde{X}$ whose fundamental group is $H$.
+
+Take $H = [\pi_1(X), \pi_1(X)]$. Then, the projection $p:\tilde{X} \rightarrow X$ induceds $p_* \pi_1(\tilde{X}) \rightarrow \pi_1(X)$ with $p_*\pi_1(\tilde{X}) = [\pi_1(X), \pi_1(X)]$..
+
+Since the covering is __normal__, Deck transformation is isomorphic to $\pi_1(X) / [\pi_1(X), \pi_1(X)] \simeq H_1(X)=\mathbb{Z}$.
+
+Denote the deck transformation of $\tilde{X}$ corresponding to $t$, the generator of $H_1(X)$, by $\tau$.
+
+Note that the abelian group $H_1(\tilde(X))$ is naturally endowed with the structure of a module over a the group ring $\mathbb{Z}[H_1(\tilde{X})]=\mathbb{Z}[t, t^{-1}]$.
+
+This module, $M_K$, is called the _Alexander module_ of a knot $K$.
+
+And.. get a related matrix, build ideals, so on..
+
+[On the Visibility of Alternating +Achiral Knots](https://arxiv.org/abs/1503.01897)
+> Nicola Ermotti, Cam Van Quach Hongler, Claude Weber
+
+It is well-known that many topological invarinats can be detected from a minimal projection $\Pi$ of $K$, crossingnumber, genus, etc.
+
+$\Rightarrow$ __Achirality__?!
+
+A knot $K$ is $+$achiral if there exists as mirror homeo. $\Psi: (S^3, K) \rightarrow (S^3, K)$ which reverses the orientation of $S^3$ but preserves the orientation of $K$
+
+$-$achiral if there exists a mirror homeo. $\Psi: (S^3, K) \rightarrow (S^3, K)$ which reverses the orientation of both $S^3$ and $K$.
+
+[The Exact Computation of A Real Hyperbolic Structure on the Complement of the Borromean Rings](https://arxiv.org/abs/2104.00516)
+> Alejandro Ucan-Puc
+
+A classical construction of the Hyperbolic structure of the complemenet of a link in the sense of _Thurston_ for the Borromean rings link.
+
+... 패스
+
+[Ihara zeta function and twisted Alexander invariants](https://arxiv.org/abs/2104.00215)
+> Zipei Zhuang
+
+Let $q: \mathbb{Z}[\mathbb{F}_n] \longrightarrow \mathbb{Z}[\Gamma]$ be an induced homomorphism between the group rings of free group and the fundamental group of a given knot.
+
+nad $\rho:\Gamma \longrightarrow GL(m;\mathbb{F})$ be a representation, and write
+$$
+\rho_*: \mathbb{Z}(\mathbb{F}_n) \longrightarrow \mathbb{Z}GL(m;\mathbb{F}) \subset GL(m;\mathbb{F})
+$$
+for the ring homomorphism induced by $\rho$.
+
+Denoete $\Phi$ by a composition of $\mathbb{Z}\mathbb{F}_n \longrightarrow \mathbb{Z}\Gamma$ and $\rho_* \otimes  \alpha_* : \mathbb{Z}\Gamma \longrightarrow GL(m;\mathbb{F}) \otimes \mathbb{Z}[t, t^{-1}] \subset GL(m;\mathbb{F}[t,t^{-1}])$
+
+and let $A_\rho = (\Phi(\frac{\partial r_i}{\partial x_j})_{i,j})$.
+
+is called __the twisted Alexander matrix__ of $\Gamma$ assiciated to the representation $\rho$.
+
+the twisted Alexander polynomial of $K$ for $\rho$ is defined to be
+$$
+\Delta_{K, \rho}(t) = \frac{\det A_{\rho, K}}{\det \Phi(x_k - 1)}
+$$
+
+Note: twisted $\rightarrow$ usual Alexander polynomial when $\rho$ is the trivial representation. (to $GL(1;\mathbb{R})$)
+
+[Polynomial link invariants and quantum algebras](https://arxiv.org/abs/2104.00989)
+> Hoel Queffelec
+
+Algebraic setup that allows for golbal definitions of quantum polynomials(Jones, HOMFLY-PT etc.)
+
+Polynomial inv. 입문용으로 읽어볼 시도를 할만한..가?
+
+$(k,l)$-tangle : It has $k$ ends at the bottom, $l$ ends at the top.
+
+Skein relation, Brauer category, ...
+
+[Shapes of hyperbolic triangles and once-punctured torus groups](https://arxiv.org/abs/2006.02621)
+> Sang-hyun Kim, Thomas Koberda, Jaejeong Lee, Ken'ichi Ohshika, Ser Peow Tan, with an appendix by Xinghua Gao
+
+Let $\Delta$ be a hyperbolic triangle with a fixed area $\phi$, then,
+
+all but countably many $\phi$, generic choices of $\Delta$ have the property that the group generated by the $\pi$-rotations about the midpoints of the sides of the triangle admits no nontrivial relations.
+
+## DT
+
+## AT
+
+[A Unified Topological Approach to Data Science](https://arxiv.org/abs/2103.16926)
+> Jelena Grbić, Jie Wu, Kelin Xia, Guo-Wei Wei
+
+Generalize simplicial complexes and hypergraphs to super-hypergraphs, and establish super-hypergraph homology as an extension of simplicial homology.
+
+and super-persistent homology as an application.
+
+Otto: It's just $\mathbb{Z}_2$ grading ㅋ (How to see this?)
+
+A _super-hypergraph_ is a pair $(\mathcal{H}, X)$ where $X$ is a $\Delta$-set and $\mathcal{H}$ is a graded subset of $X$.
+
+Topology on the super-hypergraph: _Vertex-deletion_ topology, namely, grading function $f_v: \mathcal{H} \longrightarrow \mathbb{N}$ is given by the size of vertices $-1$ in subgraph.
+
+and $\mathcal{H}_n := f^{-1}(n)$.
+
+[Triangular arrangements on the projective plane](https://arxiv.org/abs/1903.08885)
+> Simone Marchesi (UB), Jean Vallès (UPPA)
+
+Algebraic.. geometry....
+
+[Machine learning with persistent homology and chemical word embeddings improves prediction accuracy and interpretability in metal-organic frameworks](https://arxiv.org/abs/2010.00532)
+> Aditi S. Krishnapriyan, Joseph Montoya, Maciej Haranczyk, Jens Hummelshøj, Dmitriy Morozov
+
+__Metal-Organic Frameworks__
+
+Word embedding from NLP(used for augmenting the top. info.) + pH(vectorized diagram)
+
+# 일단 생각나는 오늘의 ToDo
+
+* Check all the $3$-manifolds are triangulable.
+
+* determinant of combinatorial Laplacian
+
+* Vol, CS, CuspShape Statistical investigation II
+
+* Torsion in terms of Laplacian in the case of not acyclic chain complexes
+
+* Singular 에서의 delta inv, genus, Milnor number 등의 계산이 어떤 방식으로 이루어져 있는지에 대한 조사
+
+* GDA
+
+* Otto's TODO
+    * Train model (e.g. AE(otto's script)), goal acc >= 0.9
+    * R-peak finder
+    * UMAP with 1 sample
+    * feature extraction via UMAP or other models
+    * pH on weights of models, is it useful for developing networks?
+    * Replace CNN structure by RNN or LSTM etc in AE, VAE?
+    * Regression on gender/age
+
+* matrix with det=1 can be expressed in terms of elementary matrices
+
+* 출장 check
+
+* Turaev Ch2
+
+* zigzag algorithm
+
+* ML check (ㅠㅠ)
+
+* Mr.Lie
+
+# Priority on Dawn / ToDo List in this week
+
+__1__ Lie group study!
+
+__2__ ($3$-manifold study!) Otto's lecture (3~4 lectures) v
+
+__3__ Hyperbolic geometry study!
+
+__4__ C++ gudhi로 여러 pH 계산해보기
+
+__5__ ML 탐방 ㅎㅎ
+
+# Just to do
+
+> 주말에까지 일을 늘리는 건 못할 짓인 것 같다.... 죽을거같다.. 으악
+
+* 시간되면 resolution 분석도
+
+* fork compatible sow 만들기
+
+* persistent cup product 있는 논문 분석 [Link](https://arxiv.org/pdf/1902.09138.pdf)
+
+* How about __Persistence Torsion__? or .. __Persistence Product__!?
+    * Pers. torsion : NO intutive, hard to calculate
+
+* Singular 계산 프로세스 뒤져보기
+
+* SnapPy Chern-Simons 계산 프로세스를 통해 $\pm \frac{\pi^2}{4}$ 구간에 몰리는 이유 찾아보기
+
+* Experimental Mathematics 논문들 살펴보기
+
+* Knot drawing program 분석(Theoretical?)
+
+* PCG Segmentation 알아보기 -> CinC2016 with MatLab
+
+* 해당 분야의 배경지식 없이 인자 사이의 관련성을 찾는 것이 가능할까? / 배경지식 없이 행할 수 있는 모든 분석 -> 통계적인 방법을 배워야할까보다
+
+* Discrete component is just a high probablistic distribution?
+
+* Dunfield / Burton 논문 참고하여 exp. 관련 논문은 어떻게 쓰나 report
+
+* __Data with uncertainty__
+
+# 2021 Reading Challenge
+
+__REMEMBER:__ You always need more time to read. So, don't waste ur time.
+
+* DISCRETE DIFFERENTIAL GEOMETRY: AN APPLIED INTRODUCTION - Keenan Crane (/170)
+
+* All of Statistics, A concise Course in Statistical Inference - Larry Wasserman (/736)
+
+* 논어 - 공자 (/421)
+
+* An Introduction to Homological Algebra - Charles A. Weibel (/464)
+
+* Octahedral developing of knot complement I: Pseudo-hyperbolic structure - Hyuk Kim, Seonhwa Kim, Seokbeom Yoon (/54)
+
+* Computation of Large Asymptotics of 3-Manifold Quantum Invariants - Clément Maria, Owen Rouillé (/26)
+
+* Variational inference & deep learning: A new synthesis - Diederik P. Kingma (24/174)
+
+* ~~STORIES OF YOUR LIFE AND OTHERS - Ted Chiang (447/447)~~
+
+* Lie Groups, Lie Algebras, and Representations - Brain C. Hall (/453)
+
+* A Comprehensive Introduction to Differential Geometry - Spivak (/512)
+
+* A Course in Metric Geometry - Dmitri Burago, Yuri Burago, Sergei Ivanov (/425)
+
+* Reidemeister torsion on character varieties - Leo Benard (24/110)
+
+* Persistent Intersection Homology - Paul Bendich, John Harer (17/32)
+
+* 데미안 - (78/244)
+
+* Introduction to Combinatorial Torsions - Vladimir Turaev (22/127) : Ch.1. 끝!
+
+* Knots and Links - Rolfsen Dale (12/439)
+
+* Geometric and Topological Inference - Jean-Daniel Boissonnat, Frédéric Chazal, Mariette Yvinec (/295)
+
+* Optimizing persistent homology based functions - Mathieu Carrière, Frédéric Chazal, et al. (2/15)
+
+# Schedule
+
+* 1000 - 1130: 출근, 밀린 Arxiv check(GT, DG)
+
+* 1130 - 1150: 치과다녀옴(잇몸 또 내려가고 파임 ㅎㅎ...)
+
+* 1150 - 1310: Arxiv Check(AT).. 띄워놓기만하고 Knot server 복구 기념 작업걸어두기, Otto 방문 기념 Quotient space of Euclidean space by shifting coordinates(cyclic) 물어보기(=> orbitfold!)
+
+* 1310 - 1323: 117번 실험 journaling 토대로 수정(cpx vol, aCS 검토 추가), 수학연구소 전화받고 나감
+
+* 1323 - 1412: 스케일링 받고옴, 윗앞니 어금니 사이(유지장치) 관리하십쇼, 스케일링 반년에 한번은 하고
+
+* 1412 - 1500: 117번 마저 수정
+
+* 1500 - 1530: 졸도
+
+* 1530 - 1600: 산책(아니.. 이렇게 오래한건 아닌거같은데..)
+
+* 1600 - 1630: Arxiv Check(AT) 
+
+* 1630 - 1640: Arxiv Check(GT, 오늘것)
+
+* 1640 - 1845: Validation check ... 난장판이오
+
+* 1845 - 1937: 저녁거리 살 겸 산책 가려다가 1dim knot 계산 오류 찾아서 수정
+
+* 1937 - 2027: 진짜 저녁거리 살 겸 산책에 저녁(오징어 한판 + 닭가슴살 네모난거 + 언스위튼 아몬드브리즈 + 밀크티초코 하나)
+
+* 2027 - 2308: Covering space랑 싸우는 중.. 오늘은 진것같다
+
+# ToDo
+
+* 1개 빠진 샘플 찾아보기 
+    * 30028629
+
+* Autoencoder? / 새로운 모델(maybe 2d) 구상 / validation protocol 만들기
+
+* Implement PCG envelope
+
+* Segmentation model?
+
+* More training models
+
+# ToDo for weekend(하나도 못했던)
+
+* Prime decomposition method
+
+* Closed Model Theory
+
+* Handlebodies Ref.
+
+* Autoencoder Ref.
+
+* Rolfsen
+
+* Wall
+
+* Discrete Differential Geometry
+
+* A course in a metric geometry / oudot's book?
+* Other references you printed out ...
+
+# TODO
+
+- [ ] Make more models :D
+
+- [ ] Do some experiments with sound data (feature extracting first?)
+
+- [ ] Autoencoder / how about reading '12 automatic ecg blah blah'
+
+- [ ] Augmentation on training set
+
+- [ ] Read [_Evolution of unknotting strategies for knots and braids_](https://arxiv.org/abs/1302.0787)
+
+- [x] 1st chapter of Rolfsen's book
+
+- [ ] 1st chapter of Wall's book
+
+- [ ] Cnt comp 생각해보기
+
+- [ ] Recurrence plot?
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? Because there is _continuous_ homotopy between  them
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? (False, what the author want to say is just there is an another embedding for being unknot (by def.))
+
+- [ ] Read Ch2. of the thesis written by Kingma
+
+- [ ] stability condition reading
+
+- [ ] Marching cube code 살펴보기
+
+- [ ] CT dcm investigation (necessary?)
+
+- [ ] Diagram drawing 코드 분석(command only, 실행이라도 시켜보기)
+
+- [ ] PrimeDecomposition 원리 분석
+
+- [ ] Sphere packing algorithm
