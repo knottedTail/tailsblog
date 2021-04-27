@@ -72,9 +72,6 @@ module.exports = {
               ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
             },
           },
-          {
-            resolve: `gatsby-remark-katex`  // What need to be added.
-          },
         ],
         plugins: [
           `gatsby-remark-katex`
@@ -104,7 +101,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: config.gaTrackingId,
+        // trackingId: config.gaTrackingId,
+        trackingId: "270356245",
       },
     },
 
