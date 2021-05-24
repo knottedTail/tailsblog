@@ -10,7 +10,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-offline`,
-    `gatsby-transformer-remark`,
+    // `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-remark-emoji`, // Emoji list: https://emojipedia.org/joypixels/
