@@ -47,15 +47,15 @@ module.exports = {
             },
           },
 
-          // Process images in markdown
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: config.maxWidth,
-              backgroundColor: `transparent`,
-              linkImagesToOriginal: false,
-            },
-          },
+          // // Process images in markdown
+          // {
+          //   resolve: `gatsby-remark-images`,
+          //   options: {
+          //     maxWidth: config.maxWidth,
+          //     backgroundColor: `transparent`,
+          //     linkImagesToOriginal: false,
+          //   },
+          // },
 
           {
             resolve: `gatsby-remark-autolink-headers`,
@@ -127,6 +127,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: config.maxWidth,
+              // maxWidth: config.maxWidth,
               backgroundColor: `transparent`,
               linkImagesToOriginal: false,
             },
