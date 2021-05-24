@@ -60,7 +60,6 @@ export const pageQuery = graphql`
           id
           body
           excerpt(pruneLength: 180, truncate: true)
-          // timeToRead
           fields {
             slug
           }
