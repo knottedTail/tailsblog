@@ -77,9 +77,9 @@ module.exports = {
 
           },
         ],
-        plugins: [
-          `gatsby-remark-katex`
-        ],
+        // plugins: [
+        //   `gatsby-remark-katex`
+        // ],
         remarkPlugins: [remarkSlug],
       },
     },
