@@ -6,8 +6,8 @@ const config = {
   ========================================= */
   title: `catstail's blog`,          // Displayed in header
   description: `Write Everything`,     // Site description
-  // maxWidth: "768px",                  // Max width of website
-  maxWidth: 768,                  // Max width of website
+  maxWidth: "768px",                  // Max width of website
+  // maxWidth: 768,                  // Max width of website
   enableAbout: true,                  // Enables about page
   siteUrl: `https://catstail.netlify.app/`, // For sitemap & RSS feed
   useScrollIndicator: true,           // Use scroll indicator on top of screen in posts
