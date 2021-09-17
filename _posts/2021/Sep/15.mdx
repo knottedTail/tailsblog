@@ -1,0 +1,275 @@
+---
+title: 09/15
+date: 2021-09-15 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# TODO
+
+* **Gatekeeper**
+    * [ ] Find some noticing features by ML with integrated data (2nd)
+
+* **Sage On Wolfram**
+    * [ ] 테스트용 스크립트 준비
+    * [ ] 코드 정리 .. 시작하기
+
+* 논문읽기모임에서 읽을 논문 찾아보기
+    * [ ] More paper and choose proper one or candidates
+
+* Ultranomic data
+    * [x] Run *something*(anything) with the data
+        * Find the outlier 4254162 via UMAP
+    * [ ] Analyze why the outlier is detected in UMAP
+        * [x] Find features which 4254162 is outlied
+        * [ ] Run UMAP with the selected/unselected features
+    * [x] AlignUMAP 각보기
+    * [ ] Feature correlation 계산
+    * [x] Basic feature extraction 찾아 적용해보기    
+        * RandomForest(100% on the test set ㅎㅎ..)
+
+* Turaev 발표 준비
+    * [ ] Euler structure Ch.20. 읽기
+    * [ ] Lens space 총정리
+
+* Dunfield / Burton 논문 참고하여 exp. 관련 논문은 어떻게 쓰나 report
+    * [ ] Dunfield / Burton 논문 찾아보기
+
+* Gordian complex -> Knot diagram 살펴보기
+    * [ ] 2nd read + brainstoming
+
+* Lie theroy 공부하기
+    * [ ] Read Hall's book (책상에 꼽혀있음 ㅋㅋㅋㅋㅋ)
+
+* Genomics and Topology(esp. Knot theory)
+    * [ ] Search "Knot theory protein" or "DNA topology"
+
+* Closed model theory
+    * [ ] Ref 찾기
+
+* Mapper / Reeb graph 자료조사
+    * [ ] Reeb graph ref 조사
+
+* KNN algorithm (ver. distance to measure)
+    * [ ] knn algorithm 살펴보기
+    * [ ] distance to measure 정의 살펴보기
+
+* Knot diagram 1호기
+    * [ ] 원격제어 세팅 (How to use the same desktop by two different users independently?)
+    
+* Discrete Morse Theory
+    * [ ] Scoville 책 읽기 시작하기
+    * [ ] Forman 논문 읽기 시작하기
+
+* Calculation of torsion on simplicial complexes 
+    * [ ] 김혁 선생님 05/21 노트로 subspace에 대한 covering 이야기 정리하기
+
+* Two Cultures 읽기
+    * [ ] 읽기!
+
+* Alexander Quandle / De Rham Poly / Alexander Poly 관계 찾기   
+    * [ ] Turaev] Alexander poly 복습
+
+* [ ] Ultronomics presentation / notebook 만들기
+    * [ ] Extract attracting features
+    * [ ] UMAP으로 new cluster / outlier 확인하기
+    * [ ] k-fold cross validation 써보기
+
+* [ ] ECG extraction check (xml)
+    * [ ] 병원 당 xml 파일에서 ECG가 나오는지 확인하기
+    * [ ] ECG collection(.npy no more .pkl) 만들기
+
+* [ ] 간만 Stastics
+    * [x] R-squared value 조사
+        * 1 - \sum (y-f)^2 / \sum(y-mean(y))^2
+    * [x] p value 조사
+        * Used to reject null hypothesis H_0:통계적 가정이 하나인 경우, p-value가 쓰일때는 주로 주어진 distribution이 trivial하다인 듯
+        * p=Pr(T \geq t | H_0) or Pr(T \leq t | H_0) or 2*min{the above values}
+        * p < \alpha (pre-defined), the alpha level/significance level
+    * [ ] feature importance of random forest 조사
+
+# Qs
+
+* [ ] Discrete component is just a high probablistic distribution?
+
+* [ ] Knot diagram diagram(tree?) 정리
+
+# Reading
+
+* [ ] DISCRETE DIFFERENTIAL GEOMETRY: AN APPLIED INTRODUCTION
+    * Keenan Crane 
+    * /170
+
+* [ ] All of Statistics, A concise Course in Statistical Inference 
+    * Larry Wasserman
+    * /736
+
+* [ ] Octahedral developing of knot complement I: Pseudo-hyperbolic structure
+    * Hyuk Kim, Seonhwa Kim, Seokbeom Yoon 
+    * /54
+
+* [ ] Lie Groups, Lie Algebras, and Representations
+    * Brain C. Hall
+    * /453
+
+* [ ] Reidemeister torsion on character varieties
+    * Leo Benard
+    * 24/110
+
+* [ ] Computation of Large Asymptotics of 3-Manifold Quantum Invariants
+    * Clément Maria, Owen Rouillé
+    * /26
+
+* [ ] A Comprehensive Introduction to Differential Geometry
+    * Spivak
+    * /512
+
+* [ ] Knots and Links
+    * Rolfsen Dale
+    * 12/439
+
+* [x] ~~STORIES OF YOUR LIFE AND OTHERS~~
+    * Ted Chiang
+    * 447/447
+
+* [ ] Persistent Intersection Homology
+    * Paul Bendich, John Harer
+    * 17/32
+
+* [ ] Demian
+    * Hermann Hesse
+    * 78/244
+
+* [ ] Introduction to Combinatorial Torsions
+    * Vladimir Turaev
+    * 95/127
+
+* [ ] Geometric and Topological Inference 
+    * Jean-Daniel Boissonnat, Frédéric Chazal, Mariette Yvinec
+    * /295
+
+* [x] THE GORDIAN COMPLEX OF KNOTS
+    * Mikami Hirasawa, Yoshiaki uchida
+    * 6/6
+    * 주어진 knot으로 부터 Crossing을 하나씩 늘려 gordian complex의 모든 vertices들이 임의의 dimensional simplex에 포함된다는 것을 보임
+
+* [ ] Optimizing persistent homology based functions
+    * Mathieu Carrière, Frédéric Chazal, et al. 
+    * 2/15
+
+* [ ] Evolution of unknotting strategies for knots and braids
+    * Nicholas Jackson, Colin G. Johnson
+    * /6
+
+* [ ] Knot Invariants and Their Relations: A Topological Perspective
+    * PAWE L D LOTKO, DAVIDE GURNARI, AND RADMILA SAZDANOVIC
+    * 2/22
+    
+* [ ] Discrete Morse Theory
+    * Nicholas A. Scoville
+    * /289
+
+* [ ] Morse Theory for Cell Complexes
+    * Robin Forman
+    * /56
+
+* [ ] Statistical Modeling: The Two Cultures
+    * Leo Breiman
+    * 7/17
+
+# Notes
+
+* 연구는 찾는 것일 수 있습니다. 이러한 것들은 항상 희미한 아이디어로 부터, 흐리멍텅한 채로 시작하죠
+
+* 비겁함을 알고 매일 최선을 다해야한다. 불행은 어디에나 있고 나는 운이 좋은 일을 할 뿐이다.
+
+* 때때로 불행한 일이 좋은 사람들에게 생길 수 있다 (슬의생2)
+
+* 시간은 중요한 곳에, 계속 부족함이 느껴질 것이므로.
+
+* Don't waste ur time (looking at progress bar, waiting for generating any pictures ...)
+
+* Fix a prob, varying methods / Fix a method, varying probs.
+
+* Being active
+
+* 아는게 중요한게 아니라 모르는걸 아는게 중요한 것.
+
+* Frog book에 intersection theory 있음!
+
+* Ask to teachers before you get a shame
+
+# Schedule
+ 
+* 0945 - 1100: 간만에 일찍왔더니 서버일로 허둥지둥 + Breidman 논문과 함께 아침거리 장보기(근무시간에 ㅎㅎ)
+
+* 1100 - 1146: Alexander poly 계산 오류 수정 및 12 crossing까지 체크
+
+* 1146 - 1530: 점심 w/ Breidman + 정호형 만나서 수다
+
+* 1530 - 1810: Breidman 마저 + 경이 놀러옴 + 오토가 ECG extraction 리퀘함 + 잠깐 잠
+
+* 1810 - 1835: 저녁잠
+
+* 1835 - 1935: 좀 더 보다 성은 누나랑 산책겸 샐러드 사옴
+
+* 1935 - 2309: 저녁! + .xml extracting... + 긁어 부스럼을 만드는 그런 인이 박인 습관들이 생각나는,
+
+* 2309 - 0058: Extractor 마저하기.. 후..
+
+# ToDo for weekend(하나도 못했던)
+
+* Prime decomposition method
+
+* Closed Model Theory
+
+* Handlebodies Ref.
+
+* Autoencoder Ref.
+
+* Rolfsen
+
+* Wall
+
+* Discrete Differential Geometry
+
+* A course in a metric geometry / oudot's book?
+* Other references you printed out ...
+
+# TODO
+
+- [ ] Make more models :D
+
+- [ ] Do some experiments with sound data (feature extracting first?)
+
+- [ ] Autoencoder / how about reading '12 automatic ecg blah blah'
+
+- [ ] Augmentation on training set
+
+- [ ] Read [_Evolution of unknotting strategies for knots and braids_](https://arxiv.org/abs/1302.0787)
+
+- [x] 1st chapter of Rolfsen's book
+
+- [ ] 1st chapter of Wall's book
+
+- [ ] Cnt comp 생각해보기
+
+- [ ] Recurrence plot?
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? Because there is _continuous_ homotopy between  them
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? (False, what the author want to say is just there is an another embedding for being unknot (by def.))
+
+- [ ] Read Ch2. of the thesis written by Kingma
+
+- [ ] stability condition reading
+
+- [ ] Marching cube code 살펴보기
+
+- [ ] CT dcm investigation (necessary?)
+
+- [ ] Diagram drawing 코드 분석(command only, 실행이라도 시켜보기)
+
+- [ ] PrimeDecomposition 원리 분석
+
+- [ ] Sphere packing algorithm
