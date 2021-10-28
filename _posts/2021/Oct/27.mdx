@@ -1,6 +1,6 @@
 ---
-title: 10/25
-date: 2021-10-25 00:00:00
+title: 10/27
+date: 2021-10-27 00:00:00
 tags: [Daily]
 excerpt: Daily Report
 ---
@@ -11,11 +11,17 @@ excerpt: Daily Report
     * [x] Discrete Morse Theory 읽기 시작
         * [x] Chapter 2(Remaining part) 발표 준비
         * [x] Chapter 3, 4.. 는 안(못)읽고 발표 들음(찬규)
-        * [ ] Chapter 5 읽기
+        * [x] Chapter 5 읽기
 
 * **Gatekeeper**
     * [ ] Find some noticing features by ML with integrated data (2nd)
     * [ ] RF on stenosis
+    * [ ] TopAE
+        * [x] CAE 돌려보기 (partial waves -> partial waves)
+        * Moo Chung Algorithm은 1-cycle이 너무 과함, 개선 전까지는 보류
+
+    * [ ] 10s generator
+        * [ ] LSTM/GRU로 기본 모델 작성
 
 * **Sage On Wolfram**
     * [x] Add installation guide(rough) for Sage-On-Wolfram & SageMath
@@ -192,12 +198,7 @@ excerpt: Daily Report
 * [ ] Persistent Intersection Homology
     * Paul Bendich, John Harer
     * 17/32
-
-* [ ] Demian
-    * Hermann Hesse
-    * 78/244
-
-* [ ] Introduction to Combinatorial Torsions
+성
     * Vladimir Turaev
     * 107/127
 
@@ -270,27 +271,71 @@ excerpt: Daily Report
 
 # Schedule
  
-* 1000 - 1030: 초청강연이 있었구나? 들을 준비
+* 1000 - 1013: 출근
 
-* 1030 - 1315: 듣다.. 졸다.. 끝나고 복습할까 하다 웹서핑 좀 하다.. ppt 다시 보기
+* 1013 - 1018:LSTM 모델 그려보기
 
-* 1315 - 1445: 밥(파업으로 치킨볼 사먹음) 겸 딴짓 겸
+* 1018 - 1020: ToDo에 Peak mark data 정리 추가하기 + ToDo에 TopAE부분 수정
 
-* 1445 - 1800: TopAE 마무리.. 중 model 도 다 못 짬 시간 실화냐고
+* 1020 - 1108: TopAE 정리후 git pulling
 
-* 1800 - 1925: 효진누나 TopAE 트레이닝 부분 만들기전에 백업 + gpu로 돌려보기 직전
+* 1108 - 1120: 화장실 좀
 
-* 1925 - 2028: 트레이닝 돌려두긴 함 (50min / 1epoch?)
+* 1120 - 1220: 웹툰 하나만.. 하다 점심 (왕갈비짬뽕)
 
-* 2028 - 2058: 커피.. 사고 오기 + 훈련과정 조금 수정하고(printing) 다시 돌려두기
+* 1220 - 1338: 성은 누나랑 수다
 
-* 2058 - 2206: AG Ch.4 읽기
+* 1338 - 1548: 병원진료
 
-* 2206 - 2309: 읽는 중.. + 종이비행기 원데이 클래스 w/ 국가대표라니 너무 커여워.. + 그리고 윤하의 종이비행기
+* 1548 - 1610: LSTM 10s 모델만들기 시작 .. 전에 Deep mind(AlphaFold) 유튭 구경 및 레퍼런스 조사 중
 
-* 2309 - 2320: 사연 설명 듣다가, 책 조금 더 보기로 할까 싶어서 오늘의 주제까지, 오늘 처음 했던 한마디
+* 1610 - 1622: AlphaFold-Attention based -> 구조 확인을 위한 자료 확인 중
+
+* 1622 - 1646: Attention 구조 설명 읽다(wikidocs.net/31379) 다음 장에 있는 Transformer 글 읽기, 인코더까지 대충
+
+* 1646 - 1655: 깰겸 화장실
+
+* 1655 - 1702: 노래 바꾸고 디코더 읽기
+
+* 1702 - 1711: Attention 세부구조(LSTM? GRU?) 관련 자료 검색, 생각해보니 Attention은 그냥 mechanism
+
+* 1711 - 1730: Attention 복습 + 포인트는 Attention과 CAM(for interpretablity)로 잡자 + 
+
+* 1730 - 1743: CAM 복습 + CAM은 일단 신경쓰지 않고 10s generator만 만들기
+
+* 1743 - 1752: RNN/LSTM 복습 + notebook 세팅 시작
+
+* 1752 - 1802: 양방향 LSTM w/ Attention 구경 + BiLSTM 구조 그림 구경
+
+* 1802 - 1821: 화장실겸 저녁사오기
+
+* 1821 - 1907: 저녁 w/ 트위치 + 양치
+
+* 1907 - 1909: 노래 선곡
+
+* 1909 - 2013: LSTM input/output, hidden state의 사이즈 확인
+
+* 2013 - 2028: LSTM.. 같은 weight를 돌려쓰는 부분에서 생각 중.... + 밤잠
+
+* 2028 - 2159: LSTM 진짜 기본으로 Lead I -> Lead II 모델만 만들어보기로 하고 sliding window concatenation만 만들었는데 시간 실화냐
+
+* 2159 - 2309: LSTM 기본만 만드는데 이렇게 시간이 걸리고 ... + 이 사람에 대해 어디까지 알아야 할까 어디까지 알 수 있는 걸까 싶은
+
+* 2309 - 2312: Training 100번 돌리고 집으로 가기!
+
+* 2312 - 0007: 귀가 + 씻고 + 과자먹으면서 돌린 결과 구경
+
+* 0007 - 0050: 일단 기타 잠깐 블루밍블루밍 블루밍
+
+* 0050 - 0058: 듀오링고 프랑스어.. 전에 유튜브보면서 과자
+
+* 0058 - ....: 듀오링고 깨다 잠들었다 4시반쯤에 깼다 컴퓨터 끄고 다시 잠 
 
 # ToDo for today
+
+* [ ] Peak mark data 받아 정리
+
+* [ ] 10s generating model with GRU
 
 * [ ] Davis+Kirk, obstruction theory + bdl theory
 
