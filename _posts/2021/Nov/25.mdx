@@ -1,6 +1,6 @@
 ---
-title: 11/11
-date: 2021-11-11 00:00:00
+title: 11/25
+date: 2021-11-25 00:00:00
 tags: [Daily]
 excerpt: Daily Report
 ---
@@ -12,7 +12,7 @@ excerpt: Daily Report
         * [x] Chapter 2(Remaining part) 발표 준비
         * [x] Chapter 3, 4.. 는 안(못)읽고 발표 들음(찬규)
         * [x] Chapter 5 읽기
-        * [ ] Chapter 7 발표준비
+        * [x] Chapter 7 발표준비
 
 * **Gatekeeper**
     * [ ] Find some noticing features by ML with integrated data (2nd)
@@ -52,7 +52,7 @@ excerpt: Daily Report
 * 논문읽기모임에서 읽을 논문 찾아보기
     * [x] More paper and choose proper one or candidates
         * [x] Knots inv
-        * [ ] Evasion path in mobile sensor network
+        * [ ] Evasion path in mobile sensor network 발표 준비
     * [ ] 지난주 용준씨 발표자료 살펴보기
     * [x] 찬규 발표 내용 미리보기
     * [ ] 발표준비
@@ -204,43 +204,56 @@ excerpt: Daily Report
 * Ask to teachers before you get a shame
 
 # Schedule
- 
-* 1000 - 1057: Funnel 마저 작업 + BK 질의응답 전까지 성은 누나랑 수다
 
-* 1057 - 1130: BK!
+* 1000 - 1058: 출근 + 교수님 와계셨음 + 돌려둔거 conf mat 확인 + 모델들이 생각도 안하고 정상이라고 하네 + 화장실 + AUC / BCELoss 밸런스 문제 확인 중
 
-* 1130 - 1244: Funnel 버그 고치고 돌리기
+* 1058 - 1153: 먼저 BCELoss 부터 해결하기 (custom weight!) + AUC (Binary case라 weighted고 뭐고 의미가 없음)
 
-* 1244 - 1301: 칼밥가능? 가능!
+* 1153 - 1213: 돈가스 조지기.. 전에 홍영택 박사님 메일에 답장
 
-* 1301 - 1417: 리딩세미나(용준씨) + 다음 발표할 논문 찾기
+* 1213 - 1259: 진짜 조지기 + 오레오 가지고 귀환 + 상준선배 확진자랑 밥먹은적 있어서 검사받으러 가심 + 4시 미팅 장소 물색하려는데.. 없네?
 
-* 1417 - 1512: Funnel 마무리.. 하지만 너무 느려서 포기
+* 1259 - 1357: gatekeeper 업데이트 메일 보내기 + 말로 업데이트
 
-* 1512 - 1548: 다음타자.. ALBERT 결과 확인 및 PHATE? 일단 ALBERT 다른버전으로 돌려보자 + 는 서버 GPU 사용이 안되어서 실패
+* 1357 - 1555: 5레오 + 금요일 강의실 알아보기
 
-* 1548 - 1554: PHATE / hospital check 돌려는 둠
+* 1555 - 1739: 미팅 w/ 세브란스 + 세호형이랑 언제 뭐 먹을지 정하면서 + 돌아와서 보고
 
-* 1554 - 1726: 딱 강연회 들을 타이밍 + Rationally Slice knot! + 성은누나 마지막? 인사
+* 1739 - 1800: 저녁때까지 데이터 추출 밑작업.. 갔다와서 마무리하자
 
-* 1726 - 1809: Developing map 관련 Ref 찾기 + 기절
+* 1800 - 2020: 저녁! w/ 세이호
 
-* 1809 - 1845: 깨어나서 잠깐 더 봄
+* 2020 - 2100: 뭔가 하려다 그냥 잠이나 잠
 
-* 1845 - 2000: 저녁! + 콘치 사가지고 오는 길에 진성태박사님과 통화 + 전장 구경하면서 ㅎㅎ..
+* 2100 - 2115: 일어나서 정신 차리기
 
-* 2000 - 2039: 이닦고 딴짓함 힘들다 힘들어
+* 2115 - 2340: Data Extraction .. 하지만 Extract 할 것이 없었다는 함정 + 교수님 놀러? 와서 얘기함 .. lecture를 재활용하는 교수님들에 대해.. Sloth and it's bad attitude
 
-* 2039 - 2206: developing 마저보기 ... 많이 못보고 기절
-
-* 2206 - 2310: 3장 처음부터 보기 + 여섯살 아이도 겨울나무가 아름다울 수 있음을 아는데,
+* 2340 - 2343: 이승윤 특집으로 하루 틈은 없지만 새소년 신곡 듣고 가자
 
 
 # ToDo for today
 
+* [ ] **CACSA model 만들기**
+    * [x] RF
+        * [x] 0 vs non0 -> 100 테스트 해보기
+    * [x] CNN based (Ng)
+        * [ ] 결과 정리, best model upload
+        * [ ] 시연 notebook(load, test) 만들기
+
+* [ ] **Wave decomposition model**
+
+* [ ] Integrated model 구조 생각해보기
+
+* [ ] (pseudo) developing 정리
+    * [ ] Thurston
+    * [ ] 김선화/윤석범
+
+* [ ] Docker로 office desktop 사용하기
+
 * [ ] Peak mark data 받아 정리
 
-* [ ] 10s generating model with GRU
+<!-- * [ ] 10s generating model with GRU -->
 
 * [ ] Davis+Kirk, obstruction theory + bdl theory
 
@@ -254,6 +267,11 @@ excerpt: Daily Report
 * [ ] Shafa: 2절 1섹션? 정도 읽기
 
 * [ ] Do some data analysis (ultromics / NIA)
+
+* [x] Snappy에서 Symmetry type 추출하기
+
+* [x] Evasion path 할지 / PHATE 할지 정하기
+    (Evasion path 당첨! 하지만 미뤄야할 것 같다)
 
 # TODO
 
