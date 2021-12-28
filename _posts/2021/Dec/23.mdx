@@ -1,0 +1,346 @@
+---
+title: 12/23
+date: 2021-12-23 00:00:00
+tags: [Daily]
+excerpt: Daily Report
+---
+
+# TODO
+
+* **TDA**
+    * [x] Discrete Morse Theory 읽기 시작
+        * [x] Chapter 2(Remaining part) 발표 준비
+        * [x] Chapter 3, 4.. 는 안(못)읽고 발표 들음(찬규)
+        * [x] Chapter 5 읽기
+        * [x] Chapter 7 발표준비
+
+* **Gatekeeper**
+    * [ ] Find some noticing features by ML with integrated data (2nd)
+    * [ ] RF on stenosis4 copy
+    * [ ] TopAE
+        * [x] CAE 돌려보기 (partial waves -> partial waves)
+        * Moo Chung Algorithm은 1-cycle이 너무 과함, 개선 전까지는 보류
+
+    * [ ] 10s generator
+        * [ ] LSTM/GRU로 기본 모델 작성
+
+* **Sage On Wolfram**
+    * [x] Add installation guide(rough) for Sage-On-Wolfram & SageMath
+    * [ ] 테스트용 스크립트 준비
+    * [x] 코드 정리 .. 시작하기... 김선화 선생님에 의해 반 강제적으로 시작해버렸다
+
+* **Knot**
+    * [ ] 윤영호 선생님 fact4 copy
+    * Turaev 발표 준비
+        * [x] Euler structure Ch.20. 읽기
+        * [x] Euler structure bijection 증명 (반만, Obstruction theory 좀 더 보고!)
+        * [x] Lens space 총정리
+        * [x] 발표자료 글씨 크게!
+        * [ ] 전체 내용 정리
+        * [ ] Alexander Polynomial 기준 재정리
+
+    * Alexander Quandle / De Rham Poly / Alexander Poly 관계 찾기   
+        * [x] Alexander poly from Alexander quandle 증명 생각해보기
+            * 정답: Fox calculus의 matrix에서 generator를 component에 해당하는 variable인 t로 보낸 것
+        * [x] 김선화 선생님의 수정본 분석
+        * [ ] Alexander det와 torsion 관계 확인 (Alexander / Milnor's paper)
+        * [x] 2977 이후의 Alexander poly 추가(계산? 0924-1013)
+            * [x] Snappy에서 추출 중
+            * [x] knotsBM data 구조 찾아보기
+                * [x].py 코드에서 유추(There exists string list)
+
+* 논문읽기모임에서 읽을 논문 찾아보기
+    * [x] More paper and choose proper one or candidates
+        * [x] Knots inv
+        * [ ] Evasion path in mobile sensor network 발표 준비
+    * [ ] 지난주 용준씨 발표자료 살펴보기
+    * [x] 찬규 발표 내용 미리보기
+    * [ ] 발표준비
+        * [x] Mapper(Ball) + knot poly 분석 (한번 읽음)
+        * [x] 내용 부족하면4 copy
+    * [x] AlignUMAP 각보기
+    * [ ] Feature correlation 계산
+    * [x] Basic feature extraction 찾아 적용해보기    
+        * RandomForest (100% on the test set ㅎㅎ..)
+    * [x] Ultromics 발표자료 정리 및 보강
+        * [x] RF / Decision tree 조사
+            * [x] feature_importance_
+            * [x] gini?
+        * [x] Attain more attractible figure (UMAP)
+        * [ ] Outlier 정리
+        * [x] k-fold cross validation 써보기
+        * [ ] DenseMap 써보기
+        * [ ] UMAP revisit
+            * [ ] Check algorithm of UMAP again
+            * [ ] Especiailly, about n_nbhd
+        * [ ] Original shape 빼고 돌려보기
+    * [x] TopAE로 dimension reduction
+        * [ ] hyperparameter tuning 추가해서 다시 보기
+
+* Dunfield / Burton 논문 참고하여 exp. 관련 논문은 어떻게 쓰나 report
+    * [ ] Dunfield (Snappy) / Burton (Regina) 논문 찾아보기
+
+* Gordian complex -> Knot diagram 살펴보기
+    * [ ] 2nd read + brainstorming
+
+* Lie theroy 공부하기
+    * [ ] Read Hall's book
+
+* Genomics and Topology(esp. Knot theory)
+    * [ ] Search "Knot theory protein" or "DNA topology"
+
+* Closed model theory
+    * [ ] Ref 찾기
+
+* Mapper / Reeb graph 자료조사
+    * [ ] Reeb graph re4 copy
+* [ ] Knot diagram diagram(tree?) 정리
+
+# Reading
+
+* [ ] DISCRETE DIFFERENTIAL GEOMETRY: AN APPLIED INTRODUCTION
+    * Keenan Crane 
+    * /170
+
+* [ ] All of Statistics, A concise Course in Statistical Inference 
+    * Larry Wasserman
+    * /736
+
+* [ ] Octahedral developing of knot complement I: Pseudo-hyperbolic structure
+    * Hyuk Kim, Seonhwa Kim, Seokbeom Yoon 
+    * /54
+
+* [ ] Lie Groups, Lie Algebras, and Representations
+    * Brain C. Hall4 copy
+    * /453
+
+* [ ] Reidemeister torsion on character varieties
+    * Leo Benard
+    * 24/110
+
+* [ ] Computation of Large Asymptotics of 3-Manifold Quantum Invariants
+    * Clément Maria, Owen Rouillé
+    * /26
+
+* [ ] A Comprehensive Introduction to Differential Geometry
+    * Spivak
+    * /512
+
+* [ ] Knots and Links
+    * Rolfsen Dale
+    * 12/439
+
+* [x] ~~STORIES OF YOUR4 copyn Harer
+    * 17/32
+성
+    * Vladimir Turaev
+    * 107/127
+
+* [ ] Geometric and Topological Inference 
+    * Jean-Daniel Boissonnat, Frédéric Chazal, Mariette Yvinec
+    * /295
+
+* [x] THE GORDIAN COMPLEX OF KNOTS
+    * Mikami Hirasawa, Yoshiaki uchida
+    * 6/6
+    * 주어진 knot으로 부터 Crossing을 하나씩 늘려 gordian complex의 모든 vertices들이 임의의 dimensional simplex에 포함된다는 것을 보임
+
+* [ ] Optimizing persistent homology based functions
+    * Mathieu Carrière, Frédéric Chazal, et al. 
+    * 2/15
+
+* [ ] Evolution of unknotting strategies for knots and braids
+    * Nicholas Jackson, Colin G. Johnson
+    * /6
+
+* [ ] Knot Invariants and Their Relations: A Topological Perspective
+    * PAWE L D LOTKO, DAVIDE GURNARI, AND RADMILA SAZDANOVIC
+    * 2/22
+    
+* [ ] Discrete Morse Theory
+    * Nicholas A. Scoville
+    * /289
+
+* [ ] Morse Theory for Cell Complexes
+    * Robin Forman
+    * /56
+
+* [ ] Statistical Modeling: The Two Cultures
+    * Leo Breiman
+    * 7/17
+
+* [x] On the Number of Knots and Links (Revisit)
+    * D. J. A. Welsh
+    * /6
+
+* [ ] Knot Diagrammatics
+    * Louis H. Kauffman
+    * /107
+
+* [ ] Quantum Groups and Knot Invariants
+    * Christian Kassel, Mark Rosso, Vladmir Turaev
+    * /121
+
+# Notes
+
+* 부담이 없으면.. 잘 안되더라구요 (장혁재 교수님)
+
+* 연구는 찾는 것일 수 있습니다. 이러한 것들은 항상 희미한 아이디어로 부터, 흐리멍텅한 채로 시작하죠
+
+* 비겁함을 알고 매일 최선을 다해야한다. 불행은 어디에나 있고 나는 운이 좋은 일을 할 뿐이다.
+
+* 때때로 불행한 일이 좋은 사람들에게 생길 수 있다 (슬의생2)
+
+* 시간은 중요한 곳에, 계속 부족함이 느껴질 것이므로.
+
+* Don't waste ur time (looking at progress bar, waiting for generating any pictures ...)
+
+* Fix a prob, varying methods / Fix a method, varying probs.
+
+* Being active
+
+* 아는게 중요한게 아니라 모르는걸 아는게 중요한 것.
+
+* Frog book에 intersection theory 있음!
+
+* Ask to teachers before you get a shame
+
+# Schedule
+
+* 1000 - 1012: 출 to the 근
+
+* 1012 - 1154: UMAP(any embedding) + ECG viewer 만들기 + fighting with Dash + samll talks with Obstruction
+
+* 1154 - 1257: 마저 Viewer 만들기
+
+* 1257 - 1356: 리딩세미나!
+
+* 1356 - 1848: Viewer 얼추 완성 + 닭가슴살 사오기
+
+* 1848 - 2310: 저녁! + Rolfsen..... Wirtinger에서 막힘 ㅎㅎ.. How to deal with plumbing? + 돌아가면서도 좋아하는 것을 놓치지는 말아야겠다고,
+
+* 2311 - : 퇴근! 발표준비하러가기
+
+# ToDo for today
+
+* [ ] **Gatekeeper**
+    * [x] DS label로 data extraction
+    * [x] simple model 만들기
+    * [x] 결과 첨부해서 ppt 만들기
+
+* [ ] **KNOT**
+    * [x] 1호기 170만개 계산 자동화
+        * [x] 179/180 Symmetry 이어서 계산시키기
+        * [x] 181 1초컷 분할계산 추가해서 계산 돌리기 / failed 불러오는 부분 수정
+        * [x] 182 ALL Solvseq도 분할해서 계산하게끔
+
+    * [ ] Torsion number와 Alexander polynomial 연관짓기
+        * [x] 't' as a generator in \mathbb{Z} -> a generator in \mathbb{Z}_k
+            * Problems: Z[\zeta{n}]이 UFD가 아닌 경우가 많음 (class number)
+        * 혹은 Seifert pairing(matrix)로 Alexander polynomial의 관계에서 찾아보기
+
+    * [x] 허준이 교수님께 M-convex 판별하는 프로그램 혹은 Lorentzian 확인하는 프로그램 여쭈어보기 
+        * [x] 메일 스토리라인 짜기
+            * 교수님 답장 없어 시무룩..
+        * [x] Survey paper 추천받기
+            * 내년 일정만 받고 페이퍼는 안 알려주셨다 ^오^  
+
+    * [x] Diagram site 표 보기좋게 만들기
+        * [ ] 업데이트 되는지 확인
+
+    * [ ] Solving Seqs 논문 작업
+        * [ ] 어느 journal이 좋을지 찾아보기
+            * Groebner basis 계산을 빠르게 한다는 관점에서 Groebner 관련된 저널이 좋을지도
+            * Exprimental math?
+
+    * [ ] 김혁 교수님 서버에 Wolfram kernel 문제 해결
+        * [ ] Wolfram kernel만 따로 재설치 + sageOn 작동 확인
+        * [x] 이창우 박사님께 MMA 재설치 문의드리기
+
+    * [ ] para computation 모듈 리빌드
+        * [ ] Template JSON 참고하여 JSON 파일 뼈대 만들기
+        * [ ] Primary decomposition
+        * [ ] uCompLimit
+
+    * [ ] Rolfsen 책 공부하기
+        * [ ] Ch7 발표준비하기
+
+    * [x] Lorentzian
+        * [x] M-convexity 보는 함수 만들기
+        * [x] Positive coefficient 조건 포함해서 CheckLorentzian 함수 매듭짓기
+        * [x] S(a, b)에 대해 검사 (G(T,X), H(T,X))    
+
+* [x] **CACSA model 만들기**
+    * 가능한하지 않는 걸로, DS ㄱㄱ
+    * [x] RF
+        * [x] 0 vs non0 -> 100 테스트 해보기
+    * [x] CNN based (Ng)
+        * [ ] 결과 정리, best model upload
+        * [ ] 시연 notebook(load, test) 만들기
+
+* [ ] **Wave decomposition model**
+
+* [ ] Integrated model 구조 생각해보기
+    * [ ] Ensenble, 대신 Input이 다른
+
+* [ ] (pseudo) developing 정리
+    * [ ] Thurston
+    * [ ] 김선화/윤석범
+
+* [ ] Docker로 office desktop 사용하기
+
+* [ ] Peak mark data 받아 정리
+
+* [ ] Davis+Kirk, obstruction theory + bdl theory
+
+* [ ] Nicolaescu, Seiberg-Witten ver torsion introduction check
+    * 읽기 너무 어려웠음 다음에 리트 ㄱ
+
+* [ ] Dehn cpx and Wirtinger cpx 조사비교분석
+
+* [ ] Shafa: 2절 1섹션? 정도 읽기
+
+* [ ] Do some data analysis (ultromics / NIA)
+
+* [x] Snappy에서 Symmetry type 추출하기 (돌아가는 중)
+
+* [x] Evasion path 할지 / PHATE 할지 정하기
+    * [ ] Evasion path 어디까지 발표할지 정하기 + 읽기
+
+# TODO
+
+- [ ] Make more models :D
+
+- [ ] Do some experiments with sound data (feature extracting first?)
+
+- [ ] Autoencoder / how about reading '12 automatic ecg blah blah'
+
+- [ ] Augmentation on training set
+
+- [ ] Read [_Evolution of unknotting strategies for knots and braids_](https://arxiv.org/abs/1302.0787)
+
+- [x] 1st chapter of Rolfsen's book
+
+- [ ] 1st chapter of Wall's book
+
+- [ ] Cnt comp 생각해보기
+
+- [ ] Recurrence plot?
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? Because there is _continuous_ homotopy between  them
+
+- [x] Why any knot embedded in $S^3$ is homotoped to unknot? (False, what the author want to say is just there is an another embedding for being unknot (by def.))
+
+- [ ] Read Ch2. of the thesis written by Kingma
+
+- [ ] stability condition reading
+
+- [ ] Marching cube code 살펴보기
+
+- [ ] CT dcm investigation (necessary?)
+
+- [ ] Diagram drawing 코드 분석(command only, 실행이라도 시켜보기)
+
+- [ ] PrimeDecomposition 원리 분석
+
+- [ ] Sphere packing algorithm
